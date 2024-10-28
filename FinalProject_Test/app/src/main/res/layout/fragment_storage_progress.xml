@@ -70,7 +70,7 @@
             android:background="@color/black"/>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="560dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -115,15 +115,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
                             android:fontFamily="@font/baloo2_bold"
-                            android:text="Tổng hợp các câu hỏi về khoa học" />
+                            android:text="Top 10 câu đố vui về ca dao , tục ngữ" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="100 câu"
-                            android:textSize="14sp" />
-                    <LinearLayout
+                        <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -133,12 +127,13 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="Tiến độ: "
                             android:textSize="14sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="34/100"
-                            android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/baloo2_regular"
+                                android:text="3/10"
+                                android:textSize="14sp" />
                     </LinearLayout>
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -155,6 +150,7 @@
                                 android:layout_height="wrap_content"
                                 android:text=" @dinhquyzeq10"
                                 android:fontFamily="@font/baloo2_bold"
+                                android:textColor="@color/black"
                                 android:layout_gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -205,14 +201,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="1dp"
                             android:fontFamily="@font/baloo2_bold"
-                            android:text="Top 50 câu đố vui siêu hay" />
+                            android:text="Top 10 đội vô địch World Cup gần nhất" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="50 câu"
-                            android:textSize="14sp" />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -223,11 +213,12 @@
                                 android:fontFamily="@font/baloo2_regular"
                                 android:text="Tiến độ: "
                                 android:textSize="14sp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/baloo2_regular"
-                                android:text="2/50"
+                                android:text="2/10"
                                 android:textSize="14sp" />
                         </LinearLayout>
                         <LinearLayout
@@ -245,6 +236,7 @@
                                 android:layout_height="wrap_content"
                                 android:text=" @dinhduc77"
                                 android:fontFamily="@font/baloo2_bold"
+                                android:textColor="@color/black"
                                 android:layout_gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -294,14 +286,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:fontFamily="@font/baloo2_bold"
-                        android:text="Tổng hợp các câu hỏi về khoa học" />
+                        android:text="Những phát minh vĩ đại của thế giới " />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="100 câu"
-                        android:textSize="14sp" />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -312,11 +298,12 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="Tiến độ: "
                             android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/baloo2_regular"
-                            android:text="34/100"
+                            android:text="9/10"
                             android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
@@ -334,6 +321,7 @@
                             android:layout_height="wrap_content"
                             android:text=" @vukhanh99"
                             android:fontFamily="@font/baloo2_bold"
+                            android:textColor="@color/black"
                             android:layout_gravity="center_vertical"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -383,14 +371,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:fontFamily="@font/baloo2_bold"
-                        android:text="Tổng hợp các câu hỏi về khoa học" />
+                        android:text="Tuyển tập các tác phẩm văn học nổi tiếng của nhà .." />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="100 câu"
-                        android:textSize="14sp" />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -401,11 +383,12 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="Tiến độ: "
                             android:textSize="14sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/baloo2_regular"
-                            android:text="34/100"
+                            android:text="8/10"
                             android:textSize="14sp" />
                     </LinearLayout>
                     <LinearLayout
@@ -423,6 +406,7 @@
                             android:layout_height="wrap_content"
                             android:text=" @dinhquyzeq10"
                             android:fontFamily="@font/baloo2_bold"
+                            android:textColor="@color/black"
                             android:layout_gravity="center_vertical"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -475,12 +459,6 @@
                             android:fontFamily="@font/baloo2_bold"
                             android:text="Tổng hợp các câu hỏi về khoa học" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="100 câu"
-                            android:textSize="14sp" />
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -491,11 +469,12 @@
                                 android:fontFamily="@font/baloo2_regular"
                                 android:text="Tiến độ: "
                                 android:textSize="14sp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/baloo2_regular"
-                                android:text="34/100"
+                                android:text="7/10"
                                 android:textSize="14sp" />
                         </LinearLayout>
                         <LinearLayout
@@ -513,6 +492,7 @@
                                 android:layout_height="wrap_content"
                                 android:text=" @dinhquyzeq10"
                                 android:fontFamily="@font/baloo2_bold"
+                                android:textColor="@color/black"
                                 android:layout_gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>

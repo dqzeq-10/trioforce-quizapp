@@ -6,8 +6,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
@@ -22,14 +20,11 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.example.finalproject_test.LoginORSignup;
-import com.example.finalproject_test.MainScreen;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.RandomQuiz;
 
 import com.example.finalproject_test.activity_choose_mode;
 import com.example.finalproject_test.createQuiz;
-import com.example.finalproject_test.login_activity;
 
 /**
  * A simple {@link Fragment} subclass.

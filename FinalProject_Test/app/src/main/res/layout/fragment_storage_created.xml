@@ -13,9 +13,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
         android:background="#009B1D1D"
         android:orientation="vertical"
-        android:layout_marginStart="5dp"
         android:padding="16dp">
 
         <LinearLayout
@@ -68,377 +68,381 @@
             android:layout_height="1.5dp"
             android:layout_marginTop="20dp"
 
-            android:background="@color/black"/>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-        <LinearLayout
+            android:background="@color/black" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#00838383"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:layout_height="560dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical"
-               >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/baloo2_bold"
-                    android:text="Tháng 9 năm 2024"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black" />
+                android:layout_height="match_parent"
+                android:background="#00838383"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <LinearLayout
-
                     android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/baloo2_bold"
-                        android:text="Đố vui:" />
+                        android:text="Tháng 9 năm 2024"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đuôi thì chẳng thấy, mà có hai đầu?"
-                        android:textSize="14sp" />
+                    <LinearLayout
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Cây cầu"
-                        android:textSize="14sp" />
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Đố vui" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Top 10 câu đố vui về ca dao , tục ngữ"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D8D8D8" />
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#D8D8D8" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/baloo2_bold"
+                        android:text="Tháng 10 năm 2022"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Bóng đá" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Top 10 đội vô địch World Cup gần nhất"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Khoa học" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Những phát minh vĩ đại của thế giới "
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D8D8D8" />
 
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/baloo2_bold"
+                        android:text="Tháng 9 năm 2024"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Văn học" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Tuyển tập các tác phẩm văn học nổi tiếng của nhà...."
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D8D8D8" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/baloo2_bold"
+                        android:text="Tháng 9 năm 2024"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Lịch sử" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Top 10 trận chiến gây thiệt hại nặng nề cho nền kinh tế"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D8D8D8" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/baloo2_bold"
+                        android:text="Tháng 9 năm 2024"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="9.524dp"
+                        android:background="@drawable/border_tt_storage"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="3dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:fontFamily="@font/baloo2_bold"
+                            android:text="Thể loại : Âm nhạc" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_semibold"
+                            android:text="Khám phá âm nhạc - 10 điều bạn chưa biết"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo2_regular"
+                            android:text="@string/see_details"
+                            android:textColor="#416BE1"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D8D8D8" />
+
+
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/baloo2_bold"
-                    android:text="Tháng 10 năm 2022"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black" />
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Bóng đá:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đội bóng nào vô địch World Cup nhiều nhất ?"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Brazil"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Khoa học:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đầu máy hơi nước được sản xuất vào năm nào?"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Năm 1784"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#D8D8D8" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/baloo2_bold"
-                    android:text="Tháng 9 năm 2024"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black" />
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Đố vui:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đuôi thì chẳng thấy, mà có hai đầu?"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Cây cầu"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#D8D8D8" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/baloo2_bold"
-                    android:text="Tháng 9 năm 2024"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black" />
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Đố vui:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đuôi thì chẳng thấy, mà có hai đầu?"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Cây cầu"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#D8D8D8" />
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/baloo2_bold"
-                    android:text="Tháng 9 năm 2024"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black" />
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="96dp"
-                    android:layout_marginTop="9.524dp"
-                    android:background="@drawable/border_tt_storage"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="3dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="3dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Đố vui:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đuôi thì chẳng thấy, mà có hai đầu?"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/baloo2_regular"
-                        android:text="Đáp án: Cây cầu"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1.5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#D8D8D8" />
-
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
 
     </LinearLayout>
 

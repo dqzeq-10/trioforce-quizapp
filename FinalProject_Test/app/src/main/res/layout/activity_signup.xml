@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="325dp"
-        android:layout_height="221dp"
+        android:layout_width="334dp"
+        android:layout_height="162dp"
         android:layout_marginTop="32dp"
         android:scrollbarSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,29 +127,28 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext"
+            android:inputType="text"
+            android:maxEms="20"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:background="@drawable/edittext"
-            android:maxEms="20"
-            android:inputType="text"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            app:boxStrokeColor="#C71515"
-            app:boxBackgroundMode="none">
 
-                <com.google.android.material.textfield.TextInputEditText
+            app:boxBackgroundMode="none"
+            app:boxStrokeColor="#C71515">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
                 android:drawableStart="@raw/userr"
                 android:drawablePadding="5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="16sp"
 
-                android:padding="12dp"
                 android:fontFamily="@font/baloo2_regular"
                 android:hint="Tên người dùng"
-                android:background="@null"/>
+                android:padding="12dp"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -160,28 +159,55 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="5dp"
             android:background="@drawable/edittext"
-            android:maxEms="20"
-
             android:inputType="textEmailAddress"
+            android:maxEms="20"
+            android:paddingLeft="10dp"
+
+            android:paddingRight="10dp"
             app:boxBackgroundMode="none">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
                 android:drawableStart="@raw/email"
                 android:drawablePadding="5dp"
-                android:layout_marginBottom="5dp"
-                android:textSize="16sp"
 
                 android:fontFamily="@font/baloo2_regular"
                 android:hint="Email"
                 android:padding="12dp"
-                android:background="@null"/>
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext"
+            android:inputType="textEmailAddress"
+            android:maxEms="20"
+            android:paddingLeft="10dp"
+
+            android:paddingRight="10dp"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
+                android:drawableStart="@drawable/baseline_phone_24"
+                android:drawablePadding="5dp"
+
+                android:fontFamily="@font/baloo2_regular"
+                android:hint="Số điện thoại"
+                android:padding="12dp"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -191,29 +217,154 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/edittext"
+            android:inputType="date"
             android:maxEms="20"
             android:paddingLeft="10dp"
+
             android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="5dp"
-            android:inputType="date"
 
             app:boxBackgroundMode="none">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
                 android:drawableStart="@raw/calendarr"
                 android:drawableEnd="@raw/calendar2"
                 android:drawablePadding="5dp"
-                android:layout_marginBottom="5dp"
-                android:textSize="16sp"
                 android:fontFamily="@font/baloo2_regular"
 
-                android:background="@null"
+                android:hint="Ngày sinh"
                 android:padding="12dp"
-                android:hint="Ngày sinh" />
+                android:textSize="16sp" />
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDangKy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/baloo2_medium"
+            android:text="Bạn đã có tài khoản?"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/formDangNhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo2_medium"
+            android:text="Đăng nhập"
+            android:textColor="#ef2222"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDangKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_dang_nhap"
+        android:elevation="100dp"
+        android:fontFamily="@font/baloo2_regular"
+        android:paddingStart="50dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="50dp"
+        android:paddingBottom="0dp"
+        android:text="Đăng ký"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_verti2" />
+
+    <LinearLayout
+        android:id="@+id/layout_verti2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_tv_gioitinh">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_MatKhau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext"
+            android:inputType="textPassword"
+            android:maxEms="20"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:boxBackgroundMode="none"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
+                android:drawableStart="@raw/lock"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/baloo2_regular"
+                android:hint="Mật khẩu"
+                android:paddingStart="10dp"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_XacNhanMatKhau"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/edittext"
+            android:inputType="textPassword"
+            android:maxEms="20"
+            android:paddingLeft="10dp"
+            android:paddingTop="0dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            app:boxBackgroundMode="none"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
+                android:drawableStart="@raw/lock"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/baloo2_regular"
+                android:hint="Xác nhận mật khẩu"
+                android:paddingStart="10dp"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -222,12 +373,12 @@
         android:id="@+id/layout_tv_gioitinh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="45dp"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="45dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_verti">
 
@@ -273,129 +424,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_verti2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_tv_gioitinh">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_MatKhau"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edittext"
-            android:maxEms="20"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="0dp"
-            app:passwordToggleEnabled="true"
-            android:inputType="textPassword"
-            app:boxBackgroundMode="none">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@raw/lock"
-                android:drawablePadding="5dp"
-                android:layout_marginBottom="5dp"
-                android:paddingStart="10dp"
-                android:textSize="16sp"
-                android:fontFamily="@font/baloo2_regular"
-                android:hint="Mật khẩu"
-                android:background="@null"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_XacNhanMatKhau"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="5dp"
-            android:paddingTop="0dp"
-            android:background="@drawable/edittext"
-            android:maxEms="20"
-            app:passwordToggleEnabled="true"
-            android:inputType="textPassword"
-            app:boxBackgroundMode="none">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@raw/lock"
-                android:drawablePadding="5dp"
-                android:layout_marginBottom="5dp"
-                android:textSize="16sp"
-                android:paddingStart="10dp"
-                android:fontFamily="@font/baloo2_regular"
-                android:hint="Xác nhận mật khẩu"
-                android:background="@null"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonDangKy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/btn_dang_nhap"
-        android:elevation="100dp"
-        android:paddingStart="50dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="50dp"
-        android:paddingBottom="0dp"
-        android:text="Đăng ký"
-        android:fontFamily="@font/baloo2_regular"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_verti2" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDangKy">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/baloo2_medium"
-            android:text="Bạn đã có tài khoản?"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/formDangNhap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo2_medium"
-            android:text="Đăng nhập"
-            android:textColor="#ef2222"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

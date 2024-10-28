@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.finalproject_test">
+    package="com.example.finalproject_test" >
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject_Test"
-        tools:targetApi="34">
+        tools:targetApi="34" >
+        <activity
+            android:name=".main_create_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".CREATE_QUIZ"
+            android:exported="false" />
         <activity
             android:name=".popup_true_answer"
             android:exported="false" />
@@ -23,44 +29,41 @@
             android:name=".Result"
             android:exported="false" />
         <activity
-
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ExampleQuizPlayWithTopic"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic2"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic3"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic4"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic5"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic6"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic7"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic8"
             android:exported="false" />
-            <activity
+        <activity
             android:name=".ExampleQuizPlayWithTopic9"
             android:exported="false" />
-
         <activity
             android:name=".RandomQuiz"
             android:exported="false" />
@@ -70,7 +73,6 @@
         <activity
             android:name=".activity_example_for_quiz_end"
             android:exported="false" />
-
         <activity
             android:name=".activity_choose_mode"
             android:exported="false" />

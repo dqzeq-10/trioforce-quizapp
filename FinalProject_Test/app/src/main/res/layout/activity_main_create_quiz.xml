@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@raw/bg"
+    tools:context=".storage">
+
+
+    <TextView
+        android:id="@+id/storage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="Tạo câu hỏi"
+        android:textColor="#FFFFFF"
+        android:textSize="100px"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999"/>
+
+
+    <!--MenuBAR-->
+
+    <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/tabLayout_createQuiz"
+        android:layout_width="400dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_itemtab_storage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storage"
+        app:tabIndicator="@drawable/bg_tab_selected_storage"
+        app:tabIndicatorColor="#CDFFFFFF"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="45dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#000000"
+        app:tabTextAppearance="@style/CustomTabTextAppearance"
+        app:tabTextColor="#000000">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager_createQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout_createQuiz" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
