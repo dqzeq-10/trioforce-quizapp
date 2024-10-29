@@ -32,21 +32,24 @@
 
         android:id="@+id/tabLayout_createQuiz"
         android:layout_width="400dp"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/bg_itemtab_storage"
+        android:background="@drawable/bg_tab_selected_storage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/storage"
-        app:tabIndicator="@drawable/bg_tab_selected_storage"
-        app:tabIndicatorColor="#CDFFFFFF"
+        app:tabIndicatorColor="@null"
+        app:tabIndicator="@drawable/bg_tab_selected_createquiz"
         app:tabIndicatorFullWidth="true"
-        app:tabIndicatorHeight="45dp"
+        app:tabIndicatorHeight="35dp"
         app:tabRippleColor="@android:color/transparent"
         app:tabSelectedTextColor="#000000"
-        app:tabTextAppearance="@style/CustomTabTextAppearance"
-        app:tabTextColor="#000000">
+        app:tabTextAppearance="@style/CustomTabTextAppearanceCreateQuiz"
+        app:tabTextColor="#000000"
+        app:tabMaxWidth="40dp"
+        app:tabMinWidth="30dp" >
+            
 
     </com.google.android.material.tabs.TabLayout>
 
