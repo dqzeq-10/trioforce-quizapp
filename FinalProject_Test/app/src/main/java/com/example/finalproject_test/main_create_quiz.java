@@ -1,6 +1,9 @@
 package com.example.finalproject_test;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,41 +29,31 @@ public class main_create_quiz extends AppCompatActivity {
         // Set up adapter
         adapter = new ViewpagerAdapter_CreateQuiz(this);
         viewPager_Create_quiz.setAdapter(adapter);
-
         // TabLayoutMediator to connect TabLayout with ViewPager2
         new TabLayoutMediator(tabLayout, viewPager_Create_quiz, (tab, position) -> {
-            switch (position) {
-                case 0:
-                    tab.setText("1");
-                    break;
-                case 1:
-                    tab.setText("2");
-                    break;
-                case 2:
-                    tab.setText("3");
-                    break;
-                case 3:
-                    tab.setText("4");
-                    break;
-                case 4:
-                    tab.setText("5");
-                    break;
-                case 5:
-                    tab.setText("6");
-                    break;
-                case 6:
-                    tab.setText("7");
-                    break;
-                case 7:
-                    tab.setText("8");
-                    break;
-                case 8:
-                    tab.setText("9");
-                    break;
-                case 9:
-                    tab.setText("10");
-                    break;
-                    }
+            tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
         }).attach();
+
+
+        ImageButton imagebtnBack = findViewById(R.id.imagebtnBack);
+        imagebtnBack.setOnClickListener(view -> {
+            Intent it = new Intent(main_create_quiz.this, MainScreen.class);
+            startActivity(it);
+            finish();
+        });
     }
+    public void goToPreviousFragment() {
+        int currentItem = viewPager_Create_quiz.getCurrentItem();
+        if (currentItem > 0) {
+            viewPager_Create_quiz.setCurrentItem(currentItem - 1);
+        }
+    }
+
+    public void goToNextFragment() {
+        int currentItem = viewPager_Create_quiz.getCurrentItem();
+        if (currentItem < adapter.getItemCount() - 1) {
+            viewPager_Create_quiz.setCurrentItem(currentItem + 1);
+        }
+    }
+
 }

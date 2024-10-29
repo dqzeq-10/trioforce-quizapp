@@ -8,23 +8,44 @@
     android:background="@raw/bg"
     tools:context=".storage">
 
-
-    <TextView
+    <LinearLayout
         android:id="@+id/storage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo2_regular"
-        android:text="Tạo câu hỏi"
-        android:textColor="#FFFFFF"
-        android:textSize="100px"
-        android:layout_marginTop="70dp"
+        android:layout_width="371dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.00999999"/>
+        app:layout_constraintVertical_bias="0.00999999">
 
+        <ImageButton
+            android:id="@+id/imagebtnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="Back button"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/fram_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@raw/rightarrow" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:fontFamily="@font/baloo2_regular"
+            android:text="Tạo câu hỏi"
+            android:textColor="#FFFFFF"
+            android:textSize="100px" />
+    </LinearLayout>
 
     <!--MenuBAR-->
 
@@ -34,7 +55,7 @@
         android:layout_width="400dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/bg_tab_selected_storage"
+        android:background="@drawable/bg_tab_all_quiz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"

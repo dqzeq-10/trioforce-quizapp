@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +23,7 @@ public class create_Fragment_Ques2 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button btnLuilai, btnNext;
 
     public create_Fragment_Ques2() {
         // Required empty public constructor
@@ -57,7 +59,28 @@ public class create_Fragment_Ques2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create___ques2, container, false);
+        View view = inflater.inflate(R.layout.fragment_create___ques2, container, false);
+
+        btnLuilai = view.findViewById(R.id.btnLuiLai);
+        btnNext = view.findViewById(R.id.btnNext);
+
+
+
+        // Xử lý sự kiện khi bấm nút "Lui lại"
+        btnLuilai.setOnClickListener(v -> {
+            if (getActivity() instanceof main_create_quiz) {
+                ((main_create_quiz) getActivity()).goToPreviousFragment();
+            }
+        });
+
+        // Xử lý sự kiện khi bấm nút "Tiếp tục"
+        btnNext.setOnClickListener(v -> {
+            // Gọi phương thức từ Activity để chuyển đến Fragment tiếp theo
+            if (getActivity() instanceof main_create_quiz) {
+                ((main_create_quiz) getActivity()).goToNextFragment();
+            }
+        });
+
+        return view;
     }
 }
