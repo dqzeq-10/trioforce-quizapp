@@ -75,7 +75,7 @@ public class create_Fragment_Ques9 extends Fragment {
 
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
-            // Gọi phương thức từ Activity để chuyển đến Fragment tiếp theo
+
             if (getActivity() instanceof main_create_quiz) {
                 ((main_create_quiz) getActivity()).goToNextFragment();
             }

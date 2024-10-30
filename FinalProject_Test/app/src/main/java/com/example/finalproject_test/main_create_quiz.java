@@ -29,7 +29,7 @@ public class main_create_quiz extends AppCompatActivity {
         // Set up adapter
         adapter = new ViewpagerAdapter_CreateQuiz(this);
         viewPager_Create_quiz.setAdapter(adapter);
-        // TabLayoutMediator to connect TabLayout with ViewPager2
+
         new TabLayoutMediator(tabLayout, viewPager_Create_quiz, (tab, position) -> {
             tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
         }).attach();
@@ -43,16 +43,16 @@ public class main_create_quiz extends AppCompatActivity {
         });
     }
     public void goToPreviousFragment() {
-        int currentItem = viewPager_Create_quiz.getCurrentItem();
-        if (currentItem > 0) {
-            viewPager_Create_quiz.setCurrentItem(currentItem - 1);
+        int Item = viewPager_Create_quiz.getCurrentItem();
+        if (Item > 0) {
+            viewPager_Create_quiz.setCurrentItem(Item - 1);
         }
     }
 
     public void goToNextFragment() {
-        int currentItem = viewPager_Create_quiz.getCurrentItem();
-        if (currentItem < adapter.getItemCount() - 1) {
-            viewPager_Create_quiz.setCurrentItem(currentItem + 1);
+        int Item = viewPager_Create_quiz.getCurrentItem();
+        if (Item < adapter.getItemCount() - 1) {
+            viewPager_Create_quiz.setCurrentItem(Item + 1);
         }
     }
 

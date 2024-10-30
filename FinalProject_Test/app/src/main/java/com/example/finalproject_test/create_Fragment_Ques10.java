@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -74,15 +75,17 @@ public class create_Fragment_Ques10 extends Fragment {
             }
         });
 
-
+        //finish
         btnfinish.setOnClickListener(v -> {
-
+            Toast.makeText(getActivity(), "Tạo thành công!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getActivity(), MainScreen.class);
             startActivity(intent);
+
             if (getActivity() != null) {
-                getActivity().finish(); // Đóng Activity hiện tại
+                getActivity().finish();
             }
         });
+
 
         return view;
     }

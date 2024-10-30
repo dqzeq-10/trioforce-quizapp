@@ -71,7 +71,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_vertical|right"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:scaleType="fitCenter"
                 android:src="@raw/imagedownarrow_combobox_s" />
         </FrameLayout>
@@ -98,7 +98,7 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center_vertical|right"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:scaleType="fitCenter"
                 android:src="@raw/imagedownarrow_combobox_s" />
         </FrameLayout>

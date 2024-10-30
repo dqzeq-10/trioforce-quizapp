@@ -17,9 +17,6 @@
             android:name=".main_create_quiz"
             android:exported="false" />
         <activity
-            android:name=".CREATE_QUIZ"
-            android:exported="false" />
-        <activity
             android:name=".popup_true_answer"
             android:exported="false" />
         <activity
