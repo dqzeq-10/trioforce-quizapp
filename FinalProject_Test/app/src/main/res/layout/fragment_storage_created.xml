@@ -133,6 +133,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -189,6 +190,7 @@
                             android:fontFamily="@font/baloo2_semibold"
                             android:text="Top 10 đội vô địch World Cup gần nhất"
                             android:textColor="@color/black"
+
                             android:textSize="14sp" />
 
                         <TextView
@@ -197,6 +199,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -237,6 +240,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -300,6 +304,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -364,6 +369,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -428,6 +434,7 @@
                             android:fontFamily="@font/baloo2_regular"
                             android:text="@string/see_details"
                             android:textColor="#416BE1"
+                            android:layout_gravity="end"
                             android:textSize="14sp" />
 
                     </LinearLayout>
