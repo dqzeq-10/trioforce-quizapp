@@ -1,4 +1,4 @@
-package com.example.finalproject_test;
+/*package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,3 +34,4 @@ public class ExampleQuizPlayWithTopic extends AppCompatActivity {
         });
     }
 }
+*/

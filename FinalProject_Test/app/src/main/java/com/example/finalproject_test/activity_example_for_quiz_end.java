@@ -1,4 +1,4 @@
-package com.example.finalproject_test;
+/*package com.example.finalproject_test;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -87,3 +87,5 @@ public class activity_example_for_quiz_end extends AppCompatActivity {
 
     }
 }
+
+ */

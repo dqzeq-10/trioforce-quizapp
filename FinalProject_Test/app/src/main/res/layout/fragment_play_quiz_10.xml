@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="700dp"
+    android:layout_gravity="center_vertical"
+    android:background="#00898989"
+    tools:context=".create_Fragment_Ques1">
+
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#009B1D1D"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/fram_1"
+            android:layout_width="356dp"
+            android:layout_height="261dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corners"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/imageBtnSave"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@raw/icons8_save" />
+
+            <ImageView
+                android:id="@+id/imgRandom"
+                android:layout_width="417px"
+                android:layout_height="413px"
+                android:layout_gravity="center"
+                android:src="@raw/imageplacehold" />
+
+            <TextView
+                android:id="@+id/txtCauhoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Câu hỏi ở đây"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_rd1"
+            android:layout_width="356dp"
+            android:layout_height="261dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDapAn_10A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/binh_thuong"
+                android:fontFamily="@font/baloo2_regular"
+                android:paddingStart="17dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="10dp"
+                android:text="A. Đáp án A"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDapAn_10B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/binh_thuong"
+                android:fontFamily="@font/baloo2_regular"
+                android:paddingStart="17dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="10dp"
+                android:text="B. Đáp án B"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDapAn_10C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/binh_thuong"
+                android:fontFamily="@font/baloo2_regular"
+                android:paddingStart="17dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="10dp"
+                android:text="C. Đáp án C"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDapAn_10D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/binh_thuong"
+                android:fontFamily="@font/baloo2_regular"
+                android:paddingStart="17dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="17dp"
+                android:paddingBottom="10dp"
+                android:text="D. Đáp án D"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_rd2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLuiLai"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/luilai"
+                android:fontFamily="@font/baloo2_semibold"
+
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:text="Lui lại"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFinish"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/tieptuc"
+                android:fontFamily="@font/baloo2_semibold"
+                android:text="Hoàn thành"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

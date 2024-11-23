@@ -41,7 +41,7 @@ AppCompatButton btnrshome, btnrsreplay, btnrsnext;
         btnrsreplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Result.this, ExampleForQuizStart.class);
+                Intent intent = new Intent(Result.this, main_play_quiz.class);
                 startActivity(intent);
                 finish();
             }

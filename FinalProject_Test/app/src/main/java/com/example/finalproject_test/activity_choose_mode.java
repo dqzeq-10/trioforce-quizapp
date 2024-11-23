@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class activity_choose_mode extends AppCompatActivity {
 ImageButton btnVeManHinhChinh;
 AppCompatButton cdde,cdbthg,cdkho;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ AppCompatButton cdde,cdbthg,cdkho;
         cdkho =findViewById(R.id.CheDoKho);
         btnVeManHinhChinh=(ImageButton) findViewById(R.id.TroVeManHinhChinh);
 
+
         btnVeManHinhChinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,21 +44,37 @@ AppCompatButton cdde,cdbthg,cdkho;
         cdde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_choose_mode.this, ExampleForQuizStart.class );
+
+                Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
+                String category = getIntent().getStringExtra("category");
+                if (category != null) {
+                    intent.putExtra("category", category);
+                }
+                intent.putExtra("level","Dễ");
                 startActivity(intent);
             }
         });
         cdbthg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_choose_mode.this, ExampleForQuizStart.class );
+                Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
+                String category = getIntent().getStringExtra("category");
+                if (category != null) {
+                    intent.putExtra("category", category);
+                }
+                intent.putExtra("level","Thường");
                 startActivity(intent);
             }
         });
         cdkho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_choose_mode.this, ExampleForQuizStart.class );
+                Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
+                String category = getIntent().getStringExtra("category");
+                if (category != null) {
+                    intent.putExtra("category", category);
+                }
+                intent.putExtra("level","Khó");
                 startActivity(intent);
             }
         });

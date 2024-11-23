@@ -1,5 +1,6 @@
 package com.example.finalproject_test;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -57,5 +58,18 @@ public class login_activity extends AppCompatActivity {
             else
                 edtMK.setTransformationMethod(PasswordTransformationMethod.getInstance());
         });
+    }
+    private void showPopupWarning() {
+
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_warning_login);
+
+        // Để nền dialog trong suốt
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        Button btnClose = dialog.findViewById(R.id.btn_close);
+        btnClose.setOnClickListener(v -> dialog.dismiss());
+
+
+        dialog.show();
     }
 }

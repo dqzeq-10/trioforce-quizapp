@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@raw/bg"
+    tools:context=".storage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playquiz"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999">
+
+        <!-- Nút Back -->
+        <ImageButton
+            android:id="@+id/imagebtnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="Back button"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@raw/rightarrow" />
+
+        <!-- Thể loại -->
+        <TextView
+            android:id="@+id/txtTheLoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo2_semibold"
+            android:text="Thể loại"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagebtnBack"
+            app:layout_constraintEnd_toStartOf="@+id/txtlevel"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!-- Level -->
+        <TextView
+            android:id="@+id/txtlevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/baloo2_regular"
+            android:text="level"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--MenuBAR-->
+
+    <com.google.android.material.tabs.TabLayout
+
+        android:id="@+id/tabLayout_Play_Quiz"
+        android:layout_width="400dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_tab_all_quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playquiz"
+        app:tabIndicatorColor="@null"
+        app:tabIndicator="@drawable/bg_tab_selected_createquiz"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="35dp"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabSelectedTextColor="#000000"
+        app:tabTextAppearance="@style/CustomTabTextAppearanceCreateQuiz"
+        app:tabTextColor="#000000"
+        app:tabMaxWidth="40dp"
+        app:tabMinWidth="30dp" >
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager_Play_Quiz"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout_Play_Quiz" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

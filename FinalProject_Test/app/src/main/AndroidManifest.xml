@@ -15,7 +15,12 @@
         tools:targetApi="34" >
         <activity
             android:name=".main_create_quiz"
-            android:exported="false" />
+            android:exported="true" />
+         <activity android:name=".main_play_quiz"
+             android:exported="false"/>
+
+
+
         <activity
             android:name=".popup_true_answer"
             android:exported="false" />

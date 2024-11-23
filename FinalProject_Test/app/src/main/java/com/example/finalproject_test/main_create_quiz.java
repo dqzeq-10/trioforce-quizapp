@@ -12,7 +12,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class main_create_quiz extends AppCompatActivity {
+public class    main_create_quiz extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager_Create_quiz;
     private ViewpagerAdapter_CreateQuiz adapter;
