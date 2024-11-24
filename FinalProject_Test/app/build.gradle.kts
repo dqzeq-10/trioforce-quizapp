@@ -33,8 +33,8 @@ android {
 
 
 dependencies {
-    implementation ("com.google.android.material:material:1.9.0")
-    implementation (libs.cardview);
+    implementation("com.google.android.material:material:1.9.0")
+    implementation(libs.cardview);
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -42,5 +42,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
+    implementation("com.squareup.retrofit2:retrofit:2.10.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
 }

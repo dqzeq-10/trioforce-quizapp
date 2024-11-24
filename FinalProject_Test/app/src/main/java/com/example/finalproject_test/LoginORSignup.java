@@ -2,6 +2,7 @@ package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import androidx.activity.EdgeToEdge;
@@ -9,9 +10,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModel;
+import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModelFactory;
 
 public class LoginORSignup extends AppCompatActivity {
     Button btnDN,btnDK;
+
+    private UsersViewModel usersViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +46,27 @@ public class LoginORSignup extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
+        //Khởi tạo  UVMfactory
+        UsersViewModelFactory UVMfactory = new UsersViewModelFactory();
+
+        //Khởi tạo usersViewModel với ViewModelProvider (tham số là this và UVMfactory).get(UsersViewModel.class)
+        usersViewModel = new ViewModelProvider(this,UVMfactory).get(UsersViewModel.class);
+
+
+        //Gọi api để nhận dữ liệu
+        usersViewModel.getUsers().observe(this, users -> {
+            if (users != null && !users.isEmpty()){
+                Log.d("dq123", "username" + users.get(0).getName());
+            }
+            else{
+                Log.d("dq123","loi");
+            }
+        });
+
+
+        usersViewModel.getUsers();
+
+
     }
 }
