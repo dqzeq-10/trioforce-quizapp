@@ -1,5 +1,7 @@
 package com.example.finalproject_test.DATA.InterfaceAPI;
 
+import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,6 +23,15 @@ public class RetrofitService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(IUsersApi.class);
+    }
+
+
+    public static ILoginRequestApi createInstanceLogin(){
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(ILoginRequestApi.class);
     }
 
 //   Tạo thêm method tạo instance cho mỗi entity ở đây

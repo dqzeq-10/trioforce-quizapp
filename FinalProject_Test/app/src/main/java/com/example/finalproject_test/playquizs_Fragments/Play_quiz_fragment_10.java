@@ -1,4 +1,4 @@
-package com.example.finalproject_test;
+package com.example.finalproject_test.playquizs_Fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+
+import com.example.finalproject_test.R;
+import com.example.finalproject_test.Result;
+import com.example.finalproject_test.main_play_quiz;
 
 /**
  * Fragment này hiển thị các chức năng trong bài quiz.

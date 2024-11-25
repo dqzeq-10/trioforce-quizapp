@@ -5,6 +5,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques1;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques10;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques2;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques3;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques4;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques5;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques6;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques7;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques8;
+import com.example.finalproject_test.createQuestions_Fragments.create_Fragment_Ques9;
+
 public class ViewpagerAdapter_CreateQuiz extends FragmentStateAdapter {
 
 

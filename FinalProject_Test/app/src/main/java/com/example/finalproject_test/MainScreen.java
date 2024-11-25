@@ -1,17 +1,9 @@
 package com.example.finalproject_test;
 
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 
 import androidx.activity.EdgeToEdge;
@@ -23,28 +15,19 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.finalproject_test.DATA.InterfaceAPI.IUsersApi;
-import com.example.finalproject_test.DATA.InterfaceAPI.MainApplication;
-import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
-import com.example.finalproject_test.DATA.InterfaceAPI.UsersApiManager;
+import com.example.finalproject_test.DATA.Models.Answer;
 import com.example.finalproject_test.DATA.Models.User;
-import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModel;
-import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModelFactory;
+import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.screenfragment.ViewPageAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainScreen extends AppCompatActivity {
 
     private ViewPager2 vp;
     private BottomNavigationView bnv;
-
+    private SharedViewModel<User> sharedViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +39,14 @@ public class MainScreen extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        //lấy thông tin của user đang đăng nhập
+        User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+        //tạo biến chứa thông tin của user đang đăng nhập để dùng chung cho toàn bộ quá trình đăng nhập
+        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+        sharedViewModel.setObjectMLD(currentUser);
+
 
         vp = findViewById(R.id.view_page);
         bnv = findViewById(R.id.menu_bar);

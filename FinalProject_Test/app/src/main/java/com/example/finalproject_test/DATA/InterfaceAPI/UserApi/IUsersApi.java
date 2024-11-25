@@ -1,4 +1,4 @@
-package com.example.finalproject_test.DATA.InterfaceAPI;
+package com.example.finalproject_test.DATA.InterfaceAPI.UserApi;
 
 import com.example.finalproject_test.DATA.Models.User;
 

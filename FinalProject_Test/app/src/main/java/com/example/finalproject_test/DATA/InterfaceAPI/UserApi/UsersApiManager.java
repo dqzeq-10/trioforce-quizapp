@@ -1,5 +1,6 @@
-package com.example.finalproject_test.DATA.InterfaceAPI;
+package com.example.finalproject_test.DATA.InterfaceAPI.UserApi;
 
+import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
 import com.example.finalproject_test.DATA.Models.User;
 
 import java.util.List;

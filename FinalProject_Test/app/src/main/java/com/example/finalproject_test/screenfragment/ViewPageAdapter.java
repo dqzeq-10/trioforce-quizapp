@@ -22,7 +22,6 @@ public class ViewPageAdapter extends FragmentStateAdapter {
             case 2:
                 return new storage_fragment();
             case 3:
-
                 return new profile_fragment();
 
             default:

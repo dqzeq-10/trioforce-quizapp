@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
@@ -20,6 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.RandomQuiz;
 
@@ -48,6 +52,10 @@ public class mainscreen_fragment extends Fragment {
     Dialog DiemDanh_dialog;
     Button btncauhoihangngay,choingaybtn, taocaudobtn, dapanDung;
     TextView tvtatcatheloai,tvthethao,tvkhoahoc, tvvanhoc, tvlichsu, tvtoanhoc, tvamthuc, tvcongnghe, tvdiali, tvamnhac, tvphimanh, tvnguphap, tvdovui;
+    TextView ChaoUsername;
+
+    private SharedViewModel<User> sharedViewModel;
+
     private ViewPager2 vp;
     private View view;
     ScrollView sv;
@@ -118,6 +126,17 @@ public class mainscreen_fragment extends Fragment {
         dapanDung=view.findViewById(R.id.DapAn_B);
 
         itoProfile = view.findViewById(R.id.itoprofile);
+
+        ChaoUsername = view.findViewById(R.id.Username);
+        //==========================================load tự động======================================================//
+        //User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
+            ChaoUsername.setText("Chào "+data.getName()+" !");
+        });
+
+
 
 
         //==========================================các sự kiện======================================================//

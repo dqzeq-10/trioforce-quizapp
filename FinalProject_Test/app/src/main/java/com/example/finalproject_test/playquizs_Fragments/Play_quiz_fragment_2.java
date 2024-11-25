@@ -1,4 +1,4 @@
-package com.example.finalproject_test;
+package com.example.finalproject_test.playquizs_Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,25 +8,27 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.finalproject_test.R;
+import com.example.finalproject_test.main_play_quiz;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link create_Fragment_Ques4#newInstance} factory method to
+ * Use the {@link Play_quiz_fragment_2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class create_Fragment_Ques4 extends Fragment {
+public class Play_quiz_fragment_2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Button btnNext, btnLuilai;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button btnLuilai, btnNext;
 
-
-    public create_Fragment_Ques4() {
+    public Play_quiz_fragment_2() {
         // Required empty public constructor
     }
 
@@ -39,8 +41,8 @@ public class create_Fragment_Ques4 extends Fragment {
      * @return A new instance of fragment create_Fragment_Ques1.
      */
     // TODO: Rename and change types and number of parameters
-    public static create_Fragment_Ques4 newInstance(String param1, String param2) {
-        create_Fragment_Ques4 fragment = new create_Fragment_Ques4();
+    public static Play_quiz_fragment_2 newInstance(String param1, String param2) {
+        Play_quiz_fragment_2 fragment = new Play_quiz_fragment_2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,36 +51,26 @@ public class create_Fragment_Ques4 extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_create___ques4, container, false);
+        View view = inflater.inflate(R.layout.fragment_play_quiz_2, container, false);
 
         btnLuilai = view.findViewById(R.id.btnLuiLai);
-        btnNext = view.findViewById(R.id.btnNext);
+        btnNext = view.findViewById(R.id.btnTiepTuc);
 
 
-
-        // Xử lý sự kiện khi bấm nút "Lui lại"
+        // Xử lý sự kiện khi nhấn nút "Lui lại" (quay lại fragment trước)
         btnLuilai.setOnClickListener(v -> {
-            if (getActivity() instanceof main_create_quiz) {
-                ((main_create_quiz) getActivity()).goToPreviousFragment();
+            if (getActivity() instanceof main_play_quiz) {
+                ((main_play_quiz) getActivity()).goToPreviousFragment();
             }
         });
 
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
             // Gọi phương thức từ Activity để chuyển đến Fragment tiếp theo
-            if (getActivity() instanceof main_create_quiz) {
-                ((main_create_quiz) getActivity()).goToNextFragment();
+            if (getActivity() instanceof main_play_quiz) {
+                ((main_play_quiz) getActivity()).goToNextFragment();
             }
         });
 
