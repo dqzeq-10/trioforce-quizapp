@@ -12,7 +12,7 @@ public class UsersApiManager {
     private static UsersApiManager usersApiManager;
 
     private UsersApiManager(){
-        iUsersApi = RetrofitService.Create();
+        iUsersApi = RetrofitService.CreateInstanceU();
     }
 
     public static UsersApiManager getInstance(){
