@@ -78,33 +78,33 @@ public class login_activity extends AppCompatActivity {
                 //   Toast.makeText(login_activity.this, username+":"+password, Toast.LENGTH_SHORT).show();
 
 
-                loginViewModel.loginInVM(username, password).observe(login_activity.this, user -> {
-                    if (user != null) {
-                        //Thông báo
-                        Toast.makeText(login_activity.this, "Đăng nhập với tên: " + user.getUsername() + ":" + user.getName(), Toast.LENGTH_SHORT).show();
-
-//                        //Vẫn là thông báo nhưng là thông báo notification:))
-//                        createNotificationChannel();
-//                        NotificationCompat.Builder builder = new NotificationCompat.Builder(login_activity.this, CHANNEL_ID)
-//                                .setSmallIcon(R.drawable.bg_signup)// Icon của thông báo
-//                                .setContentTitle("Thông báo đăng nhập")
-//                                .setContentText("Đăng nhập với tên: " + user.getUsername() + ":" + user.getName())
-//                                .setPriority(NotificationCompat.PRIORITY_HIGH)
-//                                .setAutoCancel(true);
-//                        // Tự động hủy khi người dùng nhấn vào thông báo
-//                         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(login_activity.this);
-//                         notificationManager.notify(1, builder.build());
-                        //Lưu username và password vào sharedpreference
-                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(KEY_USERNAME,username);
-                        editor.putString(KEY_PASSWORD,password);
-                        editor.apply();
-
-                        Toast.makeText(login_activity.this, "Đã lưu thông tin đăng nhập: "+username, Toast.LENGTH_SHORT).show();
-
-                        //Lưu user đang đăng nhập vào phiên đăng nhập
-                        CurrentUserSesssion.getInstance().setUserCurrent(user);
+//                loginViewModel.loginInVM(username, password).observe(login_activity.this, user -> {
+//                    if (user != null) {
+//                        //Thông báo
+//                        Toast.makeText(login_activity.this, "Đăng nhập với tên: " + user.getUsername() + ":" + user.getName(), Toast.LENGTH_SHORT).show();
+//
+////                        //Vẫn là thông báo nhưng là thông báo notification:))
+////                        createNotificationChannel();
+////                        NotificationCompat.Builder builder = new NotificationCompat.Builder(login_activity.this, CHANNEL_ID)
+////                                .setSmallIcon(R.drawable.bg_signup)// Icon của thông báo
+////                                .setContentTitle("Thông báo đăng nhập")
+////                                .setContentText("Đăng nhập với tên: " + user.getUsername() + ":" + user.getName())
+////                                .setPriority(NotificationCompat.PRIORITY_HIGH)
+////                                .setAutoCancel(true);
+////                        // Tự động hủy khi người dùng nhấn vào thông báo
+////                         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(login_activity.this);
+////                         notificationManager.notify(1, builder.build());
+//                        //Lưu username và password vào sharedpreference
+//                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+//                        SharedPreferences.Editor editor = sharedPreferences.edit();
+//                        editor.putString(KEY_USERNAME,username);
+//                        editor.putString(KEY_PASSWORD,password);
+//                        editor.apply();
+//
+//                        Toast.makeText(login_activity.this, "Đã lưu thông tin đăng nhập: "+username, Toast.LENGTH_SHORT).show();
+//
+//                        //Lưu user đang đăng nhập vào phiên đăng nhập
+//                        CurrentUserSesssion.getInstance().setUserCurrent(user);
 
 
 
@@ -112,10 +112,10 @@ public class login_activity extends AppCompatActivity {
                         Intent chuyensangManHinhChinh = new Intent(login_activity.this, MainScreen.class);
                         // Toast.makeText(login_activity.this, "Đăng nhập thành công!!", Toast.LENGTH_SHORT).show();
                         startActivity(chuyensangManHinhChinh);
-                    } else {
-                        Toast.makeText(login_activity.this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                    } else {
+//                        Toast.makeText(login_activity.this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
+//                    }
+              //  });
 
 
             }

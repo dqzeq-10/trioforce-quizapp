@@ -41,11 +41,11 @@ public class MainScreen extends AppCompatActivity {
         });
 
 
-        //lấy thông tin của user đang đăng nhập
-        User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
-        //tạo biến chứa thông tin của user đang đăng nhập để dùng chung cho toàn bộ quá trình đăng nhập
-        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
-        sharedViewModel.setObjectMLD(currentUser);
+//        //lấy thông tin của user đang đăng nhập
+//        User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+//        //tạo biến chứa thông tin của user đang đăng nhập để dùng chung cho toàn bộ quá trình đăng nhập
+//        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+//        sharedViewModel.setObjectMLD(currentUser);
 
 
         vp = findViewById(R.id.view_page);

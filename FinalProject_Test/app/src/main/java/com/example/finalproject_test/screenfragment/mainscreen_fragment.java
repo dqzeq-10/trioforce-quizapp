@@ -128,13 +128,13 @@ public class mainscreen_fragment extends Fragment {
         itoProfile = view.findViewById(R.id.itoprofile);
 
         ChaoUsername = view.findViewById(R.id.Username);
-        //==========================================load tự động======================================================//
-        //User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
-
-        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
-            ChaoUsername.setText("Chào "+data.getName()+" !");
-        });
+//        //==========================================load tự động======================================================//
+//        //User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+//
+//        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+//        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
+//            ChaoUsername.setText("Chào "+data.getName()+" !");
+//        });
 
 
 

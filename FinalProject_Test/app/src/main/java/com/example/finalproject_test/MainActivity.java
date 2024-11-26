@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //khởi tạo đã mới xài dc nha em
-        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+       // loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
         new Handler().postDelayed(new Runnable() {
             @Override
