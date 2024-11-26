@@ -3,23 +3,30 @@ package com.example.finalproject_test.screenfragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+
+import com.example.finalproject_test.LeaderboardAdapter;
+import com.example.finalproject_test.LeaderboardItem;
 import com.example.finalproject_test.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link leaderboard_fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class leaderboard_fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private RecyclerView recyclerView;
+    private LeaderboardAdapter adapter;
+    private List<LeaderboardItem> LeaderboardItems;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -29,15 +36,7 @@ public class leaderboard_fragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment leaderboard_fragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static leaderboard_fragment newInstance(String param1, String param2) {
         leaderboard_fragment fragment = new leaderboard_fragment();
         Bundle args = new Bundle();
@@ -60,6 +59,38 @@ public class leaderboard_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leaderboard_fragment, container, false);
+        View view= inflater.inflate(R.layout.fragment_leaderboard_fragment, container, false);
+        // anh xa recycleView
+       recyclerView = view.findViewById(R.id.recyclerViewLeaderboard);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Tạo danh sách dữ liệu mẫu
+        LeaderboardItems = new ArrayList<>();
+        LeaderboardItems.add(new LeaderboardItem(4, R.raw.useravatarbxh, "Quy2ngon", "100000000"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(4, R.raw.useravatarbxh, "DucDinhDac", "444444444444444"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+        LeaderboardItems.add(new LeaderboardItem(2, R.raw.useravatarbxh, "KhanhKhuKho", "12121212"));
+
+        // Gắn Adapter
+        adapter = new LeaderboardAdapter(LeaderboardItems);
+        recyclerView.setAdapter(adapter);
+
+
+        return view;
     }
 }
+

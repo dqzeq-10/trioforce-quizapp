@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+  <!-- TextView để hiển thị tháng -->
+  <TextView
+      android:id="@+id/tvMonth"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/baloo2_bold"
+      android:text="Tháng 9 năm 2024"
+      android:textColor="@android:color/black"
+      android:textSize="16sp" />
+
+  <!-- Nội dung chi tiết -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="96dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/border_tt_storage"
+      android:orientation="vertical"
+      android:padding="10dp">
+
+    <!-- Thể loại -->
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo2_bold"
+        android:text="Thể loại: Đố vui"
+        android:textSize="14sp" />
+
+    <!-- Nội dung câu hỏi -->
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="Câu hỏi: Đuôi thì chẳng thấy, mà có hai đầu?"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <!-- Nội dung câu trả lời -->
+    <TextView
+        android:id="@+id/tvAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="Đáp án: Cây cầu"
+        android:textSize="14sp" />
+  </LinearLayout>
+
+  <!-- Đường kẻ phân cách -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="1.5dp"
+      android:layout_marginTop="10dp"
+      android:background="#D8D8D8" />
+</LinearLayout>

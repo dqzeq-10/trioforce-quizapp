@@ -17,6 +17,18 @@
         android:theme="@style/Theme.FinalProject_Test"
         tools:targetApi="34">
         <activity
+            android:name=".item_ranking"
+            android:exported="false" />
+        <activity
+            android:name=".item_progress"
+            android:exported="false" />
+        <activity
+            android:name=".item_bookmarked"
+            android:exported="false" />
+        <activity
+            android:name=".popup_comfirm_delete"
+            android:exported="false" />
+        <activity
             android:name=".main_create_quiz"
             android:exported="true" />
         <activity
@@ -36,6 +48,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

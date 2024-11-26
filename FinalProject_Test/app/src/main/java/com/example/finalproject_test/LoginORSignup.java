@@ -48,7 +48,7 @@ public class LoginORSignup extends AppCompatActivity {
         });
 
         //Khởi tạo  UVMfactory
-        UsersViewModelFactory UVMfactory = new UsersViewModelFactory();
+     /*   UsersViewModelFactory UVMfactory = new UsersViewModelFactory();
 
         //Khởi tạo usersViewModel với ViewModelProvider (tham số là this và UVMfactory).get(UsersViewModel.class)
         usersViewModel = new ViewModelProvider(this,UVMfactory).get(UsersViewModel.class);
@@ -67,6 +67,6 @@ public class LoginORSignup extends AppCompatActivity {
 
         usersViewModel.getUsers();
 
-
+*/
     }
 }
