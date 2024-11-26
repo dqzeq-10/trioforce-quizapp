@@ -8,6 +8,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -40,6 +41,10 @@ public class login_activity extends AppCompatActivity {
     AppCompatEditText edtTDN;
     AppCompatEditText edtMK;
 
+    private static final String SHARED_PREFS = "sharedPrefs";
+    private static final String KEY_USERNAME = "username";
+    private static final String KEY_PASSWORD = "password";
+
     private static final String CHANNEL_ID = "example_channel_id";
 
     private LoginViewModel loginViewModel;
@@ -64,7 +69,7 @@ public class login_activity extends AppCompatActivity {
 
 
         btnDN.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
+          //  @SuppressLint("MissingPermission")
             @Override
             public void onClick(View v) {
                 String username = edtTDN.getText().toString().trim();
@@ -89,9 +94,19 @@ public class login_activity extends AppCompatActivity {
 //                        // Tự động hủy khi người dùng nhấn vào thông báo
 //                         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(login_activity.this);
 //                         notificationManager.notify(1, builder.build());
+                        //Lưu username và password vào sharedpreference
+                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(KEY_USERNAME,username);
+                        editor.putString(KEY_PASSWORD,password);
+                        editor.apply();
+
+                        Toast.makeText(login_activity.this, "Đã lưu thông tin đăng nhập: "+username, Toast.LENGTH_SHORT).show();
 
                         //Lưu user đang đăng nhập vào phiên đăng nhập
                         CurrentUserSesssion.getInstance().setUserCurrent(user);
+
+
 
                         // Chuyển sang màn hình trang chủ
                         Intent chuyensangManHinhChinh = new Intent(login_activity.this, MainScreen.class);

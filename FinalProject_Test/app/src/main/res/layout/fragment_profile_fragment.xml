@@ -26,33 +26,34 @@
 
         android:layout_height="64dp"
         android:orientation="horizontal"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <TextView
-            android:id="@+id/txtName"
+            android:id="@+id/tvUsernameP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/baloo2_medium"
-            android:text=".@quyhandsome10"
+            android:text="user1"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <ImageView
-            android:id="@+id/edit"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="9dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@raw/edit" />
+<!--        <ImageView-->
+<!--            android:id="@+id/edit"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginTop="9dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.498"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@raw/edit" />-->
     </LinearLayout>
 
     <LinearLayout
@@ -110,6 +111,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/tvHotenP"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
                     android:fontFamily="@font/baloo2_medium"
@@ -148,6 +150,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/tvEmailP"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -194,6 +197,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/tvSdtP"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -265,13 +269,7 @@
                         android:fontFamily="@font/baloo2_medium"
                         android:textSize="18sp" />
 
-                    <RadioButton
-                        android:id="@+id/radioOther"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Khác"
-                        android:fontFamily="@font/baloo2_medium"
-                        android:textSize="18sp" />
+                    <!--bỏ mục "Khác" -->
                 </RadioGroup>
             </LinearLayout>
 
@@ -299,6 +297,7 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tvBirthdayP"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
