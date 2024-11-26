@@ -14,7 +14,7 @@ public interface IUsersApi {
     Call<List<User>> getUsers();
 
     @GET("Users/{id}")
-    Call<List<User>> getUserById(@Path("id") String id);
+    Call<User> getUserById(@Path("id") String id);
 
 
 }

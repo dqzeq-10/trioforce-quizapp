@@ -10,11 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.finalproject_test.DATA.Models.Level;
+import com.example.finalproject_test.DATA.ViewModels.LevelsVM.LevelsViewModel;
 
 public class LoginORSignup extends AppCompatActivity {
     Button btnDN,btnDK;
 
-
+    private LevelsViewModel levelsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,22 @@ public class LoginORSignup extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2=new Intent(LoginORSignup.this, activity_signup.class);
                 startActivity(intent2);
+            }
+        });
+
+        levelsViewModel = new ViewModelProvider(this).get(LevelsViewModel.class);
+        levelsViewModel.getLevels().observe(LoginORSignup.this, levels -> {
+            if(levels !=null && !levels.isEmpty()){
+
+                for (Level lv: levels
+                     ) {
+//vd: gắn dữ liệu nhận về vào textview của UI nha ae: tvOK.setText(lv.getLevelName());
+                    Log.d("dq1233", "onCreate: "+lv.getLevelName());
+                }
+
+            }
+            else {
+                Log.d("dq1233", "onCreate: levels nhận về rỗng nha");
             }
         });
 

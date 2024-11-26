@@ -1,27 +1,27 @@
 package com.example.finalproject_test.DATA.Models;
 
 public class Level {
-    private int ID_Levels;
-    private String LevelName;
+    private int idLevels;
+    private String levelName;
 
-    public Level(int ID_Levels, String levelName) {
-        this.ID_Levels = ID_Levels;
-        LevelName = levelName;
+    public Level(int idLevels, String levelName) {
+        this.idLevels = idLevels;
+        this.levelName = levelName;
     }
 
-    public int getID_Levels() {
-        return ID_Levels;
+    public int getIdLevels() {
+        return idLevels;
     }
 
-    public void setID_Levels(int ID_Levels) {
-        this.ID_Levels = ID_Levels;
+    public void setIdLevels(int idLevels) {
+        this.idLevels = idLevels;
     }
 
     public String getLevelName() {
-        return LevelName;
+        return levelName;
     }
 
     public void setLevelName(String levelName) {
-        LevelName = levelName;
+        this.levelName = levelName;
     }
 }
