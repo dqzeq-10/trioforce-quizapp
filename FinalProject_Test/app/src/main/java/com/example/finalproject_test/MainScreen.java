@@ -1,17 +1,9 @@
 package com.example.finalproject_test;
 
 
-
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.MenuItem;
-import android.view.View;
-
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 
 import androidx.activity.EdgeToEdge;
@@ -20,8 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.finalproject_test.DATA.Models.Answer;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.screenfragment.ViewPageAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -30,8 +27,7 @@ public class MainScreen extends AppCompatActivity {
 
     private ViewPager2 vp;
     private BottomNavigationView bnv;
-
-
+    private SharedViewModel<User> sharedViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +40,21 @@ public class MainScreen extends AppCompatActivity {
             return insets;
         });
 
-        vp=findViewById(R.id.view_page);
-        bnv=findViewById(R.id.menu_bar);
+
+        //lấy thông tin của user đang đăng nhập
+        User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+        //tạo biến chứa thông tin của user đang đăng nhập để dùng chung cho toàn bộ quá trình đăng nhập
+        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+        sharedViewModel.setObjectMLD(currentUser);
+
+
+        vp = findViewById(R.id.view_page);
+        bnv = findViewById(R.id.menu_bar);
 
         vp.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-               bnv.getMenu().getItem(position).setChecked(true);
+                bnv.getMenu().getItem(position).setChecked(true);
             }
         });
 
@@ -65,7 +69,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                switch(position){
+                switch (position) {
                     case 0:
                         bnv.getMenu().findItem(R.id.menu_home).setCheckable(true);
                         break;
@@ -100,8 +104,7 @@ public class MainScreen extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.menu_bookmark) {
                     vp.setCurrentItem(2);
                     return true;
-                }
-                else if (item.getItemId() == R.id.menu_user) {
+                } else if (item.getItemId() == R.id.menu_user) {
                     vp.setCurrentItem(3);
                     return true;
                 }
@@ -110,6 +113,62 @@ public class MainScreen extends AppCompatActivity {
         });
 
 
+//        IUsersApi iUsersApi = RetrofitService.CreateInstanceU();
+//        Call<List<User>> call = iUsersApi.getUsers();
+//        call.enqueue(new Callback<List<User>>() {
+//            @Override
+//            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+//                if (response.isSuccessful()) {
+//                    List<User> users = response.body();
+//                    if (users != null && !users.isEmpty()) {
+//                        for (User us : users
+//                        ) {
+//                            Log.d("dq10", "name: " + us.getName());
+//                        }
+//
+//                    } else {
+//                        Log.d("dq10", "k lay dc du lieu, rong") ;
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<User>> call, Throwable throwable) {
+//                Log.e("dq10", "onFailure: loigoi api");
+//            }
+//        });
+//        UsersApiManager usersApiManager = MainApplication.usersApiManager;
+////        //Khởi tạo  UVMfactory
+
+     //   test chuẩn
+//        UsersViewModelFactory UVMfactory = new UsersViewModelFactory();
+//
+//        //Khởi tạo usersViewModel với ViewModelProvider (tham số là this và UVMfactory).get(UsersViewModel.class)
+//        UsersViewModel usersViewModel = new ViewModelProvider(this,UVMfactory).get(UsersViewModel.class);
+//
+//        //Gọi api để nhận dữ liệu
+//        try {
+//            usersViewModel.getUsers().observe(this, users -> {
+//                try {
+//                    if (users != null && !users.isEmpty()){
+//                        for (User us: users) {
+//                            Log.d("dq123", "username " + us.getUsername()+us.isSex());
+//                        }
+//
+//                    }
+//                    else{
+//                        Log.d("dq123","du lieu rong");
+//                    }
+//                }catch (Exception e){
+//                    Log.d("dq123","loi"+e.getMessage());
+//                }
+//
+//
+//            });
+//
+//        }catch (Exception e){
+//            Log.e("dq123","Lỗi: " + e.getMessage());
+//        }
 
 
     }

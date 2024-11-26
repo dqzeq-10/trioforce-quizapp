@@ -1,4 +1,4 @@
-package com.example.finalproject_test.DATA.InterfaceAPI;
+package com.example.finalproject_test.DATA.InterfaceAPI.UserApi;
 
 import com.example.finalproject_test.DATA.Models.User;
 
@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface IUsersApi {
-    //https://localhost:7210/api/QuestionCategories
+    // http://localhost:5019/api/Users
     @GET("Users")
     Call<List<User>> getUsers();
 

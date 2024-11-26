@@ -1,21 +1,22 @@
-package com.example.finalproject_test;
+package com.example.finalproject_test.createQuestions_Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.finalproject_test.R;
+import com.example.finalproject_test.main_create_quiz;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link create_Fragment_Ques10#newInstance} factory method to
+ * Use the {@link create_Fragment_Ques9#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class create_Fragment_Ques10 extends Fragment {
+public class create_Fragment_Ques9 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,9 +26,9 @@ public class create_Fragment_Ques10 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button btnLuilai, btnfinish;
+    private Button btnNext,btnLuilai;
 
-    public create_Fragment_Ques10() {
+    public create_Fragment_Ques9() {
         // Required empty public constructor
     }
 
@@ -40,8 +41,8 @@ public class create_Fragment_Ques10 extends Fragment {
      * @return A new instance of fragment create_Fragment_Ques1.
      */
     // TODO: Rename and change types and number of parameters
-    public static create_Fragment_Ques10 newInstance(String param1, String param2) {
-        create_Fragment_Ques10 fragment = new create_Fragment_Ques10();
+    public static create_Fragment_Ques9 newInstance(String param1, String param2) {
+        create_Fragment_Ques9 fragment = new create_Fragment_Ques9();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,10 +62,10 @@ public class create_Fragment_Ques10 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_create___ques10, container, false);
+        View view = inflater.inflate(R.layout.fragment_create___ques9, container, false);
 
         btnLuilai = view.findViewById(R.id.btnLuiLai);
-        btnfinish = view.findViewById(R.id.btnFinish);
+        btnNext = view.findViewById(R.id.btnNext);
 
 
 
@@ -75,17 +76,13 @@ public class create_Fragment_Ques10 extends Fragment {
             }
         });
 
-        //finish
-        btnfinish.setOnClickListener(v -> {
-            Toast.makeText(getActivity(), "Tạo thành công!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getActivity(), MainScreen.class);
-            startActivity(intent);
+        // Xử lý sự kiện khi bấm nút "Tiếp tục"
+        btnNext.setOnClickListener(v -> {
 
-            if (getActivity() != null) {
-                getActivity().finish();
+            if (getActivity() instanceof main_create_quiz) {
+                ((main_create_quiz) getActivity()).goToNextFragment();
             }
         });
-
 
         return view;
     }

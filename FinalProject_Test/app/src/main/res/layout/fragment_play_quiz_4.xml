@@ -5,7 +5,7 @@
     android:layout_height="700dp"
     android:layout_gravity="center_vertical"
     android:background="#00898989"
-    tools:context=".create_Fragment_Ques1">
+    tools:context=".createQuestions_Fragments.create_Fragment_Ques1">
 
 
 

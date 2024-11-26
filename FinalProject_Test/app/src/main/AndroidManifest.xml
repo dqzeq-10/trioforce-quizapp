@@ -4,6 +4,8 @@
     package="com.example.finalproject_test">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
 
     <application
         android:allowBackup="true"
@@ -27,10 +29,11 @@
             android:exported="false" />
         <activity
             android:name=".popup_comfirm_delete"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".main_create_quiz"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".main_play_quiz"
             android:exported="false" />
@@ -66,7 +69,9 @@
             android:exported="false" />
         <activity
             android:name=".MainScreen"
-            android:exported="false" />
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".activity_signup"
             android:exported="false" />
@@ -87,5 +92,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

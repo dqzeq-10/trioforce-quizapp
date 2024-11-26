@@ -5,6 +5,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_1;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_10;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_2;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_3;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_4;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_5;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_6;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_7;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_8;
+import com.example.finalproject_test.playquizs_Fragments.Play_quiz_fragment_9;
+
 public class ViewpagerAdapter_Play_Quiz extends FragmentStateAdapter {
 
 

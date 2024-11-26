@@ -13,7 +13,7 @@ public class UsersViewModelFactory implements ViewModelProvider.Factory {
     @SuppressWarnings("unchecked")
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass.isAssignableFrom(UsersViewModel.class)) {
-            return (T) new UsersViewModel(UsersRepo.getInstance(MainApplication.usersApiManager));
+            return (T) new UsersViewModel();
         } else {
             throw new IllegalArgumentException("Unknow ViewModel class");
         }

@@ -1,4 +1,4 @@
-package com.example.finalproject_test;
+package com.example.finalproject_test.playquizs_Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,12 +8,15 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.finalproject_test.R;
+import com.example.finalproject_test.main_play_quiz;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Play_quiz_fragment_6#newInstance} factory method to
+ * Use the {@link Play_quiz_fragment_5#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Play_quiz_fragment_6 extends Fragment {
+public class Play_quiz_fragment_5 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +28,7 @@ public class Play_quiz_fragment_6 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Play_quiz_fragment_6() {
+    public Play_quiz_fragment_5() {
         // Required empty public constructor
     }
 
@@ -38,8 +41,8 @@ public class Play_quiz_fragment_6 extends Fragment {
      * @return A new instance of fragment create_Fragment_Ques1.
      */
     // TODO: Rename and change types and number of parameters
-    public static Play_quiz_fragment_6 newInstance(String param1, String param2) {
-        Play_quiz_fragment_6 fragment = new Play_quiz_fragment_6();
+    public static Play_quiz_fragment_5 newInstance(String param1, String param2) {
+        Play_quiz_fragment_5 fragment = new Play_quiz_fragment_5();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,10 +53,11 @@ public class Play_quiz_fragment_6 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_play_quiz_6, container, false);
+        View view = inflater.inflate(R.layout.fragment_play_quiz_5, container, false);
 
         btnLuilai = view.findViewById(R.id.btnLuiLai);
         btnNext = view.findViewById(R.id.btnTiepTuc);
+
 
         // Xử lý sự kiện khi nhấn nút "Lui lại" (quay lại fragment trước)
         btnLuilai.setOnClickListener(v -> {
@@ -61,7 +65,6 @@ public class Play_quiz_fragment_6 extends Fragment {
                 ((main_play_quiz) getActivity()).goToPreviousFragment();
             }
         });
-
 
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
