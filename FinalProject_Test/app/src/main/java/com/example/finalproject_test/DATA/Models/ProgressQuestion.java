@@ -4,17 +4,17 @@ import java.sql.Date;
 
 public class ProgressQuestion {
     private String username;
-    private int ID_Set;
-    private int QuestionCount;
-    private int QuestionLastID;
-    private Date SaveTime;
+    private int idSet;
+    private int questionCount;
+    private int questionLastId;
+    private Date saveTime;
 
-    public ProgressQuestion(String username, int ID_Set, int questionCount, int questionLastID, Date saveTime) {
+    public ProgressQuestion(String username, int idSet, int questionCount, int questionLastId, Date saveTime) {
         this.username = username;
-        this.ID_Set = ID_Set;
-        QuestionCount = questionCount;
-        QuestionLastID = questionLastID;
-        SaveTime = saveTime;
+        this.idSet = idSet;
+        this.questionCount = questionCount;
+        this.questionLastId = questionLastId;
+        this.saveTime = saveTime;
     }
 
     public String getUsername() {
@@ -25,35 +25,35 @@ public class ProgressQuestion {
         this.username = username;
     }
 
-    public int getID_Set() {
-        return ID_Set;
+    public int getIdSet() {
+        return idSet;
     }
 
-    public void setID_Set(int ID_Set) {
-        this.ID_Set = ID_Set;
+    public void setIdSet(int idSet) {
+        this.idSet = idSet;
     }
 
     public int getQuestionCount() {
-        return QuestionCount;
+        return questionCount;
     }
 
     public void setQuestionCount(int questionCount) {
-        QuestionCount = questionCount;
+        this.questionCount = questionCount;
     }
 
-    public int getQuestionLastID() {
-        return QuestionLastID;
+    public int getQuestionLastId() {
+        return questionLastId;
     }
 
-    public void setQuestionLastID(int questionLastID) {
-        QuestionLastID = questionLastID;
+    public void setQuestionLastId(int questionLastId) {
+        this.questionLastId = questionLastId;
     }
 
     public Date getSaveTime() {
-        return SaveTime;
+        return saveTime;
     }
 
     public void setSaveTime(Date saveTime) {
-        SaveTime = saveTime;
+        this.saveTime = saveTime;
     }
 }

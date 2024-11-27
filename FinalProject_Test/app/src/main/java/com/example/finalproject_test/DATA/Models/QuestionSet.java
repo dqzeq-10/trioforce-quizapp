@@ -1,37 +1,57 @@
 package com.example.finalproject_test.DATA.Models;
 
 public class QuestionSet {
-    private int ID_Set;
-    private String SetName;
-    private String AuthorName;
+    private int idSet;
+    private String setName;
+    private String authorName;
+    private int idLevel;
+    private int idCategory;
 
-    public QuestionSet(int ID_Set, String setName, String authorName) {
-        this.ID_Set = ID_Set;
-        SetName = setName;
-        AuthorName = authorName;
+    public QuestionSet(int idSet, String setName, String authorName, int idLevel, int idCategory) {
+        this.idSet = idSet;
+        this.setName = setName;
+        this.authorName = authorName;
+        this.idLevel = idLevel;
+        this.idCategory = idCategory;
     }
 
-    public int getID_Set() {
-        return ID_Set;
+    public int getIdSet() {
+        return idSet;
     }
 
-    public void setID_Set(int ID_Set) {
-        this.ID_Set = ID_Set;
+    public void setIdSet(int idSet) {
+        this.idSet = idSet;
     }
 
     public String getSetName() {
-        return SetName;
+        return setName;
     }
 
     public void setSetName(String setName) {
-        SetName = setName;
+        this.setName = setName;
     }
 
     public String getAuthorName() {
-        return AuthorName;
+        return authorName;
     }
 
     public void setAuthorName(String authorName) {
-        AuthorName = authorName;
+        this.authorName = authorName;
+    }
+
+    public int getIdLevel() {
+        return idLevel;
+    }
+
+    public void setIdLevel(int idLevel) {
+        this.idLevel = idLevel;
+    }
+
+    public int getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
     }
 }

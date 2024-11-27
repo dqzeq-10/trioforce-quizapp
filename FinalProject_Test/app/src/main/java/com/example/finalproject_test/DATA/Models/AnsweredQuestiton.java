@@ -2,14 +2,14 @@ package com.example.finalproject_test.DATA.Models;
 
 public class AnsweredQuestiton {
     private String username;
-    private int ID_Set;
-    private int ID_Question;
+    private int idSet;
+    private int idQuestion;
     private boolean isCorrect;
 
-    public AnsweredQuestiton(String username, int ID_Set, int ID_Question, boolean isCorrect) {
+    public AnsweredQuestiton(String username, int idSet, int idQuestion, boolean isCorrect) {
         this.username = username;
-        this.ID_Set = ID_Set;
-        this.ID_Question = ID_Question;
+        this.idSet = idSet;
+        this.idQuestion = idQuestion;
         this.isCorrect = isCorrect;
     }
 
@@ -21,20 +21,20 @@ public class AnsweredQuestiton {
         this.username = username;
     }
 
-    public int getID_Set() {
-        return ID_Set;
+    public int getIdSet() {
+        return idSet;
     }
 
-    public void setID_Set(int ID_Set) {
-        this.ID_Set = ID_Set;
+    public void setIdSet(int idSet) {
+        this.idSet = idSet;
     }
 
-    public int getID_Question() {
-        return ID_Question;
+    public int getIdQuestion() {
+        return idQuestion;
     }
 
-    public void setID_Question(int ID_Question) {
-        this.ID_Question = ID_Question;
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public boolean isCorrect() {
