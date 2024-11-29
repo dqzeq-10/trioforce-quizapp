@@ -10,7 +10,8 @@ import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+//JsonSerializer<Date> chuyển đối tượng Date thành định dạng JSON ( chuỗi ngày tháng)
+//JsonDeserializer<Date>: interface mà Gson dùng để chuyển đổi chuỗi JSON thành đối tượng Date.
 public class DateTimeConverter implements JsonSerializer<Date>, JsonDeserializer<Date> {
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng ngày bạn nhận được từ API

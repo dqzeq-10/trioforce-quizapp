@@ -24,7 +24,7 @@ public class RetrofitService {
                 .build();
         return retrofit.create(IUsersApi.class);
     }
-
+//GsonConverterFactory : chuyen doi du lieu tra ve tu API thanh cac doi tuong java
 
     public static ILoginRequestApi createInstanceLogin(){
         retrofit = new Retrofit.Builder()
