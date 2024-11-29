@@ -7,6 +7,25 @@ public class CreatedQuestion {
     private int idQuestion;
     private Date createdTime;
 
+    private Question idQuestionNavigation;
+    private User usernameNavigation;
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
+    }
+
     public CreatedQuestion(String username, int idQuestion, Date createdTime) {
         this.username = username;
         this.idQuestion = idQuestion;

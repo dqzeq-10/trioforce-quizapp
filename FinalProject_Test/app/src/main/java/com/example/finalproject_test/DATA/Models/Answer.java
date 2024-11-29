@@ -1,10 +1,12 @@
 package com.example.finalproject_test.DATA.Models;
 
-public class Answer {
-    private int idAnswer;
-    private int idQuestion;
-    private String answerText;
-    private boolean isCorrect;
+    public class Answer {
+        private int idAnswer;
+        private int idQuestion;
+        private String answerText;
+        private boolean isCorrect;
+
+        private Question idQuestionNavigation;
 
     public Answer(int idAnswer, int idQuestion, String answerText, boolean isCorrect) {
         this.idAnswer = idAnswer;
@@ -31,6 +33,14 @@ public class Answer {
 
     public String getAnswerText() {
         return answerText;
+    }
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
     }
 
     public void setAnswerText(String answerText) {

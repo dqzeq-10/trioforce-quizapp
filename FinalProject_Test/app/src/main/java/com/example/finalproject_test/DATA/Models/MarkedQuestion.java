@@ -7,6 +7,9 @@ public class MarkedQuestion {
     private int idQuestion;
     private Date markedTime;
 
+    private Question idQuestionNavigation;
+    private User usernameNavigation;
+
     public MarkedQuestion(String username, int idQuestion, Date markedTime) {
         this.username = username;
         this.idQuestion = idQuestion;
@@ -15,6 +18,22 @@ public class MarkedQuestion {
 
     public String getUsername() {
         return username;
+    }
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
     }
 
     public void setUsername(String username) {

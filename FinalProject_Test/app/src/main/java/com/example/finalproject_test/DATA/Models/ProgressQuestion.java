@@ -9,12 +9,40 @@ public class ProgressQuestion {
     private int questionLastId;
     private Date saveTime;
 
+    private QuestionSet idSetNavigation;
+    private Question questionLast;
+    private User usernameNavigation;
+
     public ProgressQuestion(String username, int idSet, int questionCount, int questionLastId, Date saveTime) {
         this.username = username;
         this.idSet = idSet;
         this.questionCount = questionCount;
         this.questionLastId = questionLastId;
         this.saveTime = saveTime;
+    }
+
+    public QuestionSet getIdSetNavigation() {
+        return idSetNavigation;
+    }
+
+    public void setIdSetNavigation(QuestionSet idSetNavigation) {
+        this.idSetNavigation = idSetNavigation;
+    }
+
+    public Question getQuestionLast() {
+        return questionLast;
+    }
+
+    public void setQuestionLast(Question questionLast) {
+        this.questionLast = questionLast;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
     }
 
     public String getUsername() {

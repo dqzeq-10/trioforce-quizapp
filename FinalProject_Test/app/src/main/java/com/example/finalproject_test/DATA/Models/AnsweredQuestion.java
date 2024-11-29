@@ -1,12 +1,18 @@
 package com.example.finalproject_test.DATA.Models;
 
-public class AnsweredQuestiton {
+public class AnsweredQuestion {
     private String username;
     private int idSet;
     private int idQuestion;
     private boolean isCorrect;
 
-    public AnsweredQuestiton(String username, int idSet, int idQuestion, boolean isCorrect) {
+    private Question idQuestionNavigation;
+    private QuestionSet idSetNavigation;
+    private User usernameNavigation;
+
+
+
+    public AnsweredQuestion(String username, int idSet, int idQuestion, boolean isCorrect) {
         this.username = username;
         this.idSet = idSet;
         this.idQuestion = idQuestion;
@@ -43,5 +49,29 @@ public class AnsweredQuestiton {
 
     public void setCorrect(boolean correct) {
         isCorrect = correct;
+    }
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
+    }
+
+    public QuestionSet getIdSetNavigation() {
+        return idSetNavigation;
+    }
+
+    public void setIdSetNavigation(QuestionSet idSetNavigation) {
+        this.idSetNavigation = idSetNavigation;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
     }
 }
