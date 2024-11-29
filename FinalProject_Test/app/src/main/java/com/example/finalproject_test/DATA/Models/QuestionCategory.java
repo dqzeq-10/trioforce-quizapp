@@ -1,27 +1,45 @@
 package com.example.finalproject_test.DATA.Models;
 
+import java.util.List;
+
 public class QuestionCategory {
-    private int ID_Category;
-    private String CategoryName;
+    private int idCategory;
+    private String categoryName;
 
-    public QuestionCategory(int ID_Category, String categoryName) {
-        this.ID_Category = ID_Category;
-        CategoryName = categoryName;
+    private List<QuestionSet> questionSets;
+
+    public QuestionCategory(int idCategory, String categoryName) {
+        this.idCategory = idCategory;
+        this.categoryName = categoryName;
     }
 
-    public int getID_Category() {
-        return ID_Category;
+    public QuestionCategory(int idCategory, String categoryName, List<QuestionSet> questionSets) {
+        this.idCategory = idCategory;
+        this.categoryName = categoryName;
+        this.questionSets = questionSets;
     }
 
-    public void setID_Category(int ID_Category) {
-        this.ID_Category = ID_Category;
+    public List<QuestionSet> getQuestionSets() {
+        return questionSets;
+    }
+
+    public void setQuestionSets(List<QuestionSet> questionSets) {
+        this.questionSets = questionSets;
+    }
+
+    public int getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
     }
 
     public String getCategoryName() {
-        return CategoryName;
+        return categoryName;
     }
 
     public void setCategoryName(String categoryName) {
-        CategoryName = categoryName;
+        this.categoryName = categoryName;
     }
 }

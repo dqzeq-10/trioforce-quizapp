@@ -4,6 +4,8 @@ public class Ranking {
     private String username;
     private int point;
 
+    private User usernameNavigation;
+
     public Ranking(String username, int point) {
         this.username = username;
         this.point = point;
@@ -23,5 +25,13 @@ public class Ranking {
 
     public void setPoint(int point) {
         this.point = point;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
     }
 }

@@ -1,40 +1,50 @@
 package com.example.finalproject_test.DATA.Models;
 
 public class Answer {
-    private int ID_Answer;
-    private int ID_Question;
-    private String AnswerText;
+    private int idAnswer;
+    private int idQuestion;
+    private String answerText;
     private boolean isCorrect;
 
-    public Answer(int ID_Answer, int ID_Question, String answerText, boolean isCorrect) {
-        this.ID_Answer = ID_Answer;
-        this.ID_Question = ID_Question;
-        AnswerText = answerText;
+    private Question idQuestionNavigation;
+
+    public Answer(int idAnswer, int idQuestion, String answerText, boolean isCorrect) {
+        this.idAnswer = idAnswer;
+        this.idQuestion = idQuestion;
+        this.answerText = answerText;
         this.isCorrect = isCorrect;
     }
 
-    public int getID_Answer() {
-        return ID_Answer;
+    public int getIdAnswer() {
+        return idAnswer;
     }
 
-    public void setID_Answer(int ID_Answer) {
-        this.ID_Answer = ID_Answer;
+    public void setIdAnswer(int idAnswer) {
+        this.idAnswer = idAnswer;
     }
 
-    public int getID_Question() {
-        return ID_Question;
+    public int getIdQuestion() {
+        return idQuestion;
     }
 
-    public void setID_Question(int ID_Question) {
-        this.ID_Question = ID_Question;
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public String getAnswerText() {
-        return AnswerText;
+        return answerText;
+    }
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
     }
 
     public void setAnswerText(String answerText) {
-        AnswerText = answerText;
+        this.answerText = answerText;
     }
 
     public boolean isCorrect() {
