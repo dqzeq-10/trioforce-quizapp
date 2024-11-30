@@ -10,14 +10,30 @@ import java.util.List;
 
 public class QuestionSetsViewModel extends ViewModel {
     private final QuestionSetsRepo questionSetsRepo;
-    private MutableLiveData<List<QuestionSet>> setsLiveData;
+    //private MutableLiveData<List<QuestionSet>> setsLiveData;
 
-    public QuestionSetsViewModel(){
+    public QuestionSetsViewModel() {
         questionSetsRepo = new QuestionSetsRepo();
-        setsLiveData = questionSetsRepo.getSets();
+        // setsLiveData = questionSetsRepo.getSets();
     }
 
-    public MutableLiveData<List<QuestionSet>> getSets(){
-        return setsLiveData;
+    public MutableLiveData<List<QuestionSet>> getSets() {
+        return questionSetsRepo.getSets();
+    }
+
+    public MutableLiveData<QuestionSet> getSetsyId(int id) {
+        return questionSetsRepo.getSetById(id);
+    }
+
+    public MutableLiveData<Boolean> postSet(QuestionSet questionSet) {
+        return questionSetsRepo.postSet(questionSet);
+    }
+
+    public MutableLiveData<Boolean> putSet(int id, QuestionSet questionSet) {
+        return questionSetsRepo.putSet(id, questionSet);
+    }
+
+    public MutableLiveData<Boolean> deleteSet(int id) {
+        return questionSetsRepo.deleteSet(id);
     }
 }

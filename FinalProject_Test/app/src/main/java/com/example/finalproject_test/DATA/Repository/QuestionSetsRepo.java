@@ -98,6 +98,7 @@ public class QuestionSetsRepo {
                 Log.e("SetRepo", "failed to putSet: "+throwable.getMessage() );
             }
         });
+        return operationSuccess;
     }
 
     public MutableLiveData<Boolean> deleteSet(int id){

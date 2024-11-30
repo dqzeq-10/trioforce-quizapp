@@ -57,7 +57,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinnercate"
                 android:layout_width="130dp"
                 android:layout_height="36dp"
                 android:background="@drawable/spinner_selected_background"
@@ -84,7 +84,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/spinnerlv"
                 android:layout_width="130dp"
                 android:layout_height="36dp"
                 android:background="@drawable/spinner_selected_background"
@@ -171,8 +171,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_semibold"
-            android:text="Khi tạo đủ 10 câu hỏi thì mới đủ điều kiện tạo bộ câu hỏi mới  "
-
+            android:text="Phải điền đủ 10 câu hỏi tạo được bộ câu hỏi mới!"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="30dp"
             tools:layout_editor_absoluteY="434dp" />
