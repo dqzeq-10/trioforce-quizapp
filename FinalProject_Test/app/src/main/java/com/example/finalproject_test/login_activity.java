@@ -94,14 +94,15 @@ public class login_activity extends AppCompatActivity {
 //                        // Tự động hủy khi người dùng nhấn vào thông báo
 //                         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(login_activity.this);
 //                         notificationManager.notify(1, builder.build());
-                        //Lưu username và password vào sharedpreference
-                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(KEY_USERNAME,username);
-                        editor.putString(KEY_PASSWORD,password);
-                        editor.apply();
 
-                        Toast.makeText(login_activity.this, "Đã lưu thông tin đăng nhập: "+username, Toast.LENGTH_SHORT).show();
+
+//   Tạm thời chưa cần tới nó   //Lưu username và password vào sharedpreference
+//                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+//                        SharedPreferences.Editor editor = sharedPreferences.edit();
+//                        editor.putString(KEY_USERNAME,username);
+//                        editor.putString(KEY_PASSWORD,password);
+//                        editor.apply();
+//                        Toast.makeText(login_activity.this, "Đã lưu thông tin đăng nhập: "+username, Toast.LENGTH_SHORT).show();
 
                         //Lưu user đang đăng nhập vào phiên đăng nhập
                         CurrentUserSesssion.getInstance().setUserCurrent(user);
@@ -113,7 +114,7 @@ public class login_activity extends AppCompatActivity {
                         // Toast.makeText(login_activity.this, "Đăng nhập thành công!!", Toast.LENGTH_SHORT).show();
                         startActivity(chuyensangManHinhChinh);
                     } else {
-                        Toast.makeText(login_activity.this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login_activity.this, "Tài khoản hoặc mật khẩu không hợp lệ!", Toast.LENGTH_SHORT).show();
                     }
                 });
 

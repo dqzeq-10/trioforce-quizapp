@@ -1,57 +1,110 @@
 package com.example.finalproject_test.DATA.Models;
 
-public class Question {
-    private int ID_Question;
-    private String QuestionText;
-    private int ID_Category;
-    private int ID_Level;
-    private int ID_Set;
+import java.util.List;
 
-    public Question(int ID_Question, String questionText, int ID_Category, int ID_Level, int ID_Set) {
-        this.ID_Question = ID_Question;
-        QuestionText = questionText;
-        this.ID_Category = ID_Category;
-        this.ID_Level = ID_Level;
-        this.ID_Set = ID_Set;
+    public class Question {
+        private int idQuestion;
+        private String questionText;
+        private Integer idSet;
+
+        private QuestionSet idSetNavigation;
+        private List<AnsweredQuestion> answeredQuestions;
+        private List<Answer> answers;
+        private List<CreatedQuestion> createdQuestions;
+        private List<MarkedQuestion> markedQuestions;
+        private List<ProgressQuestion> progressQuestions;
+
+    public Question(int idQuestion, String questionText, int idSet) {
+        this.idQuestion = idQuestion;
+        this.questionText = questionText;
+        this.idSet = idSet;
     }
 
-    public int getID_Question() {
-        return ID_Question;
+    public Question(List<Answer> answers, Integer idSet, String questionText, int idQuestion) {
+        this.answers = answers;
+        this.idSet = idSet;
+        this.questionText = questionText;
+        this.idQuestion = idQuestion;
     }
 
-    public void setID_Question(int ID_Question) {
-        this.ID_Question = ID_Question;
+    public Question(int idQuestion, List<Answer> answers) {
+        this.idQuestion = idQuestion;
+        this.answers = answers;
+    }
+
+    public void setIdSet(Integer idSet) {
+        this.idSet = idSet;
+    }
+
+    public QuestionSet getIdSetNavigation() {
+        return idSetNavigation;
+    }
+
+    public void setIdSetNavigation(QuestionSet idSetNavigation) {
+        this.idSetNavigation = idSetNavigation;
+    }
+
+    public List<AnsweredQuestion> getAnsweredQuestions() {
+        return answeredQuestions;
+    }
+
+    public void setAnsweredQuestions(List<AnsweredQuestion> answeredQuestions) {
+        this.answeredQuestions = answeredQuestions;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
+
+    public List<CreatedQuestion> getCreatedQuestions() {
+        return createdQuestions;
+    }
+
+    public void setCreatedQuestions(List<CreatedQuestion> createdQuestions) {
+        this.createdQuestions = createdQuestions;
+    }
+
+    public List<MarkedQuestion> getMarkedQuestions() {
+        return markedQuestions;
+    }
+
+    public void setMarkedQuestions(List<MarkedQuestion> markedQuestions) {
+        this.markedQuestions = markedQuestions;
+    }
+
+    public List<ProgressQuestion> getProgressQuestions() {
+        return progressQuestions;
+    }
+
+    public void setProgressQuestions(List<ProgressQuestion> progressQuestions) {
+        this.progressQuestions = progressQuestions;
+    }
+
+    public int getIdQuestion() {
+        return idQuestion;
+    }
+
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public String getQuestionText() {
-        return QuestionText;
+        return questionText;
     }
 
     public void setQuestionText(String questionText) {
-        QuestionText = questionText;
+        this.questionText = questionText;
     }
 
-    public int getID_Category() {
-        return ID_Category;
+    public int getIdSet() {
+        return idSet;
     }
 
-    public void setID_Category(int ID_Category) {
-        this.ID_Category = ID_Category;
-    }
-
-    public int getID_Level() {
-        return ID_Level;
-    }
-
-    public void setID_Level(int ID_Level) {
-        this.ID_Level = ID_Level;
-    }
-
-    public int getID_Set() {
-        return ID_Set;
-    }
-
-    public void setID_Set(int ID_Set) {
-        this.ID_Set = ID_Set;
+    public void setIdSet(int idSet) {
+        this.idSet = idSet;
     }
 }

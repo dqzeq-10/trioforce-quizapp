@@ -97,6 +97,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check1A"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -136,6 +137,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check1B"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -175,6 +177,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check1C"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -214,6 +217,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check1D"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -230,21 +234,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btnLuiLai"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
-                android:background="@drawable/luilai"
-                android:fontFamily="@font/baloo2_semibold"
-                android:text="Lui lại "
-                android:textSize="17sp" />
+            android:orientation="horizontal"
+            android:gravity="center">
+<!--            <Button-->
+<!--                android:id="@+id/btnLuiLai"-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/luilai"-->
+<!--                android:fontFamily="@font/baloo2_semibold"-->
+<!--                android:text="Lui lại "-->
+<!--                android:textSize="17sp" />-->
 
             <Button
                 android:id="@+id/btnNext"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-               android:layout_marginLeft="40dp"
                 android:background="@drawable/tieptuc"
                 android:fontFamily="@font/baloo2_semibold"
                 android:text="Tiếp tục"

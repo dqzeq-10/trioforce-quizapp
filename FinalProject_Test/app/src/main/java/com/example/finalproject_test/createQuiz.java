@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -15,6 +18,9 @@ import com.example.finalproject_test.screenfragment.mainscreen_fragment;
 
 public class createQuiz extends AppCompatActivity {
     ImageButton thoatbtn;
+    Button btnNext;
+    EditText tenBoCauHoi;
+    Spinner cate, lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +31,27 @@ public class createQuiz extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        thoatbtn=findViewById(R.id.thoat);
+        thoatbtn = findViewById(R.id.thoat);
+        btnNext =  findViewById(R.id.btnNext);
+        cate = findViewById(R.id.spinnercate);
+        lv = findViewById(R.id.spinnerlv);
+        tenBoCauHoi = findViewById(R.id.tenChuDe);
+
+
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(createQuiz.this,main_create_quiz.class);
+                //truyền dữ liệu (tên bộ câu hỏi, tên thể loại, tên độ khó)
+                it.putExtra("QSName",tenBoCauHoi.getText().toString().trim());
+                it.putExtra("QSLevel",lv.getSelectedItemPosition());
+                it.putExtra("QSCate",cate.getSelectedItemPosition());
+                startActivity(it);
+            }
+        });
+
+        //quay lại, hủy tạo
         thoatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,14 +59,5 @@ public class createQuiz extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button btnNext = findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(createQuiz.this,main_create_quiz.class);
-                startActivity(it);
-            }
-        });
-
     }
 }

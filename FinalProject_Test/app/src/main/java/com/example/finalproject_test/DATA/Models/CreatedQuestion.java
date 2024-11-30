@@ -4,13 +4,32 @@ import java.sql.Date;
 
 public class CreatedQuestion {
     private String username;
-    private int ID_Question;
-    private Date CreatedTime;
+    private int idQuestion;
+    private Date createdTime;
 
-    public CreatedQuestion(String username, int ID_Question, Date createdTime) {
+    private Question idQuestionNavigation;
+    private User usernameNavigation;
+
+    public Question getIdQuestionNavigation() {
+        return idQuestionNavigation;
+    }
+
+    public void setIdQuestionNavigation(Question idQuestionNavigation) {
+        this.idQuestionNavigation = idQuestionNavigation;
+    }
+
+    public User getUsernameNavigation() {
+        return usernameNavigation;
+    }
+
+    public void setUsernameNavigation(User usernameNavigation) {
+        this.usernameNavigation = usernameNavigation;
+    }
+
+    public CreatedQuestion(String username, int idQuestion, Date createdTime) {
         this.username = username;
-        this.ID_Question = ID_Question;
-        CreatedTime = createdTime;
+        this.idQuestion = idQuestion;
+        this.createdTime = createdTime;
     }
 
     public String getUsername() {
@@ -21,19 +40,19 @@ public class CreatedQuestion {
         this.username = username;
     }
 
-    public int getID_Question() {
-        return ID_Question;
+    public int getIdQuestion() {
+        return idQuestion;
     }
 
-    public void setID_Question(int ID_Question) {
-        this.ID_Question = ID_Question;
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public Date getCreatedTime() {
-        return CreatedTime;
+        return createdTime;
     }
 
     public void setCreatedTime(Date createdTime) {
-        CreatedTime = createdTime;
+        this.createdTime = createdTime;
     }
 }

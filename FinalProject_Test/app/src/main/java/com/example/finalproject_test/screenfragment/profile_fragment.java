@@ -20,6 +20,7 @@
     import android.widget.Toast;
 
     import com.example.finalproject_test.DATA.Models.User;
+    import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
     import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
     import com.example.finalproject_test.LoginORSignup;
     import com.example.finalproject_test.R;
@@ -114,38 +115,24 @@
                 tvSdt.setText(data.getPhoneNumber());
 
                 //format NgayThangNam
-    //            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-    //            dateFormat.format(data.getBirthday());
-    //            tvBirthday.setText(String.valueOf(dateFormat));
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String dbirth = dateFormat.format(data.getBirthday());
+                tvBirthday.setText(dbirth);
 
-              //  rgGioiTinh.check(Integer.parseInt(String.valueOf(data.isSex())));
+                rgGioiTinh.check(data.isSex()?R.id.radioMale:R.id.radioFemale);
             });
 
             btndangxuat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    //sharedViewModel.getObjectMLD()
-                   //         .observe(getViewLifecycleOwner(), data ->{
-
-                                //Lỗi: không tạo thông báo Toast ở fragment NHƯ activity bình thường nhé
-                            //    Toast.makeText(profile_fragment.this,"Đã đăng xuất: "+data.getName(),Toast.LENGTH_SHORT).show();
-                    //});
-                    //clear Session đăng nhập
-                    sharedViewModel.clearObjectMLD();
-
-                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.remove(KEY_USERNAME);
-                    editor.remove(KEY_PASSWORD);
-                    editor.apply();
                     // chuyển sang màn hình đăng nhập lại
                     Intent it = new Intent(getActivity(), LoginORSignup.class);
                     it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(it);
-                    if (getActivity() != null) {
-                        getActivity().finish();
-                    }
+
+                    getActivity().finish();
+
                 }
             });
             //=============================su kien ==============================//
