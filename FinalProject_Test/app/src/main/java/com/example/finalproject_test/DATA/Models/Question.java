@@ -14,7 +14,10 @@ import java.util.List;
         private List<MarkedQuestion> markedQuestions;
         private List<ProgressQuestion> progressQuestions;
 
-    public Question(int idQuestion, String questionText, int idSet) {
+        public Question() {
+        }
+
+        public Question(int idQuestion, String questionText, int idSet) {
         this.idQuestion = idQuestion;
         this.questionText = questionText;
         this.idSet = idSet;

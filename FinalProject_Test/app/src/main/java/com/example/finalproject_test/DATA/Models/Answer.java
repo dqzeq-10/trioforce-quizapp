@@ -1,12 +1,18 @@
 package com.example.finalproject_test.DATA.Models;
 
-    public class Answer {
-        private int idAnswer;
-        private int idQuestion;
-        private String answerText;
-        private boolean isCorrect;
+public class Answer {
+    private int idAnswer;
+    private int idQuestion;
+    private String answerText;
+    private boolean isCorrect;
 
-        private Question idQuestionNavigation;
+    private Question idQuestionNavigation;
+
+
+    public Answer(String answerText, boolean isCorrect) {
+        this.answerText = answerText;
+        this.isCorrect = isCorrect;
+    }
 
     public Answer(int idAnswer, int idQuestion, String answerText, boolean isCorrect) {
         this.idAnswer = idAnswer;

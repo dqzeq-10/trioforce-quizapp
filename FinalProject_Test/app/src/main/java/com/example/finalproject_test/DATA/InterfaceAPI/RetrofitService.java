@@ -40,6 +40,9 @@ public class RetrofitService {
     }
 
     public static IQuestionSetsApi createInstanceSet(){
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())

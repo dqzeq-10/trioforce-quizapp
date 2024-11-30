@@ -2,7 +2,9 @@ package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ public class main_create_quiz extends AppCompatActivity {
     private SQASharedViewModel sqaSharedViewModel;
     private QuestionSet qset;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +38,14 @@ public class main_create_quiz extends AppCompatActivity {
 
         sqaSharedViewModel = new ViewModelProvider(this).get(SQASharedViewModel.class);
         sqaSharedViewModel.setSetName(getIntent().getStringExtra("QSName"));
-        sqaSharedViewModel.setIdCategory(getIntent().getIntExtra("QSCate",1));
-        sqaSharedViewModel.setIdLevel(getIntent().getIntExtra("QSLevel",1));
+        sqaSharedViewModel.setAuthorName(getIntent().getStringExtra("username"));
+        sqaSharedViewModel.setIdCategory(getIntent().getIntExtra("QSCate", 1));
+        sqaSharedViewModel.setIdLevel(getIntent().getIntExtra("QSLevel", 1));
+       // Toast.makeText(this, "main create đã nhận" + getIntent().getStringExtra("QSName") + getIntent().getIntExtra("QSCate", 1) + getIntent().getIntExtra("QSLevel", 1), Toast.LENGTH_LONG).show();
+        Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getSetName());
+        Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getAuthorName());
+        Log.d("postset", String.valueOf(sqaSharedViewModel.getSetLiveData().getValue().getIdLevel()));
+        Log.d("postset", String.valueOf(sqaSharedViewModel.getSetLiveData().getValue().getIdCategory()));
 
         tabLayout = findViewById(R.id.tabLayout_createQuiz);
         viewPager_Create_quiz = findViewById(R.id.viewPager_createQuiz);
@@ -57,6 +66,8 @@ public class main_create_quiz extends AppCompatActivity {
             finish();
         });
     }
+
+
 
 
     public void goToPreviousFragment() {

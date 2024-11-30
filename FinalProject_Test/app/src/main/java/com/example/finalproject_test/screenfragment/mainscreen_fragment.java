@@ -22,14 +22,14 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.finalproject_test.DATA.Models.User;
-import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.R;
-import com.example.finalproject_test.RandomQuiz;
 
 import com.example.finalproject_test.activity_choose_mode;
 import com.example.finalproject_test.createQuiz;
 import com.example.finalproject_test.main_play_quiz;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -134,7 +134,8 @@ public class mainscreen_fragment extends Fragment {
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
             ChaoUsername.setText("Chào "+data.getName()+" !");
-        });
+
+
 
 
 
@@ -283,10 +284,11 @@ public class mainscreen_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireActivity(), createQuiz.class);
+                intent.putExtra("username",data.getUsername());
                 startActivity(intent);
             }
         });
-
+        });
         return view;
 
     }
