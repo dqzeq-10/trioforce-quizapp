@@ -45,7 +45,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/baloo2_extrabold"
-                android:text="90.000"
+                android:text="90"
                 android:textColor="#A23535"
                 android:textSize="45sp" />
 

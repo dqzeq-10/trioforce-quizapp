@@ -155,6 +155,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Thể thao");
+                intent.putExtra("idCategory",1);
                 startActivity(intent);
             }
         });
@@ -163,6 +164,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Khoa học");
+                intent.putExtra("idCategory",2);
                 startActivity(intent);
             }
         });
@@ -171,6 +173,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Văn học");
+                intent.putExtra("idCategory",3);
                 startActivity(intent);
             }
         });
@@ -179,6 +182,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Lịch sử");
+                intent.putExtra("idCategory",4);
                 startActivity(intent);
             }
         });
@@ -186,7 +190,8 @@ public class mainscreen_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Tóan học");
+                intent.putExtra("category","Toán học");
+                intent.putExtra("idCategory",5);
                 startActivity(intent);
             }
         });
@@ -195,6 +200,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Ẩm thực");
+                intent.putExtra("idCategory",6);
                 startActivity(intent);
             }
         });
@@ -203,6 +209,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Công nghệ");
+                intent.putExtra("idCategory",7);
                 startActivity(intent);
             }
         });
@@ -211,6 +218,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Địa lý");
+                intent.putExtra("idCategory",8);
                 startActivity(intent);
             }
         });
@@ -219,6 +227,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Âm nhạc");
+                intent.putExtra("idCategory",9);
                 startActivity(intent);
             }
         });
@@ -227,6 +236,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Phim ảnh");
+                intent.putExtra("idCategory",10);
                 startActivity(intent);
             }
         });
@@ -235,6 +245,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Ngữ pháp");
+                intent.putExtra("idCategory",11);
                 startActivity(intent);
             }
         });
@@ -243,6 +254,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Đố vui");
+                intent.putExtra("idCategory",12);
                 startActivity(intent);
             }
         });

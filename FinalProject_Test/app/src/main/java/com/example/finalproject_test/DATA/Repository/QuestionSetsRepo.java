@@ -20,6 +20,7 @@ public class QuestionSetsRepo {
 
     private final MutableLiveData<List<QuestionSet>> sets = new MutableLiveData<>();
     private final MutableLiveData<QuestionSet> set = new MutableLiveData<>();
+    private final MutableLiveData<QuestionSet> setreceive = new MutableLiveData<>();
     private final MutableLiveData<Boolean> operationSuccess = new MutableLiveData<>();
 
     public QuestionSetsRepo(){
@@ -67,6 +68,30 @@ public class QuestionSetsRepo {
             }
         });
         return set;
+    }
+
+    public MutableLiveData<QuestionSet> getSetByIdLevelAndIdCate(int idLevel, int idCategory){
+        questionSetsApiManager.getSetByIdLevelAndIdCate(idLevel, idCategory, new Callback<QuestionSet>() {
+            @Override
+            public void onResponse(Call<QuestionSet> call, Response<QuestionSet> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    Log.d("APIResponse", "Data received: " + response.body().toString());
+                    QuestionSet body = response.body();
+                    setreceive.setValue(body);
+                }else {
+                    Log.d("APIResponse", "No data or response failed. Code: " + response.code());
+                    setreceive.postValue(null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<QuestionSet> call, Throwable throwable) {
+                setreceive.postValue(null);
+                Log.e("APIResponse", "Error: " + throwable.getMessage());
+                Log.e("SetRepo", "failed to getSetByIdLevelAndIdCate: "+throwable.getMessage() );
+            }
+        });
+        return setreceive;
     }
 
     public MutableLiveData<Boolean> postSet(QuestionSet questionSet){

@@ -11,6 +11,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface IQuestionSetsApi {
     @GET("QuestionSets")
@@ -18,6 +19,9 @@ public interface IQuestionSetsApi {
 
     @GET("QuestionSets/{id}")
     Call<QuestionSet> getSetById(@Path("id") int id);
+
+    @GET("QuestionSets/ByLevelAndCate")
+    Call<QuestionSet> getSetByIdLevelAndIdCate(@Query("idLevel") int idLevel, @Query("idCategory") int idCategory);
 
     @POST("QuestionSets")
     Call<QuestionSet> postSet(@Body QuestionSet questionSet);
