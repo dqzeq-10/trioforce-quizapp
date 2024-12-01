@@ -32,14 +32,16 @@ namespace API_QuizAppDB.Controllers
         }
 
         // GET: api/AnsweredQuestitons/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AnsweredQuestiton>> GetAnsweredQuestiton(string id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<IEnumerable<AnsweredQuestiton>>> GetAnsweredQuestitonsByUsername(string username)
         {
           if (_context.AnsweredQuestitons == null)
           {
               return NotFound();
           }
-            var answeredQuestiton = await _context.AnsweredQuestitons.FindAsync(id);
+            var answeredQuestiton = await _context.AnsweredQuestitons
+                .Where(mq => mq.Username == username)
+                .ToListAsync(); ;
 
             if (answeredQuestiton == null)
             {
@@ -49,12 +51,49 @@ namespace API_QuizAppDB.Controllers
             return answeredQuestiton;
         }
 
+        [HttpGet("{username}/{idSet}")]
+        public async Task<ActionResult<IEnumerable<AnsweredQuestiton>>> GetAnsweredQuestitonsByUsernameandIdset(String username, int idSet)
+        {
+            if (_context.AnsweredQuestitons == null)
+            {
+                return NotFound();
+            }
+            var answeredQuestiton = await _context.AnsweredQuestitons
+                .Where(mq => mq.Username == username && mq.IdSet == idSet)
+                .ToListAsync();
+
+            if (!answeredQuestiton.Any())
+            {
+                return NotFound();
+            }
+
+            return answeredQuestiton;
+
+        }
+
+        [HttpGet("{username}/{idSet}/{idQuestion}")]
+        public async Task<ActionResult<AnsweredQuestiton>> GetAnsweredQuestitonByUsernameandIdsetandIdQuestion(String username,int idSet, int idQuestion)
+        {
+            if (_context.AnsweredQuestitons == null)
+            {
+                return NotFound();
+            }
+            var answeredQuestiton = await _context.AnsweredQuestitons
+                .FirstOrDefaultAsync(mq => mq.Username == username && mq.IdSet == idSet && mq.IdQuestion == idQuestion);
+            if (answeredQuestiton == null)
+            {
+                return NotFound();
+            }
+            return answeredQuestiton;
+
+        }
+
         // PUT: api/AnsweredQuestitons/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAnsweredQuestiton(string id, AnsweredQuestiton answeredQuestiton)
+        [HttpPut("{username}/{idSet}/{idQuestion}")]
+        public async Task<IActionResult> PutAnsweredQuestiton(String username, int idSet, int idQuestion, AnsweredQuestiton answeredQuestiton)
         {
-            if (id != answeredQuestiton.Username)
+            if (username != answeredQuestiton.Username && idSet != answeredQuestiton.IdSet && idQuestion != answeredQuestiton.IdQuestion)
             {
                 return BadRequest();
             }
@@ -67,7 +106,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AnsweredQuestitonExists(id))
+                if (!AnsweredQuestitonExists(username,idSet,idQuestion))
                 {
                     return NotFound();
                 }
@@ -96,7 +135,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateException)
             {
-                if (AnsweredQuestitonExists(answeredQuestiton.Username))
+                if (AnsweredQuestitonExists(answeredQuestiton.Username,answeredQuestiton.IdSet,answeredQuestiton.IdQuestion))
                 {
                     return Conflict();
                 }
@@ -106,18 +145,18 @@ namespace API_QuizAppDB.Controllers
                 }
             }
 
-            return CreatedAtAction("GetAnsweredQuestiton", new { id = answeredQuestiton.Username }, answeredQuestiton);
+            return CreatedAtAction("GetAnsweredQuestitonByUsernameandIdsetandIdQuestion", new { username = answeredQuestiton.Username, idSet = answeredQuestiton.IdSet, idQuestion = answeredQuestiton.IdQuestion }, answeredQuestiton);
         }
 
         // DELETE: api/AnsweredQuestitons/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAnsweredQuestiton(string id)
+        [HttpDelete("{username}/{idSet}/{idQuestion}")]
+        public async Task<IActionResult> DeleteAnsweredQuestiton(String username, int idSet, int idQuestion)
         {
             if (_context.AnsweredQuestitons == null)
             {
                 return NotFound();
             }
-            var answeredQuestiton = await _context.AnsweredQuestitons.FindAsync(id);
+            var answeredQuestiton = await _context.AnsweredQuestitons.FirstOrDefaultAsync(mq => (mq.Username == username && mq.IdSet == idSet && mq.IdQuestion == idQuestion));
             if (answeredQuestiton == null)
             {
                 return NotFound();
@@ -129,9 +168,9 @@ namespace API_QuizAppDB.Controllers
             return NoContent();
         }
 
-        private bool AnsweredQuestitonExists(string id)
+        private bool AnsweredQuestitonExists(String username, int idSet, int idQuestion)
         {
-            return (_context.AnsweredQuestitons?.Any(e => e.Username == id)).GetValueOrDefault();
+            return (_context.AnsweredQuestitons?.Any(e => (e.Username == username && e.IdSet ==idSet && e.IdQuestion == idQuestion))).GetValueOrDefault();
         }
     }
 }

@@ -31,17 +31,19 @@ namespace API_QuizAppDB.Controllers
             return await _context.CreatedQuestions.ToListAsync();
         }
 
-        // GET: api/CreatedQuestions/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CreatedQuestion>> GetCreatedQuestion(string id)
+        // GET: api/CreatedQuestions/user1
+        [HttpGet("{username}")]
+        public async Task<ActionResult<IEnumerable<CreatedQuestion>>> GetCreatedQuestionsByUsername(string username)
         {
           if (_context.CreatedQuestions == null)
           {
               return NotFound();
           }
-            var createdQuestion = await _context.CreatedQuestions.FindAsync(id);
+            var createdQuestion = await _context.CreatedQuestions
+                .Where(cq => cq.Username == username)
+                .ToListAsync();
 
-            if (createdQuestion == null)
+            if (!createdQuestion.Any())
             {
                 return NotFound();
             }
@@ -49,12 +51,30 @@ namespace API_QuizAppDB.Controllers
             return createdQuestion;
         }
 
-        // PUT: api/CreatedQuestions/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCreatedQuestion(string id, CreatedQuestion createdQuestion)
+        [HttpGet("{username}/{idQuestion}")]
+        public async Task<ActionResult<CreatedQuestion>> GetCreatedQuestion(String username, int idQuestion)
         {
-            if (id != createdQuestion.Username)
+            if (_context.CreatedQuestions == null)
+            {
+                return NotFound();
+            }
+            var createdQuestion = await _context.CreatedQuestions
+                .FirstOrDefaultAsync(mq => mq.Username == username && mq.IdQuestion == idQuestion);
+            if (createdQuestion == null)
+            {
+                return NotFound();
+            }
+            return createdQuestion;
+
+        }
+
+
+            // PUT: api/CreatedQuestions/5
+            // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+            [HttpPut("{username}/{idQuestion}")]
+        public async Task<IActionResult> PutCreatedQuestion(string username, int idQuestion, CreatedQuestion createdQuestion)
+        {
+            if (username != createdQuestion.Username && idQuestion != createdQuestion.IdQuestion)
             {
                 return BadRequest();
             }
@@ -67,7 +87,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CreatedQuestionExists(id))
+                if (!CreatedQuestionExists(username, idQuestion))
                 {
                     return NotFound();
                 }
@@ -96,7 +116,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateException)
             {
-                if (CreatedQuestionExists(createdQuestion.Username))
+                if (CreatedQuestionExists(createdQuestion.Username,createdQuestion.IdQuestion))
                 {
                     return Conflict();
                 }
@@ -106,18 +126,18 @@ namespace API_QuizAppDB.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCreatedQuestion", new { id = createdQuestion.Username }, createdQuestion);
+            return CreatedAtAction("GetCreatedQuestion", new { username = createdQuestion.Username, idQuestion = createdQuestion.IdQuestion }, createdQuestion);
         }
 
         // DELETE: api/CreatedQuestions/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCreatedQuestion(string id)
+        [HttpDelete("{username}/{idQuestion}")]
+        public async Task<IActionResult> DeleteCreatedQuestion(string username, int idQuestion)
         {
             if (_context.CreatedQuestions == null)
             {
                 return NotFound();
             }
-            var createdQuestion = await _context.CreatedQuestions.FindAsync(id);
+            var createdQuestion = await _context.CreatedQuestions.FirstOrDefaultAsync(mq => (mq.Username == username && mq.IdQuestion == idQuestion));
             if (createdQuestion == null)
             {
                 return NotFound();
@@ -129,9 +149,9 @@ namespace API_QuizAppDB.Controllers
             return NoContent();
         }
 
-        private bool CreatedQuestionExists(string id)
+        private bool CreatedQuestionExists(string username, int idQuestion)
         {
-            return (_context.CreatedQuestions?.Any(e => e.Username == id)).GetValueOrDefault();
+            return (_context.CreatedQuestions?.Any(e => (e.Username == username && e.IdQuestion == idQuestion))).GetValueOrDefault();
         }
     }
 }

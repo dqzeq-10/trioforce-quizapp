@@ -24,10 +24,10 @@ namespace API_QuizAppDB.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<QuestionSet>>> GetQuestionSets()
         {
-          if (_context.QuestionSets == null)
-          {
-              return NotFound();
-          }
+            if (_context.QuestionSets == null)
+            {
+                return NotFound();
+            }
             return await _context.QuestionSets.ToListAsync();
         }
 
@@ -35,17 +35,17 @@ namespace API_QuizAppDB.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<QuestionSet>> GetQuestionSet(int id)
         {
-          if (_context.QuestionSets == null)
-          {
-              return NotFound();
+            if (_context.QuestionSets == null)
+            {
+                return NotFound();
             }
-            var questionSet = await _context.QuestionSets           
+            var questionSet = await _context.QuestionSets
                 .Include(qs => qs.IdCategoryNavigation)
                 .Include(qs => qs.IdLevelNavigation)
                 .Include(qs => qs.Questions)
-                    .ThenInclude(q=>q.Answers)
+                    .ThenInclude(q => q.Answers)
                 .FirstOrDefaultAsync(qs => qs.IdSet == id);
-            
+
             if (questionSet == null)
             {
                 return NotFound();
@@ -72,6 +72,54 @@ namespace API_QuizAppDB.Controllers
 
             return Ok(result);
         }
+
+
+        // GET: api/QuestionSets/ByLevelAndCate?idLevel=1&idCategory=2
+        [HttpGet("ByLevelAndCate")]
+        public async Task<ActionResult<QuestionSet>> GetQuestionSetByLevelAndCate(int idLevel, int idCategory)
+        {
+            if (_context.QuestionSets == null)
+            {
+                return NotFound();
+            }
+
+            var questionSet = await _context.QuestionSets
+                .Where(qs => qs.IdLevel == idLevel && qs.IdCategory == idCategory)
+                .Include(qs => qs.IdCategoryNavigation)
+                .Include(qs => qs.IdLevelNavigation)
+                .Include(qs => qs.Questions)
+                    .ThenInclude(q => q.Answers)
+                .FirstOrDefaultAsync();
+
+            if (questionSet == null)
+            {
+                return NotFound();
+            }
+
+            var result = new
+            {
+                questionSet.IdSet,
+                questionSet.SetName,
+                questionSet.AuthorName,
+                Category = questionSet.IdCategoryNavigation?.CategoryName,
+                Level = questionSet.IdLevelNavigation?.LevelName,
+                Questions = questionSet.Questions.Select(q => new
+                {
+                    q.IdQuestion,
+                    q.QuestionText,
+                    Answers = q.Answers.Select(a => new
+                    {
+                        a.AnswerText,
+                        a.IsCorrect
+                    }).ToList()
+                }).ToList()
+            };
+
+
+            return Ok(result);
+        }
+
+
 
         // PUT: api/QuestionSets/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -109,10 +157,10 @@ namespace API_QuizAppDB.Controllers
         [HttpPost]
         public async Task<ActionResult<QuestionSet>> PostQuestionSet(QuestionSet questionSet)
         {
-          if (_context.QuestionSets == null)
-          {
-              return Problem("Entity set 'QuizAppDbContext.QuestionSets'  is null.");
-          }
+            if (_context.QuestionSets == null)
+            {
+                return Problem("Entity set 'QuizAppDbContext.QuestionSets'  is null.");
+            }
             _context.QuestionSets.Add(questionSet);
             await _context.SaveChangesAsync();
 

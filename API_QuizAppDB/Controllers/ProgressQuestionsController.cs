@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_QuizAppDB.Models;
+using NuGet.ContentModel;
 
 namespace API_QuizAppDB.Controllers
 {
@@ -32,14 +33,15 @@ namespace API_QuizAppDB.Controllers
         }
 
         // GET: api/ProgressQuestions/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProgressQuestion>> GetProgressQuestion(string id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<IEnumerable<ProgressQuestion>>> GetProgressQuestionByUsername(string username)
         {
           if (_context.ProgressQuestions == null)
           {
               return NotFound();
           }
-            var progressQuestion = await _context.ProgressQuestions.FindAsync(id);
+            var progressQuestion = await _context.ProgressQuestions.Where(pq => pq.Username == username)
+                .ToListAsync();
 
             if (progressQuestion == null)
             {
@@ -49,12 +51,30 @@ namespace API_QuizAppDB.Controllers
             return progressQuestion;
         }
 
+
+        [HttpGet("{username}/{idSet}")]
+        public async Task<ActionResult<ProgressQuestion>> GetProgressQuestion(String username, int idSet)
+        {
+            if (_context.ProgressQuestions == null)
+            {
+                return NotFound();
+            }
+            var progressQuestion = await _context.ProgressQuestions
+                .FirstOrDefaultAsync(pq => pq.Username == username && pq.IdSet == idSet);
+            if (progressQuestion == null)
+            {
+                return NotFound();
+            }
+            return progressQuestion;
+
+        }
+
         // PUT: api/ProgressQuestions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProgressQuestion(string id, ProgressQuestion progressQuestion)
+        [HttpPut("{username}/{idSet}")]
+        public async Task<IActionResult> PutProgressQuestion(String username, int idSet, ProgressQuestion progressQuestion)
         {
-            if (id != progressQuestion.Username)
+            if (username != progressQuestion.Username && idSet != progressQuestion.IdSet)
             {
                 return BadRequest();
             }
@@ -67,7 +87,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProgressQuestionExists(id))
+                if (!ProgressQuestionExists(username,idSet))
                 {
                     return NotFound();
                 }
@@ -96,7 +116,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateException)
             {
-                if (ProgressQuestionExists(progressQuestion.Username))
+                if (ProgressQuestionExists(progressQuestion.Username,progressQuestion.IdSet))
                 {
                     return Conflict();
                 }
@@ -106,18 +126,18 @@ namespace API_QuizAppDB.Controllers
                 }
             }
 
-            return CreatedAtAction("GetProgressQuestion", new { id = progressQuestion.Username }, progressQuestion);
+            return CreatedAtAction("GetProgressQuestion", new { username = progressQuestion.Username, idSet = progressQuestion.IdSet }, progressQuestion);
         }
 
         // DELETE: api/ProgressQuestions/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProgressQuestion(string id)
+        [HttpDelete("{username}/{idSet}")]
+        public async Task<IActionResult> DeleteProgressQuestion(string username, int idSet)
         {
             if (_context.ProgressQuestions == null)
             {
                 return NotFound();
             }
-            var progressQuestion = await _context.ProgressQuestions.FindAsync(id);
+            var progressQuestion = await _context.ProgressQuestions.FirstOrDefaultAsync(mq => (mq.Username == username && mq.IdSet == idSet));
             if (progressQuestion == null)
             {
                 return NotFound();
@@ -129,9 +149,9 @@ namespace API_QuizAppDB.Controllers
             return NoContent();
         }
 
-        private bool ProgressQuestionExists(string id)
+        private bool ProgressQuestionExists(string username, int idSet)
         {
-            return (_context.ProgressQuestions?.Any(e => e.Username == id)).GetValueOrDefault();
+            return (_context.ProgressQuestions?.Any(e => (e.Username == username && e.IdSet == idSet))).GetValueOrDefault();
         }
     }
 }

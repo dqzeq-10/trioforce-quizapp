@@ -9,7 +9,7 @@ namespace API_QuizAppDB.Models
         public int IdQuestion { get; set; }
         public DateTime? MarkedTime { get; set; }
 
-        public virtual Question IdQuestionNavigation { get; set; } = null!;
-        public virtual User UsernameNavigation { get; set; } = null!;
+        public virtual Question? IdQuestionNavigation { get; set; }
+        public virtual User? UsernameNavigation { get; set; }
     }
 }

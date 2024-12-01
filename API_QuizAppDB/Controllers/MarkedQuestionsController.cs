@@ -31,30 +31,54 @@ namespace API_QuizAppDB.Controllers
             return await _context.MarkedQuestions.ToListAsync();
         }
 
-        // GET: api/MarkedQuestions/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<MarkedQuestion>> GetMarkedQuestion(string id)
+        // GET: api/MarkedQuestions/user1
+        [HttpGet("{username}")]
+        public async Task<ActionResult<IEnumerable<MarkedQuestion>>> GetMarkedQuestionsByUsername(string username)
         {
           if (_context.MarkedQuestions == null)
           {
               return NotFound();
           }
-            var markedQuestion = await _context.MarkedQuestions.FindAsync(id);
+            var markedQuestions = await _context.MarkedQuestions
+                .Where(mq => mq.Username == username)
+                .ToListAsync();
+        
 
-            if (markedQuestion == null)
+            if (!markedQuestions.Any())
             {
                 return NotFound();
             }
 
-            return markedQuestion;
+            return markedQuestions;
         }
+
+        // GET: api/MarkedQuestions/user1/1
+        [HttpGet("{username}/{idQuestion}")]
+        public async Task<ActionResult<MarkedQuestion>> GetMarkedQuestion(String username, int idQuestion)
+        {
+            if (_context.MarkedQuestions == null)
+            {
+                return NotFound();
+            }
+            var markedQuestion = await _context.MarkedQuestions
+                .FirstOrDefaultAsync(mq => mq.Username == username && mq.IdQuestion == idQuestion);
+            if (markedQuestion == null)
+            {
+                return NotFound();
+            }
+            return markedQuestion;
+
+        }
+
+
+
 
         // PUT: api/MarkedQuestions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMarkedQuestion(string id, MarkedQuestion markedQuestion)
+        [HttpPut("{username}/{idQuestion}")]
+        public async Task<IActionResult> PutMarkedQuestion(string username, int idQuestion, MarkedQuestion markedQuestion)
         {
-            if (id != markedQuestion.Username)
+            if (username != markedQuestion.Username && idQuestion != markedQuestion.IdQuestion)
             {
                 return BadRequest();
             }
@@ -67,7 +91,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MarkedQuestionExists(id))
+                if (!MarkedQuestionExists(username, idQuestion))
                 {
                     return NotFound();
                 }
@@ -82,6 +106,13 @@ namespace API_QuizAppDB.Controllers
 
         // POST: api/MarkedQuestions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+
+        //POST json:
+        //{
+        //  "username": "user1",
+        //  "idQuestion": 3,
+        //  "markedTime": "2024-12-01"
+        //}
         [HttpPost]
         public async Task<ActionResult<MarkedQuestion>> PostMarkedQuestion(MarkedQuestion markedQuestion)
         {
@@ -96,7 +127,7 @@ namespace API_QuizAppDB.Controllers
             }
             catch (DbUpdateException)
             {
-                if (MarkedQuestionExists(markedQuestion.Username))
+                if (MarkedQuestionExists(markedQuestion.Username, markedQuestion.IdQuestion))
                 {
                     return Conflict();
                 }
@@ -106,18 +137,18 @@ namespace API_QuizAppDB.Controllers
                 }
             }
 
-            return CreatedAtAction("GetMarkedQuestion", new { id = markedQuestion.Username }, markedQuestion);
+            return CreatedAtAction("GetMarkedQuestion", new { username = markedQuestion.Username, idQuestion = markedQuestion.IdQuestion }, markedQuestion);
         }
 
         // DELETE: api/MarkedQuestions/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMarkedQuestion(string id)
+        [HttpDelete("{username}/{idQuestion}")]
+        public async Task<IActionResult> DeleteMarkedQuestion(string username, int idQuestion)
         {
             if (_context.MarkedQuestions == null)
             {
                 return NotFound();
             }
-            var markedQuestion = await _context.MarkedQuestions.FindAsync(id);
+            var markedQuestion = await _context.MarkedQuestions.FirstOrDefaultAsync(mq => (mq.Username == username && mq.IdQuestion == idQuestion));
             if (markedQuestion == null)
             {
                 return NotFound();
@@ -129,9 +160,9 @@ namespace API_QuizAppDB.Controllers
             return NoContent();
         }
 
-        private bool MarkedQuestionExists(string id)
+        private bool MarkedQuestionExists(string username, int idQuestion)
         {
-            return (_context.MarkedQuestions?.Any(e => e.Username == id)).GetValueOrDefault();
+            return (_context.MarkedQuestions?.Any(e => (e.Username == username && e.IdQuestion == idQuestion))).GetValueOrDefault();
         }
     }
 }

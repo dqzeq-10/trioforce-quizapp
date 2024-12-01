@@ -8,6 +8,6 @@ namespace API_QuizAppDB.Models
         public string Username { get; set; } = null!;
         public int? Point { get; set; }
 
-        public virtual User UsernameNavigation { get; set; } = null!;
+        public virtual User? UsernameNavigation { get; set; }
     }
 }

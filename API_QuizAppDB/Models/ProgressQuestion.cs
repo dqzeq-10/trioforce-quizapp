@@ -11,8 +11,8 @@ namespace API_QuizAppDB.Models
         public int? QuestionLastId { get; set; }
         public DateTime? SaveTime { get; set; }
 
-        public virtual QuestionSet IdSetNavigation { get; set; } = null!;
+        public virtual QuestionSet? IdSetNavigation { get; set; }
         public virtual Question? QuestionLast { get; set; }
-        public virtual User UsernameNavigation { get; set; } = null!;
+        public virtual User? UsernameNavigation { get; set; }
     }
 }

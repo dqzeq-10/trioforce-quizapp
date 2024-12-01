@@ -47,15 +47,82 @@
   },
   {
     "ContainingType": "API_QuizAppDB.Controllers.AnsweredQuestitonsController",
-    "Method": "GetAnsweredQuestiton",
-    "RelativePath": "api/AnsweredQuestitons/{id}",
+    "Method": "GetAnsweredQuestitonsByUsername",
+    "RelativePath": "api/AnsweredQuestitons/{username}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_QuizAppDB.Models.AnsweredQuestiton, API_QuizAppDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.AnsweredQuestitonsController",
+    "Method": "GetAnsweredQuestitonsByUsernameandIdset",
+    "RelativePath": "api/AnsweredQuestitons/{username}/{idSet}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_QuizAppDB.Models.AnsweredQuestiton, API_QuizAppDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.AnsweredQuestitonsController",
+    "Method": "GetAnsweredQuestitonByUsernameandIdsetandIdQuestion",
+    "RelativePath": "api/AnsweredQuestitons/{username}/{idSet}/{idQuestion}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -74,14 +141,24 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.AnsweredQuestitonsController",
     "Method": "PutAnsweredQuestiton",
-    "RelativePath": "api/AnsweredQuestitons/{id}",
+    "RelativePath": "api/AnsweredQuestitons/{username}/{idSet}/{idQuestion}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
@@ -95,14 +172,24 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.AnsweredQuestitonsController",
     "Method": "DeleteAnsweredQuestiton",
-    "RelativePath": "api/AnsweredQuestitons/{id}",
+    "RelativePath": "api/AnsweredQuestitons/{username}/{idSet}/{idQuestion}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -281,15 +368,46 @@
   },
   {
     "ContainingType": "API_QuizAppDB.Controllers.CreatedQuestionsController",
-    "Method": "GetCreatedQuestion",
-    "RelativePath": "api/CreatedQuestions/{id}",
+    "Method": "GetCreatedQuestionsByUsername",
+    "RelativePath": "api/CreatedQuestions/{username}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_QuizAppDB.Models.CreatedQuestion, API_QuizAppDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.CreatedQuestionsController",
+    "Method": "GetCreatedQuestion",
+    "RelativePath": "api/CreatedQuestions/{username}/{idQuestion}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -308,14 +426,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.CreatedQuestionsController",
     "Method": "PutCreatedQuestion",
-    "RelativePath": "api/CreatedQuestions/{id}",
+    "RelativePath": "api/CreatedQuestions/{username}/{idQuestion}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
@@ -329,14 +452,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.CreatedQuestionsController",
     "Method": "DeleteCreatedQuestion",
-    "RelativePath": "api/CreatedQuestions/{id}",
+    "RelativePath": "api/CreatedQuestions/{username}/{idQuestion}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -499,15 +627,46 @@
   },
   {
     "ContainingType": "API_QuizAppDB.Controllers.MarkedQuestionsController",
-    "Method": "GetMarkedQuestion",
-    "RelativePath": "api/MarkedQuestions/{id}",
+    "Method": "GetMarkedQuestionsByUsername",
+    "RelativePath": "api/MarkedQuestions/{username}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_QuizAppDB.Models.MarkedQuestion, API_QuizAppDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.MarkedQuestionsController",
+    "Method": "GetMarkedQuestion",
+    "RelativePath": "api/MarkedQuestions/{username}/{idQuestion}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -526,14 +685,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.MarkedQuestionsController",
     "Method": "PutMarkedQuestion",
-    "RelativePath": "api/MarkedQuestions/{id}",
+    "RelativePath": "api/MarkedQuestions/{username}/{idQuestion}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
@@ -547,14 +711,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.MarkedQuestionsController",
     "Method": "DeleteMarkedQuestion",
-    "RelativePath": "api/MarkedQuestions/{id}",
+    "RelativePath": "api/MarkedQuestions/{username}/{idQuestion}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idQuestion",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -608,15 +777,46 @@
   },
   {
     "ContainingType": "API_QuizAppDB.Controllers.ProgressQuestionsController",
-    "Method": "GetProgressQuestion",
-    "RelativePath": "api/ProgressQuestions/{id}",
+    "Method": "GetProgressQuestionByUsername",
+    "RelativePath": "api/ProgressQuestions/{username}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[API_QuizAppDB.Models.ProgressQuestion, API_QuizAppDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.ProgressQuestionsController",
+    "Method": "GetProgressQuestion",
+    "RelativePath": "api/ProgressQuestions/{username}/{idSet}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -635,14 +835,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.ProgressQuestionsController",
     "Method": "PutProgressQuestion",
-    "RelativePath": "api/ProgressQuestions/{id}",
+    "RelativePath": "api/ProgressQuestions/{username}/{idSet}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
         "IsRequired": true
       },
       {
@@ -656,14 +861,19 @@
   {
     "ContainingType": "API_QuizAppDB.Controllers.ProgressQuestionsController",
     "Method": "DeleteProgressQuestion",
-    "RelativePath": "api/ProgressQuestions/{id}",
+    "RelativePath": "api/ProgressQuestions/{username}/{idSet}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "username",
         "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSet",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -995,6 +1205,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_QuizAppDB.Controllers.QuestionSetsController",
+    "Method": "GetQuestionSetByLevelAndCate",
+    "RelativePath": "api/QuestionSets/ByLevelAndCate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idLevel",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "idCategory",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_QuizAppDB.Models.QuestionSet",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "API_QuizAppDB.Controllers.RankingsController",
