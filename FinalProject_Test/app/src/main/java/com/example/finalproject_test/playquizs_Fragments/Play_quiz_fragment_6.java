@@ -5,17 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.main_play_quiz;
+import com.example.finalproject_test.popup_warning_play_Quiz;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Play_quiz_fragment_6#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Play_quiz_fragment_6 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -23,24 +21,16 @@ public class Play_quiz_fragment_6 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Button btnNext, btnLuilai;
-
+    private TextView btnDapAn_6A, btnDapAn_6B, btnDapAn_6C, btnDapAn_6D;
+    private  boolean  isAnswerSelected = false;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public Play_quiz_fragment_6() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment create_Fragment_Ques1.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Play_quiz_fragment_6 newInstance(String param1, String param2) {
         Play_quiz_fragment_6 fragment = new Play_quiz_fragment_6();
         Bundle args = new Bundle();
@@ -57,25 +47,87 @@ public class Play_quiz_fragment_6 extends Fragment {
 
         btnLuilai = view.findViewById(R.id.btnLuiLai);
         btnNext = view.findViewById(R.id.btnTiepTuc);
+        btnDapAn_6A = view.findViewById(R.id.btnDapAn_6A);
+        btnDapAn_6B = view.findViewById(R.id.btnDapAn_6B);
+        btnDapAn_6C = view.findViewById(R.id.btnDapAn_6C);
+        btnDapAn_6D = view.findViewById(R.id.btnDapAn_6D);
 
-        // Xử lý sự kiện khi nhấn nút "Lui lại" (quay lại fragment trước)
+        //xu ly su kien khi chon dap an
+        View.OnClickListener answerClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isAnswerSelected) return;
+                // lay id cua dap an duoc chon
+                int selectedAnswerId = v.getId();
+                //kiem tra dap an duoc chon co dung hay sai
+                boolean isCorerct = checkAnswer(selectedAnswerId);
+
+                //thay doi mau sac cua dap an duoc chon
+                changeAnswerButtonColor(selectedAnswerId, isCorerct);
+
+                if (isCorerct){
+                    if (getActivity() instanceof main_play_quiz) {
+                        ((main_play_quiz) getActivity()).updateScore(10);
+                    }
+                }
+
+                changeAnswerButtonColor(selectedAnswerId, isCorerct);
+
+
+                int tabIndex = 5;
+                if (getActivity() instanceof main_play_quiz) {
+                    ((main_play_quiz) getActivity()).setTabBackgroundColor(tabIndex, isCorerct);
+
+                }
+                isAnswerSelected = true;
+                disableOtherAnswer(selectedAnswerId);
+            }
+
+        };
+
+        btnDapAn_6A.setOnClickListener(answerClickListener);
+        btnDapAn_6B.setOnClickListener(answerClickListener);
+        btnDapAn_6C.setOnClickListener(answerClickListener);
+        btnDapAn_6D.setOnClickListener(answerClickListener);
+
+
+
+
         btnLuilai.setOnClickListener(v -> {
             if (getActivity() instanceof main_play_quiz) {
                 ((main_play_quiz) getActivity()).goToPreviousFragment();
             }
         });
 
-
-        // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
-            // Gọi phương thức từ Activity để chuyển đến Fragment tiếp theo
-            if (getActivity() instanceof main_play_quiz) {
-                ((main_play_quiz) getActivity()).goToNextFragment();
+            if(!isAnswerSelected){
+                popup_warning_play_Quiz.showWarningPopup(requireContext());
+            }
+            else {
+                if (getActivity() instanceof main_play_quiz) {
+                    ((main_play_quiz) getActivity()).goToNextFragment();
+                }
             }
         });
 
         return view;
     }
-
+    private boolean checkAnswer(int selectedAnswerId) {
+        return selectedAnswerId == R.id.btnDapAn_6A;
+    }
+    private  void changeAnswerButtonColor(int selectedAnswerId, boolean isCorrect) {
+        TextView selectedButton = getView().findViewById(selectedAnswerId);
+        if (isCorrect) {
+            selectedButton.setBackgroundResource(R.drawable.dung);
+        } else {
+            selectedButton.setBackgroundResource(R.drawable.sai);
+        }
+    }
+    private  void disableOtherAnswer(int selectedAnswerId) {
+        if (selectedAnswerId != R.id.btnDapAn_1A) btnDapAn_6A.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1B) btnDapAn_6B.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1C) btnDapAn_6C.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1D) btnDapAn_6D.setEnabled(false);
+    }
 
 }

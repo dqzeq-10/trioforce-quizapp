@@ -2,7 +2,9 @@ package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Result extends AppCompatActivity {
 AppCompatButton btnrshome, btnrsreplay, btnrsnext;
+private TextView resultPoint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,13 @@ AppCompatButton btnrshome, btnrsreplay, btnrsnext;
         btnrshome = findViewById(R.id.rs_home);
         btnrsreplay = findViewById(R.id.rs_replay);
         btnrsnext = findViewById(R.id.rs_next);
+        resultPoint = findViewById(R.id.result_point);
+// /nhan diem tu intent
+
+        int totalScore = getIntent().getIntExtra("totalScore", 0);
+        Log.d("TotalScore", "Total Score from Intent: " + totalScore); // In ra log để kiểm tra điểm
+
+        resultPoint.setText(String.valueOf(totalScore+".00"));
 
         btnrshome.setOnClickListener(new View.OnClickListener() {
             @Override

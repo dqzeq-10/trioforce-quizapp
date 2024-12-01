@@ -2,7 +2,7 @@ package com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi;
 
 import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
 import com.example.finalproject_test.DATA.Models.QuestionSet;
-import com.example.finalproject_test.DATA.Models.User;
+
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ public class QuestionSetsApiManager {
     private static QuestionSetsApiManager questionSetsApiManager;
 
     private QuestionSetsApiManager(){
+
         iQuestionSetsApi = RetrofitService.createInstanceSet();
     }
 

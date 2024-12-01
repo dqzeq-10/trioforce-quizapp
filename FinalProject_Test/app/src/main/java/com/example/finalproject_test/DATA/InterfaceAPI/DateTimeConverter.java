@@ -10,22 +10,21 @@ import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 public class DateTimeConverter implements JsonSerializer<Date>, JsonDeserializer<Date> {
 
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng ngày bạn nhận được từ API
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng ngày bạn nhận từ API
 
     @Override
     public JsonElement serialize(Date src, Type typeOfSrc, JsonSerializationContext context) {
-        return context.serialize(dateFormat.format(src));
+        return context.serialize(dateFormat.format(src)); // Chuyển đối tượng Date thành chuỗi
     }
 
     @Override
     public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         try {
-            return dateFormat.parse((json.getAsString()));
+            return dateFormat.parse(json.getAsString()); // Chuyển chuỗi ngày về kiểu Date
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            throw new JsonParseException("Failed to parse date: " + json.getAsString(), e);
         }
     }
 }

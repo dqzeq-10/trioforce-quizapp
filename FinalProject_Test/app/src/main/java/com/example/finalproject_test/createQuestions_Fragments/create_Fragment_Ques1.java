@@ -1,23 +1,20 @@
 package com.example.finalproject_test.createQuestions_Fragments;
 
-import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SQASharedViewModel;
 import com.example.finalproject_test.R;
+import com.example.finalproject_test.popup_warning_create_Quiz;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -95,27 +92,12 @@ public class create_Fragment_Ques1 extends Fragment {
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
 
-         showPopup_Warning_create();
+        popup_warning_create_Quiz.showWarningPopup(requireContext());
         });
 
         return view;
     }
 
-    // --------------------------------------------------   WARNING CREATE QUIZ   -----------------------------------------------------------
-    private void showPopup_Warning_create(){
-        Dialog dialog = new Dialog(requireActivity(),R.style.CustomDialog);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_warning_creat_quiz);
-        Button btnClose = dialog.findViewById(R.id.btn_close);
-        btnClose.setOnClickListener(view -> dialog.dismiss());
 
-        dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        WindowManager.LayoutParams layoutParams1 = dialog.getWindow().getAttributes();
-        layoutParams1.gravity=Gravity.CENTER;
-        layoutParams1.y= 10;
-        dialog.getWindow().setAttributes(layoutParams1);
-        dialog.show();
-
-    }
 
 }
