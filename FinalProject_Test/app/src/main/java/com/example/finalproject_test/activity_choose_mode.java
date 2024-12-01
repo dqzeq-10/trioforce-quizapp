@@ -73,6 +73,10 @@ AppCompatButton cdde,cdbthg,cdkho;
                 Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
                 String category = getIntent().getStringExtra("category");
                 int idCategory = getIntent().getIntExtra("idCategory",1);
+                if (category == null || idCategory == -1) {
+                    Log.e("main_play_quiz", "Thiếu dữ liệu Intent: category hoặc idCategory");
+                    return;
+                }
                 if (category != null) {
                     intent.putExtra("category", category);
                     intent.putExtra("idCategory",idCategory);
