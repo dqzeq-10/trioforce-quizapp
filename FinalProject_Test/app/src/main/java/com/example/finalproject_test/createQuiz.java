@@ -16,8 +16,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.finalproject_test.screenfragment.mainscreen_fragment;
-
 public class createQuiz extends AppCompatActivity {
     ImageButton thoatbtn;
     Button btnNext;
@@ -37,13 +35,19 @@ public class createQuiz extends AppCompatActivity {
         btnNext =  findViewById(R.id.btnNext);
         cate = findViewById(R.id.spinnercate);
         lv = findViewById(R.id.spinnerlv);
-        tenBoCauHoi = findViewById(R.id.tenChuDe);
+        tenBoCauHoi = findViewById(R.id.tenbocauhoi);
 
 
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String quizName = tenBoCauHoi.getText().toString().trim();
+                if (quizName.isEmpty()) {
+                Toast.makeText(createQuiz.this, "Vui lòng nhập tên bộ câu hỏi", Toast.LENGTH_SHORT).show();
+                return;
+                }
+
                 Intent it = new Intent(createQuiz.this,main_create_quiz.class);
                 //truyền dữ liệu (tên bộ câu hỏi, tên thể loại, tên độ khó)
                 it.putExtra("QSName",tenBoCauHoi.getText().toString().trim());

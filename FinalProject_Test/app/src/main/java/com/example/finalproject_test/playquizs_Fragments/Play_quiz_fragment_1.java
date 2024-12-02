@@ -76,6 +76,7 @@ public class Play_quiz_fragment_1 extends Fragment {
 
 
         txtCauhoi.setText(question.getQuestionText());
+
         da1.setText(question.getAnswers().get(0).getAnswerText().toString());
         da1.setTag(question.getAnswers().get(0).isCorrect());
         Log.d("setTag", da1.getTag().toString());
