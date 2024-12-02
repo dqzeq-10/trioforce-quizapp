@@ -6,6 +6,7 @@ public class Level {
     private int idLevels;
     private String levelName;
 
+
     private List<QuestionSet> questionSets;
 
     public Level(int idLevels, String levelName) {
@@ -23,14 +24,15 @@ public class Level {
 
     public String getLevelName() {
         return levelName;
-    }
 
+    }
     public List<QuestionSet> getQuestionSets() {
         return questionSets;
     }
 
     public void setQuestionSets(List<QuestionSet> questionSets) {
         this.questionSets = questionSets;
+
     }
 
     public void setLevelName(String levelName) {
