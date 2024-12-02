@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,10 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.finalproject_test.DATA.Models.Level;
+import com.example.finalproject_test.DATA.ViewModels.LevelsVM.LevelsViewModel;
 
 public class activity_choose_mode extends AppCompatActivity {
 ImageButton btnVeManHinhChinh;
@@ -33,6 +38,12 @@ AppCompatButton cdde,cdbthg,cdkho;
         cdkho =findViewById(R.id.CheDoKho);
         btnVeManHinhChinh=(ImageButton) findViewById(R.id.TroVeManHinhChinh);
 
+        //(mới thêm nè...
+        int idTheLoai = getIntent().getIntExtra("ID_THE_LOAI", -1); // -1 nếu không có dữ liệu
+        String tenTheLoai = getIntent().getStringExtra("TEN_THE_LOAI");
+        Log.d("ChooseModeActivity", "ID Thể Loại: " + idTheLoai);
+        Log.d("ChooseModeActivity", "Tên Thể Loại: " + tenTheLoai);
+        //...mới thêm nè)
 
         btnVeManHinhChinh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +53,41 @@ AppCompatButton cdde,cdbthg,cdkho;
             }
         });
 
+        LevelsViewModel levelsViewModel = new ViewModelProvider(this).get(LevelsViewModel.class);
+        // Quan sát LiveData
+        levelsViewModel.getLevels().observe(this, levels -> {
+            if (levels != null) {
+                for (Level level : levels) {
+                    if (level.getIdLevels() == 1) {
+                        cdde.setText(level.getLevelName());
+                    } else if (level.getIdLevels() == 2) {
+                        cdbthg.setText(level.getLevelName());
+                    } else if (level.getIdLevels() == 3) {
+                        cdkho.setText(level.getLevelName());
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Failed to load levels", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
 
         cdde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("ChooseMode", "Button Easy clicked");
                 Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
-                int idCategory = getIntent().getIntExtra("idCategory",-1);
-                String category = getIntent().getStringExtra("category");
+//                int idCategory = getIntent().getIntExtra("idCategory",-1);
+//                String category = getIntent().getStringExtra("category");
+
+                int idCategory = getIntent().getIntExtra("ID_THE_LOAI", -1); // -1 nếu không có dữ liệu
+                String category = getIntent().getStringExtra("TEN_THE_LOAI");
+                Log.d("ChooseModeActivity", "ID Thể Loại: " + idTheLoai);
+                Log.d("ChooseModeActivity", "Tên Thể Loại: " + tenTheLoai);
+
                 if (category == null || idCategory == -1) {
                     Log.e("main_play_quiz", "Thiếu dữ liệu Intent: category hoặc idCategory");
                     return;

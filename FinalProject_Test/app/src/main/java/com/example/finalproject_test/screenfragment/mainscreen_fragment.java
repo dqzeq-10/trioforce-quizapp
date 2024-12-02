@@ -4,12 +4,17 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +25,14 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.CategoriesAdapter;
+import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
+import com.example.finalproject_test.DATA.Models.QuestionCategory;
 import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.CategoriesVM.CategoriesViewModel;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.R;
 
@@ -29,7 +40,13 @@ import com.example.finalproject_test.activity_choose_mode;
 import com.example.finalproject_test.createQuiz;
 import com.example.finalproject_test.main_play_quiz;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,15 +68,24 @@ public class mainscreen_fragment extends Fragment {
     AppCompatButton daA, daB, daC, daD;
     Dialog DiemDanh_dialog;
     Button btncauhoihangngay,choingaybtn, taocaudobtn, dapanDung;
-    TextView tvtatcatheloai,tvthethao,tvkhoahoc, tvvanhoc, tvlichsu, tvtoanhoc, tvamthuc, tvcongnghe, tvdiali, tvamnhac, tvphimanh, tvnguphap, tvdovui;
-    TextView ChaoUsername;
+    TextView tvtatcatheloai,ChaoUsername, tvTitle;
+    private List<QuestionCategory> categoryList = new ArrayList<>();
+
+    //mới thêm nè...)
+    private List<QuestionCategory> fullCategoryList = new ArrayList<>(); // Danh sách đầy đủ
+    private List<QuestionCategory> displayedCategoryList = new ArrayList<>(); // Danh sách hiển thị
+    private boolean isExpanded = false; // Biến cờ theo dõi trạng thái mở rộng
+    //...mới thêm nè)
+    private CategoriesViewModel categoriesViewModel;
+
 
     private SharedViewModel<User> sharedViewModel;
-
+    RecyclerView recyclerView;
     private ViewPager2 vp;
     private View view;
     ScrollView sv;
-    LinearLayout hidden;
+//    LinearLayout hidden;
+CategoriesAdapter menuAdapter;
 
     public mainscreen_fragment() {
         // Required empty public constructor
@@ -90,8 +116,91 @@ public class mainscreen_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        categoriesViewModel = new ViewModelProvider(this).get(CategoriesViewModel.class);
+        categoriesViewModel.getCategories().observe(mainscreen_fragment.this, categories -> {
+            if(categories !=null && !categories.isEmpty()){
+
+                for (QuestionCategory qc: categories
+                ) {
+//vd: gắn dữ liệu nhận về vào textview của UI nha ae: tvOK.setText(lv.getLevelName());
+                    Log.d("vk123", "onCreate: "+qc.getCategoryName());
+                }
+
+            }
+            else {
+                Log.d("vk123", "onCreate: thể loại nhận về rỗng nha");
+            }
+        });
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        // Đặt LayoutManager
+        fetchCategories();
 
     }
+    private void fetchCategories() {
+        IQuestionCategoriesApi api = RetrofitService.createInstanceCate();
+//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        // Thực hiện gọi API
+        api.getCategories().enqueue(new Callback<List<QuestionCategory>>() {
+
+
+            @Override
+            public void onResponse(Call<List<QuestionCategory>> call, Response<List<QuestionCategory>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+//mới thêm...)
+                    fullCategoryList = response.body();
+//...mới thêm)
+                    // Gán dữ liệu cho adapter và hiển thị trong RecyclerView
+//                    List<QuestionCategory> categories = response.body();
+                    // Gán dữ liệu cho adapter và hiển thị trong RecyclerView
+//                    menuAdapter = new CategoriesAdapter(categories);
+//mới thêm...)
+                    displayedCategoryList = new ArrayList<>(fullCategoryList.subList(0, Math.min(4, fullCategoryList.size())));
+                    menuAdapter = new CategoriesAdapter(getContext(), displayedCategoryList);
+                    recyclerView.setAdapter(menuAdapter);
+                    setupExpandToggle();
+//...mới thêm)
+
+                } else {
+                    Toast.makeText(getContext(), "Failed to load categories", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<QuestionCategory>> call, Throwable throwable) {
+                Toast.makeText(getContext(), "Error: " + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+    //mới thêm...)
+    private void setupExpandToggle() {
+        tvtatcatheloai = getView().findViewById(R.id.TatCaTheLoai); // TextView trong XML
+
+        tvtatcatheloai.setOnClickListener(v -> {
+            if (isExpanded) {
+                // Ẩn bớt, chỉ hiển thị 4 thể loại
+                displayedCategoryList = new ArrayList<>(fullCategoryList.subList(0, Math.min(4, fullCategoryList.size())));
+                tvtatcatheloai.setText("Tất cả ▼"); // Cập nhật text
+            } else {
+                // Hiển thị đầy đủ thể loại
+                displayedCategoryList = new ArrayList<>(fullCategoryList);
+                tvtatcatheloai.setText("Thu gọn ▲"); // Cập nhật text
+            }
+
+            isExpanded = !isExpanded; // Đổi trạng thái
+            menuAdapter.updateData(displayedCategoryList); // Cập nhật adapter
+        });
+    }
+//...mới thêm)
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,23 +213,18 @@ public class mainscreen_fragment extends Fragment {
 
         btnDiemDanh=view.findViewById(R.id.DiemDanh);
         btncauhoihangngay=view.findViewById(R.id.btnChoiHangNgay);
+        tvTitle = view.findViewById(R.id.tvTitleCategories);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        menuAdapter = new CategoriesAdapter(categoryList);
+        recyclerView.setAdapter(menuAdapter);
+        fetchCategories();
+        categoriesViewModel = new ViewModelProvider(this).get(CategoriesViewModel.class);
+        observeCategories();
 
-        tvtatcatheloai=view.findViewById(R.id.TatCaTheLoai);
+//        tvtatcatheloai=view.findViewById(R.id.TatCaTheLoai);
 
-        tvthethao=view.findViewById(R.id.txtTheThao);
-        tvkhoahoc=view.findViewById(R.id.txtKhoaHoc);
-        tvvanhoc=view.findViewById(R.id.txtVanHoc);
-        tvlichsu=view.findViewById(R.id.txtLichSu);
-        tvtoanhoc=view.findViewById(R.id.txtToanHoc);
-        tvamthuc=view.findViewById(R.id.txtAmThuc);
-        tvcongnghe=view.findViewById(R.id.txtCongNghe);
-        tvdiali=view.findViewById(R.id.txtDialy);
-        tvamnhac=view.findViewById(R.id.txtAmNhac);
-        tvphimanh=view.findViewById(R.id.txtPhimAnh);
-        tvnguphap=view.findViewById(R.id.txtNguPhap);
-        tvdovui=view.findViewById(R.id.txtDoVui);
 
-        hidden=view.findViewById(R.id.hiddenTheLoai);
         choingaybtn=view.findViewById(R.id.btnChoiNgay);
         taocaudobtn=view.findViewById(R.id.btnTaoCauDo);
         dapanDung=view.findViewById(R.id.DapAn_B);
@@ -150,128 +254,20 @@ public class mainscreen_fragment extends Fragment {
             }
         });
 
-        tvthethao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Thể thao");
-                intent.putExtra("idCategory",1);
-                startActivity(intent);
-            }
-        });
-        tvkhoahoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Khoa học");
-                intent.putExtra("idCategory",2);
-                startActivity(intent);
-            }
-        });
-        tvvanhoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Văn học");
-                intent.putExtra("idCategory",3);
-                startActivity(intent);
-            }
-        });
-        tvlichsu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Lịch sử");
-                intent.putExtra("idCategory",4);
-                startActivity(intent);
-            }
-        });
-        tvtoanhoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Toán học");
-                intent.putExtra("idCategory",5);
-                startActivity(intent);
-            }
-        });
-        tvamthuc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Ẩm thực");
-                intent.putExtra("idCategory",6);
-                startActivity(intent);
-            }
-        });
-        tvcongnghe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Công nghệ");
-                intent.putExtra("idCategory",7);
-                startActivity(intent);
-            }
-        });
-        tvdiali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Địa lý");
-                intent.putExtra("idCategory",8);
-                startActivity(intent);
-            }
-        });
-        tvamnhac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Âm nhạc");
-                intent.putExtra("idCategory",9);
-                startActivity(intent);
-            }
-        });
-        tvphimanh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Phim ảnh");
-                intent.putExtra("idCategory",10);
-                startActivity(intent);
-            }
-        });
-        tvnguphap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Ngữ pháp");
-                intent.putExtra("idCategory",11);
-                startActivity(intent);
-            }
-        });
-        tvdovui.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Đố vui");
-                intent.putExtra("idCategory",12);
-                startActivity(intent);
-            }
-        });
 
-        tvtatcatheloai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(hidden.getVisibility()==View.GONE){
-                    tvtatcatheloai.setText("Thu gọn ▲");
-                    hidden.setVisibility(View.VISIBLE);
-                }
-                else {
-                    tvtatcatheloai.setText("Tất cả ▼");
-                    hidden.setVisibility(View.GONE);
-                }
-            }
-        });
+//        tvtatcatheloai.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(hidden.getVisibility()==View.GONE){
+//                    tvtatcatheloai.setText("Thu gọn ▲");
+//                    hidden.setVisibility(View.VISIBLE);
+//                }
+//                else {
+//                    tvtatcatheloai.setText("Tất cả ▼");
+//                    hidden.setVisibility(View.GONE);
+//                }
+//            }
+//        });
         btnDiemDanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -304,6 +300,58 @@ public class mainscreen_fragment extends Fragment {
         return view;
 
     }
+
+    private void observeCategories() {
+        categoriesViewModel.getCategories().observe(getViewLifecycleOwner(), categories -> {
+            if (categories != null && !categories.isEmpty()) {
+
+                for (QuestionCategory qc : categories) {
+                    if (tvTitle != null) {
+                        tvTitle.setText(qc.getCategoryName());
+
+//                        int imageResId = getImageResIdByCategoryId(qc.getIdCategory()); // Lấy imageResId
+//                        qc.setImageResId(imageResId);
+//                        loadData();
+                    }
+                }
+            } else {
+                Log.d("vk123", "categories is empty or null");
+            }
+        });
+    }
+
+    // Phương thức ánh xạ idCategory sang imageResId
+//    private int getImageResIdByCategoryId(int idCategory) {
+//        switch (idCategory) {
+//            case 1:
+//                return R.raw.the_thao;
+//            case 2:
+//                return R.drawable.btn_easy_mode;
+//            case 3:
+//                return R.raw.van_hoc;
+//            case 4:
+//                return R.raw.lich_su;
+//            case 5:
+//                return R.raw.toan_hoc;
+//            case 6:
+//                return R.raw.am_thuc;
+//            case 7:
+//                return R.raw.cong_nghe;
+//            case 8:
+//                return R.raw.dia_ly;
+//            case 9:
+//                return R.raw.am_nhac;
+//            case 10:
+//                return R.raw.phim_anh;
+//            case 11:
+//                return R.raw.ngu_phap;
+//            case 12:
+//                return R.raw.do_vui;
+//            default:
+//                return R.raw.the_thao;
+//        }
+//    }
+
 
     //==========================================show popup======================================================//
     private void showPopup() {

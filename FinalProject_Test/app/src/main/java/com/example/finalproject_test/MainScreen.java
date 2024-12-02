@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +21,7 @@ import com.example.finalproject_test.DATA.Models.Answer;
 import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.DATA.Models.User;
 import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
+import com.example.finalproject_test.DATA.ViewModels.CategoriesVM.CategoriesViewModel;
 import com.example.finalproject_test.DATA.ViewModels.QuestionSetsVM.QuestionSetsViewModel;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.screenfragment.ViewPageAdapter;
@@ -32,6 +34,9 @@ public class MainScreen extends AppCompatActivity {
     private BottomNavigationView bnv;
     private SharedViewModel<User> sharedViewModel;
     private QuestionSetsViewModel setsViewModel;
+    private CategoriesViewModel categoriesViewModel;
+    TextView tvTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

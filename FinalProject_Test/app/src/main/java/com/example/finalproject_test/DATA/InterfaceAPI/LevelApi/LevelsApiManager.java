@@ -29,4 +29,8 @@ public class LevelsApiManager {
         Call<List<Level>> qCall = iLevelsApi.getLevels();
         qCall.enqueue(callback);
     }
+    public void getLevels (Callback<List<Level>> callback){
+        Call<List<Level>> levelsCall = iLevelsApi.getLevels();
+        levelsCall.enqueue(callback);
+    }
 }

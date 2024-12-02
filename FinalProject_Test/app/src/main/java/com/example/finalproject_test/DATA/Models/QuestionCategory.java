@@ -5,8 +5,14 @@ import java.util.List;
 public class QuestionCategory {
     private int idCategory;
     private String categoryName;
-
+        private int imageResId;
     private List<QuestionSet> questionSets;
+
+
+        public QuestionCategory(int imageResId) {
+        this.imageResId = imageResId;
+    }
+
 
     public QuestionCategory(int idCategory, String categoryName) {
         this.idCategory = idCategory;
@@ -41,5 +47,13 @@ public class QuestionCategory {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public int getImageResId() {
+        return imageResId;
+    }
+
+    public void setImageResId(int imageResId) {
+        this.imageResId = imageResId;
     }
 }

@@ -1,83 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        package="com.example.finalproject_test">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.finalproject_test">
 
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinalProject_Test"
+        tools:targetApi="34">
+        <activity
+            android:name=".Member_info"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <application
-            android:allowBackup="true"
-            android:dataExtractionRules="@xml/data_extraction_rules"
-            android:fullBackupContent="@xml/backup_rules"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:networkSecurityConfig="@xml/network_security_config"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/Theme.FinalProject_Test"
-            tools:targetApi="34">
-            <activity
-                android:name=".main_create_quiz"
-                android:exported="false" />
-            <activity
-                android:name=".main_play_quiz"
-                android:exported="false" />
-            <activity
-                android:name=".popup_true_answer"
-                android:exported="false" />
-            <activity
-                android:name=".activity_popup_false_answer"
-                android:exported="false" />
-            <activity
-                android:name=".Result"
-                android:exported="false" />
-            <activity
-                android:name=".MainActivity"
-                android:exported="true">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
-            <activity
-                android:name=".RandomQuiz"
-                android:exported="false" />
-            <activity
-                android:name=".activity_choose_mode"
-                android:exported="false" />
-            <activity
-                android:name=".dailyquiz_popup"
-                android:exported="false" />
-            <activity
-                android:name=".createQuiz"
-                android:exported="false" />
-            <activity
-                android:name=".MainScreen"
-                android:exported="false" >
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main_create_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".main_play_quiz"
+            android:exported="false" />
+        <activity
+            android:name=".popup_true_answer"
+            android:exported="false" />
+        <activity
+            android:name=".activity_popup_false_answer"
+            android:exported="false" />
+        <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
 
-            </activity>
-            <activity
-                android:name=".activity_signup"
-                android:exported="false" />
-            <activity
-                android:name=".LoginORSignup"
-                android:exported="false" />
-            <activity
-                android:name=".login_activity"
-                android:exported="false" />
-            <activity
-                android:name=".dailycheckin_popup"
-                android:exported="false" />
-            <activity
-                android:name=".storage"
-                android:exported="false" />
+        </activity>
+        <activity
+            android:name=".RandomQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".activity_choose_mode"
+            android:exported="false" />
+        <activity
+            android:name=".dailyquiz_popup"
+            android:exported="false" />
+        <activity
+            android:name=".createQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".MainScreen"
+            android:exported="false"/>
+        <activity
+            android:name=".activity_signup"
+            android:exported="false" />
+        <activity
+            android:name=".LoginORSignup"
+            android:exported="false" />
+        <activity
+            android:name=".login_activity"
+            android:exported="false" />
+        <activity
+            android:name=".dailycheckin_popup"
+            android:exported="false" />
+        <activity
+            android:name=".storage"
+            android:exported="false" />
 
-            <meta-data
-                android:name="preloaded_fonts"
-                android:resource="@array/preloaded_fonts" />
-        </application>
-        <uses-permission android:name="android.permission.INTERNET" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
 
-    </manifest>
+</manifest>
