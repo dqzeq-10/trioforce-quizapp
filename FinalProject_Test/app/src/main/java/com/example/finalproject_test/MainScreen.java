@@ -123,7 +123,7 @@ public class MainScreen extends AppCompatActivity {
 
 
         setsViewModel = new ViewModelProvider(this).get(QuestionSetsViewModel.class);
-        setsViewModel.getSetByIdLevelAndIdCate(1,4).observe(this, data->{
+        setsViewModel.getSetByIdLevelAndIdCate(1,1).observe(this, data->{
             if (data!=null){
                 for (Question qs:data.getQuestions()
                      ) {
