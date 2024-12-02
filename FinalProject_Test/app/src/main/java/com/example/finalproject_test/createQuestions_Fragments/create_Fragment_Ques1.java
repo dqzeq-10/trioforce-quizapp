@@ -1,5 +1,6 @@
 package com.example.finalproject_test.createQuestions_Fragments;
 
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -13,7 +14,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,10 +23,13 @@ import com.example.finalproject_test.DATA.Models.Answer;
 import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SQASharedViewModel;
 import com.example.finalproject_test.R;
+
 import com.example.finalproject_test.main_create_quiz;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.finalproject_test.popup_warning_create_Quiz;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -104,7 +107,6 @@ public class create_Fragment_Ques1 extends Fragment {
 
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
-
             //nhắc điền câu hỏi và câu trả lời mới sang tiếp theo
 //            if (cauhoi.getText().toString().trim().isEmpty() || da1.getText().toString().trim().isEmpty() || da2.getText().toString().trim().isEmpty() || da3.getText().toString().trim().isEmpty() || da4.getText().toString().trim().isEmpty()) {
 //            Toast.makeText(getActivity(),"Điền thiếu câu hỏi hoặc câu trả lời!",Toast.LENGTH_SHORT).show();
@@ -159,26 +161,12 @@ public class create_Fragment_Ques1 extends Fragment {
             if (getActivity() instanceof main_create_quiz) {
                 ((main_create_quiz) getActivity()).goToNextFragment();
             }
+
+        popup_warning_create_Quiz.showWarningPopup(requireContext());
+
         });
 
         return view;
-    }
-
-    // --------------------------------------------------   WARNING CREATE QUIZ   -----------------------------------------------------------
-    private void showPopup_Warning_create() {
-        Dialog dialog = new Dialog(requireActivity(), R.style.CustomDialog);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_warning_creat_quiz);
-        Button btnClose = dialog.findViewById(R.id.btn_close);
-        btnClose.setOnClickListener(view -> dialog.dismiss());
-
-        dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        WindowManager.LayoutParams layoutParams1 = dialog.getWindow().getAttributes();
-        layoutParams1.gravity = Gravity.CENTER;
-        layoutParams1.y = 10;
-        dialog.getWindow().setAttributes(layoutParams1);
-        dialog.show();
-
     }
 
     private void saveOriginalState() {

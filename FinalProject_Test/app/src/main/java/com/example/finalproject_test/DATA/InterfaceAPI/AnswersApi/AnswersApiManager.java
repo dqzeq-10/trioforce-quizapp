@@ -13,6 +13,7 @@ public class AnswersApiManager {
     private static AnswersApiManager answersApiManager;
 
     private AnswersApiManager(){
+
         iAnswersApi = RetrofitService.createInstanceAns();
     }
 

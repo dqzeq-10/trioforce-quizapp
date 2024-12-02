@@ -4,6 +4,8 @@ import com.example.finalproject_test.DATA.InterfaceAPI.AnswersApi.IAnswersApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.ILevelsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.IMarkedQuestionApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsAPi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
@@ -81,9 +83,21 @@ public class RetrofitService {
                 .build();
         return retrofit.create(IAnswersApi.class);
     }
+    public static IMarkedQuestionApi createInstanceMQ(){
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(IMarkedQuestionApi.class);
+    }
 
-
-
+    public static IProgressQuestionsAPi createInstancePQ() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(IProgressQuestionsAPi.class);
+    }
 
 
 //   Tạo thêm method tạo instance cho mỗi entity ở đây
