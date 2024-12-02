@@ -20,7 +20,7 @@ import com.example.finalproject_test.popup_warning_play_Quiz;
 public class Play_quiz_fragment_10 extends Fragment {
     private Dialog dialog;
     private Button btnKetThuc, btnNext, btnLuilai;
-    private TextView btnDapAn_10A, btnDapAn_10B, btnDapAn_10C, btnDapAn_10D;
+    private TextView da1, da2, da3, da4;
     private  boolean  isAnswerSelected = false;
 
     private static final String ARG_PARAM1 = "param1";
@@ -50,10 +50,10 @@ public class Play_quiz_fragment_10 extends Fragment {
         btnLuilai = view.findViewById(R.id.btnLuiLai);
         btnKetThuc = view.findViewById(R.id.btnFinish);
         
-        btnDapAn_10A = view.findViewById(R.id.btnDapAn_10A);
-        btnDapAn_10B = view.findViewById(R.id.btnDapAn_10B);
-        btnDapAn_10C = view.findViewById(R.id.btnDapAn_10C);
-        btnDapAn_10D = view.findViewById(R.id.btnDapAn_10D);
+        da1 = view.findViewById(R.id.btnDapAn_10A);
+        da2 = view.findViewById(R.id.btnDapAn_10B);
+        da3 = view.findViewById(R.id.btnDapAn_10C);
+        da4 = view.findViewById(R.id.btnDapAn_10D);
 
         View.OnClickListener answerClickListener = new View.OnClickListener() {
             @Override
@@ -87,10 +87,10 @@ public class Play_quiz_fragment_10 extends Fragment {
 
         };
 
-        btnDapAn_10A.setOnClickListener(answerClickListener);
-        btnDapAn_10B.setOnClickListener(answerClickListener);
-        btnDapAn_10C.setOnClickListener(answerClickListener);
-        btnDapAn_10D.setOnClickListener(answerClickListener);
+        da1.setOnClickListener(answerClickListener);
+        da2.setOnClickListener(answerClickListener);
+        da3.setOnClickListener(answerClickListener);
+        da4.setOnClickListener(answerClickListener);
 
 
     
@@ -128,10 +128,10 @@ public class Play_quiz_fragment_10 extends Fragment {
         }
     }
     private  void disableOtherAnswer(int selectedAnswerId) {
-        if (selectedAnswerId != R.id.btnDapAn_1A) btnDapAn_10A.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1B) btnDapAn_10B.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1C) btnDapAn_10C.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1D) btnDapAn_10D.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1A) da1.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1B) da2.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1C) da3.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_1D) da4.setEnabled(false);
     }
 
 }

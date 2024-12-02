@@ -14,8 +14,10 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.finalproject_test.DATA.ViewModels.QuestionSetsVM.QuestionSetsViewModel;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 public class main_play_quiz extends AppCompatActivity {
@@ -25,6 +27,7 @@ public class main_play_quiz extends AppCompatActivity {
     private ViewpagerAdapter_Play_Quiz adapter;
     Dialog dialog;
     TextView btn_dialogLuuThoat, btn_dialogHuy, txtLevel, txtcategory;
+    QuestionSetsViewModel setsViewModel;
     private  int totalScore =0;
 
 
@@ -51,6 +54,15 @@ public class main_play_quiz extends AppCompatActivity {
         // Xử lý các nút Back và Dialog
         ImageButton btnBack = findViewById(R.id.imagebtnBack);
         btnBack.setOnClickListener(view -> dialog.show());
+
+        int idCate = getIntent().getIntExtra("idCate", 1);
+        int idLevel = getIntent().getIntExtra("idLevel", 1);
+
+        //-----------------------------------------------------------------------
+        setsViewModel = new ViewModelProvider(this).get(QuestionSetsViewModel.class);
+        setsViewModel.getSetByidLevelAndIdCate(idCate, idLevel).observe(main_play_quiz.this, sets -> {
+
+        };
 
         // Truyền dữ liệu cho Level và Category
         txtLevel = findViewById(R.id.txtlevel);
