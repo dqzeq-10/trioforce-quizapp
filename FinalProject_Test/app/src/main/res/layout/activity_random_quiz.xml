@@ -91,7 +91,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDapAn_A"
-            android:layout_width="359dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/dung"
@@ -106,7 +106,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDapAn_B"
-            android:layout_width="359dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/binh_thuong"
@@ -121,7 +121,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDapAn_C"
-            android:layout_width="359dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/sai"
@@ -136,7 +136,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDapAn_D"
-            android:layout_width="359dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/binh_thuong"
