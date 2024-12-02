@@ -43,9 +43,36 @@ public class createQuiz extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String quizName = tenBoCauHoi.getText().toString().trim();
-                if (quizName.isEmpty()) {
-                Toast.makeText(createQuiz.this, "Vui lòng nhập tên bộ câu hỏi", Toast.LENGTH_SHORT).show();
-                return;
+                String category = cate.getSelectedItem().toString();
+                String level = lv.getSelectedItem().toString();
+                if (quizName.isEmpty() && category.equals("Chọn thể loại") && level.equals("Chọn độ khó")) {
+                    // Nếu tất cả các trường đều trống hoặc Chọn giá trị mặc định
+                    Toast.makeText(createQuiz.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (quizName.isEmpty() && category.equals("Chọn thể loại") && !level.equals("Chọn độ khó")) {
+                    // Nếu quizName trống và category Chọn "Chọn thể loại", level hợp lệ
+                    Toast.makeText(createQuiz.this, "Vui lòng nhập tên quiz và Chọn thể loại", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (quizName.isEmpty() && !category.equals("Chọn thể loại") && level.equals("Chọn độ khó")) {
+                    // Nếu quizName trống và category hợp lệ, level Chọn "Chọn độ khó"
+                    Toast.makeText(createQuiz.this, "Vui lòng nhập tên quiz và Chọn độ khó", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (!quizName.isEmpty() && category.equals("Chọn thể loại") && level.equals("Chọn độ khó")) {
+                    // Nếu quizName hợp lệ nhưng category và level đều Chọn giá trị mặc định
+                    Toast.makeText(createQuiz.this, "Vui lòng Chọn thể loại và mức độ", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (quizName.isEmpty()) {
+                    // Nếu chỉ quizName trống
+                    Toast.makeText(createQuiz.this, "Vui lòng nhập tên quiz", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (category.equals("Chọn thể loại")) {
+                    // Nếu chỉ category Chọn "Chọn thể loại"
+                    Toast.makeText(createQuiz.this, "Vui lòng Chọn thể loại", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (level.equals("Chọn độ khó")) {
+                    // Nếu chỉ level Chọn "Chọn độ khó"
+                    Toast.makeText(createQuiz.this, "Vui lòng Chọn độ khó", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 Intent it = new Intent(createQuiz.this,main_create_quiz.class);

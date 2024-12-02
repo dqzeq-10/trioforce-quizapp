@@ -64,6 +64,7 @@ public class Play_quiz_fragment_1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_play_quiz_1, container, false);
+        Log.d("PlayQuizFragment", "Fragment Play_quiz_fragment_1 has been created!");
 
         txtCauhoi = view.findViewById(R.id.txtCauhoi1);
         da1 = view.findViewById(R.id.btnDapAn_1A);

@@ -1,4 +1,4 @@
-package com.example.finalproject_test.playquizs_Fragments;
+/*package com.example.finalproject_test.playquizs_Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,11 +14,7 @@ import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.main_play_quiz;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Play_quiz_fragment_Default#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Play_quiz_fragment_Default extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -36,15 +32,7 @@ public class Play_quiz_fragment_Default extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment create_Fragment_Ques1.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static Play_quiz_fragment_Default newInstance(String param1, String param2) {
         Play_quiz_fragment_Default fragment = new Play_quiz_fragment_Default();
         Bundle args = new Bundle();
@@ -53,9 +41,6 @@ public class Play_quiz_fragment_Default extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-
-
 
 
     @Override
@@ -79,9 +64,6 @@ public class Play_quiz_fragment_Default extends Fragment {
 
         return view;
     }
-    public void ChonDungSai(AppCompatButton choice){
-        // Đổi màu green background appcompatbutton khi chọn đúng
-        // Đổi màu red background appcompatbutton khi chọn sai
-    }
 
-}
+
+}*/
