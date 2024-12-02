@@ -45,13 +45,15 @@
                 android:src="@raw/imageplacehold" />
 
             <TextView
-                android:id="@+id/txtCauhoi10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:text="Câu hỏi ở đây"
-                android:textSize="20sp" />
+            android:id="@+id/txtCauhoi10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="Cau hoi"
+            android:textSize="20sp" />
+
 
 
         </LinearLayout>
@@ -74,7 +76,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
                 android:text="A. Đáp án A"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -84,13 +86,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="center"
                 android:background="@drawable/binh_thuong"
                 android:fontFamily="@font/baloo2_regular"
                 android:paddingStart="17dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
                 android:text="B. Đáp án B"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -100,13 +103,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+
                 android:background="@drawable/binh_thuong"
                 android:fontFamily="@font/baloo2_regular"
                 android:paddingStart="17dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
                 android:text="C. Đáp án C"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -119,10 +124,10 @@
                 android:background="@drawable/binh_thuong"
                 android:fontFamily="@font/baloo2_regular"
                 android:paddingStart="17dp"
+                android:layout_gravity="center"
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
                 android:text="D. Đáp án D"
                 android:textAllCaps="false"
                 android:textSize="20sp" />

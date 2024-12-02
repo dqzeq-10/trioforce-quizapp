@@ -50,7 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:text="Câu hỏi ở đây"
+                android:textColor="@color/black"
+                android:text="Cau hoi"
                 android:textSize="20sp" />
 
 
@@ -74,7 +75,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
                 android:text="A. Đáp án A"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -90,7 +91,8 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
+
                 android:text="B. Đáp án B"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -106,7 +108,8 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
+
                 android:text="C. Đáp án C"
                 android:textAllCaps="false"
                 android:textSize="20sp" />
@@ -122,7 +125,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:gravity="start"
+                android:gravity="center"
                 android:text="D. Đáp án D"
                 android:textAllCaps="false"
                 android:textSize="20sp" />

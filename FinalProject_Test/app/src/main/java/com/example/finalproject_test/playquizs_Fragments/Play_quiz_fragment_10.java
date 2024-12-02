@@ -175,10 +175,10 @@ public class Play_quiz_fragment_10 extends Fragment {
         }
     }
     private  void disableOtherAnswer(int selectedAnswerId) {
-        if (selectedAnswerId != R.id.btnDapAn_1A) da1.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1B) da2.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1C) da3.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1D) da4.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10A) da1.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10B) da2.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10C) da3.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10D) da4.setEnabled(false);
     }
 
 

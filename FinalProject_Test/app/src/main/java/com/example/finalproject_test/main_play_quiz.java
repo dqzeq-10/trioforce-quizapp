@@ -55,6 +55,7 @@ public class main_play_quiz extends AppCompatActivity {
                 new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {
                     tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
                 }).attach();
+                disableTabs();
             } else {
                 Log.e("main_play_quiz", "Dữ liệu câu hỏi rỗng hoặc không hợp lệ");
             }
@@ -106,6 +107,18 @@ public class main_play_quiz extends AppCompatActivity {
                 tab.view.setEnabled(false);
             }
         }
+        viewPager_play_quiz.setUserInputEnabled(false);  // Vô hiệu hóa vuốt
+
+    }
+
+    // kich hoat lai tab
+    public  void activeTab(int tabIndex){
+        TabLayout.Tab tab =tabLayout.getTabAt(tabIndex);
+        if (tab!=null){
+            tab.view.setEnabled(true);
+        }
+
+
     }
 
     // Chuyển đến fragment trước đó
@@ -148,6 +161,7 @@ public class main_play_quiz extends AppCompatActivity {
     public void updateScore(int score) {
         Log.d("ScoreUpdate", "Current Score: " + totalScore + ", Adding Points: " + score);
         totalScore += score;
+
     }
 
     // Chuyển đến màn hình kết quả

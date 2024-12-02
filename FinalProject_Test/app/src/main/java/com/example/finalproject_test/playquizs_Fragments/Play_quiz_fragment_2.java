@@ -117,6 +117,7 @@ public class Play_quiz_fragment_2 extends Fragment {
                 int tabIndex = 1;
                 if (getActivity() instanceof main_play_quiz) {
                     ((main_play_quiz) getActivity()).setTabBackgroundColor(tabIndex, isCorerct);
+                    ((main_play_quiz) getActivity()).activeTab(tabIndex);  // Kích hoạt tab
 
                 }
                 isAnswerSelected = true;
@@ -167,10 +168,10 @@ public class Play_quiz_fragment_2 extends Fragment {
         }
     }
     private  void disableOtherAnswer(int selectedAnswerId) {
-        if (selectedAnswerId != R.id.btnDapAn_1A) da1.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1B) da2.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1C) da3.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1D) da4.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_2A) da1.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_2B) da2.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_2C) da3.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_2D) da4.setEnabled(false);
     }
 
 

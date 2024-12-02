@@ -23,15 +23,12 @@ public class Play_quiz_fragment_6 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Button btnNext, btnLuilai;
-
     private TextView txtCauhoi;
     private AppCompatButton da1,da2,da3,da4;
 
     private Question question;
     private static final String ARG_QUESTION  = "arg_question";
-
     private  boolean  isAnswerSelected = false;
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -52,11 +49,12 @@ public class Play_quiz_fragment_6 extends Fragment {
     public static Play_quiz_fragment_6 receiveQuestion(Question question){
         Play_quiz_fragment_6 playQuizFragment6 = new Play_quiz_fragment_6();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_QUESTION, question);
+        if (question!=null){
+            args.putSerializable(ARG_QUESTION, question);
+        }
         playQuizFragment6.setArguments(args);
         return playQuizFragment6;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -65,16 +63,20 @@ public class Play_quiz_fragment_6 extends Fragment {
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_play_quiz_6, container, false);
+
         txtCauhoi = view.findViewById(R.id.txtCauhoi6);
         da1 = view.findViewById(R.id.btnDapAn_6A);
         da2 = view.findViewById(R.id.btnDapAn_6B);
         da3 = view.findViewById(R.id.btnDapAn_6C);
         da4 = view.findViewById(R.id.btnDapAn_6D);
+
+
+        btnLuilai = view.findViewById(R.id.btnLuiLai);
+        btnNext = view.findViewById(R.id.btnTiepTuc);
 
 
         txtCauhoi.setText(question.getQuestionText());
@@ -87,24 +89,20 @@ public class Play_quiz_fragment_6 extends Fragment {
         da3.setText(question.getAnswers().get(2).getAnswerText().toString());
         da3.setTag(question.getAnswers().get(2).isCorrect());
 
-        da4.setText(question.getAnswers().get(6).getAnswerText().toString());
-        da4.setTag(question.getAnswers().get(6).isCorrect());
+        da4.setText(question.getAnswers().get(3).getAnswerText().toString());
+        da4.setTag(question.getAnswers().get(3).isCorrect());
 
-
-        btnLuilai = view.findViewById(R.id.btnLuiLai);
-        btnNext = view.findViewById(R.id.btnTiepTuc);
 
         //xu ly su kien khi chon dap an
         View.OnClickListener answerClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(isAnswerSelected) return;
-                // lay id cua dap an duoc chon
+
                 int selectedAnswerId = v.getId();
-                //kiem tra dap an duoc chon co dung hay sai
+
                 boolean isCorerct = checkAnswer(selectedAnswerId);
 
-                //thay doi mau sac cua dap an duoc chon
                 changeAnswerButtonColor(selectedAnswerId, isCorerct);
 
                 if (isCorerct){
@@ -112,7 +110,7 @@ public class Play_quiz_fragment_6 extends Fragment {
                         ((main_play_quiz) getActivity()).updateScore(10);  // Cộng 10 điểm
                     }
                 }
-                //thay doi mau sac cua dap an duoc chon
+
                 changeAnswerButtonColor(selectedAnswerId, isCorerct);
 
                 // cap nhap mau sac cua tab trong activity
@@ -154,6 +152,7 @@ public class Play_quiz_fragment_6 extends Fragment {
 
         return view;
     }
+
     private boolean checkAnswer(int selectedAnswerId) {
         Button selectedButton = getView().findViewById(selectedAnswerId); // lay button duoc chon
         boolean isCorrect = (boolean) selectedButton.getTag();  // lay tag cua button va ep kieu thanh boolean
@@ -168,10 +167,11 @@ public class Play_quiz_fragment_6 extends Fragment {
         }
     }
     private  void disableOtherAnswer(int selectedAnswerId) {
-        if (selectedAnswerId != R.id.btnDapAn_1A) da1.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1B) da2.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1C) da3.setEnabled(false);
-        if (selectedAnswerId != R.id.btnDapAn_1D) da4.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_6A) da1.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_6B) da2.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_6C) da3.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_6D) da4.setEnabled(false);
     }
+
 
 }

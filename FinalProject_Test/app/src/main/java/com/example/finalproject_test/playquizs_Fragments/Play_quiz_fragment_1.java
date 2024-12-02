@@ -119,7 +119,7 @@ public class Play_quiz_fragment_1 extends Fragment {
                 int tabIndex = 0;
             if (getActivity() instanceof main_play_quiz) {
                 ((main_play_quiz) getActivity()).setTabBackgroundColor(tabIndex, isCorerct);
-
+                ((main_play_quiz) getActivity()).activeTab(tabIndex);  // Kích hoạt tab
             }
 
                 isAnswerSelected = true;
