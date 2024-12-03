@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="57.143dp"
+    android:layout_marginTop="9.524dp"
+    android:background="@drawable/border_bxh"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="0dp">
+
+
+    <TextView
+        android:id="@+id/tvRank"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="4"
+        android:textColor="#737373"
+        android:textSize="10sp" />
+
+    <ImageButton
+        android:id="@+id/ivAvatarResID"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@raw/useravatarbxh" />
+
+    <TextView
+        android:id="@+id/playName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="Nguyễn Văn A"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/baloo2_regular"
+        android:text="9.000"
+        android:textColor="#3EB8D4" />
+
+</LinearLayout>

@@ -6,6 +6,7 @@ import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.ILevelsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -81,6 +82,14 @@ public class RetrofitService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(IAnswersApi.class);
+    }
+
+    public static IRankingApi createInstanceRank(){
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(IRankingApi.class);
     }
 
 
