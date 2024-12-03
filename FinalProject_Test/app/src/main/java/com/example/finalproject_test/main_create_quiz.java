@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +22,6 @@ public class main_create_quiz extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager_Create_quiz;
     private ViewpagerAdapter_CreateQuiz adapter;
-
     private SQASharedViewModel sqaSharedViewModel;
     private QuestionSet qset;
 
@@ -41,7 +41,7 @@ public class main_create_quiz extends AppCompatActivity {
         sqaSharedViewModel.setAuthorName(getIntent().getStringExtra("username"));
         sqaSharedViewModel.setIdCategory(getIntent().getIntExtra("QSCate", 1));
         sqaSharedViewModel.setIdLevel(getIntent().getIntExtra("QSLevel", 1));
-       // Toast.makeText(this, "main create đã nhận" + getIntent().getStringExtra("QSName") + getIntent().getIntExtra("QSCate", 1) + getIntent().getIntExtra("QSLevel", 1), Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "main create đã nhận" + getIntent().getStringExtra("QSName") + getIntent().getIntExtra("QSCate", 1) + getIntent().getIntExtra("QSLevel", 1), Toast.LENGTH_LONG).show();
         Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getSetName());
         Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getAuthorName());
         Log.d("postset", String.valueOf(sqaSharedViewModel.getSetLiveData().getValue().getIdLevel()));
@@ -50,6 +50,8 @@ public class main_create_quiz extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout_createQuiz);
         viewPager_Create_quiz = findViewById(R.id.viewPager_createQuiz);
 
+        disableTabs();
+
         // Set up adapter
         adapter = new ViewpagerAdapter_CreateQuiz(this);
         viewPager_Create_quiz.setAdapter(adapter);
@@ -57,7 +59,7 @@ public class main_create_quiz extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager_Create_quiz, (tab, position) -> {
             tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
         }).attach();
-
+        disableTabs();
 
         ImageButton imagebtnBack = findViewById(R.id.imagebtnBack);
         imagebtnBack.setOnClickListener(view -> {
@@ -68,6 +70,14 @@ public class main_create_quiz extends AppCompatActivity {
     }
 
 
+    private void disableTabs() {
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab != null) {
+                tab.view.setEnabled(false);
+            }
+        }
+    }
 
 
     public void goToPreviousFragment() {

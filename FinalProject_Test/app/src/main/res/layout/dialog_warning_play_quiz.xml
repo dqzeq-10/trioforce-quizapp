@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="298dp"
+            android:layout_height="230dp"
+            android:background="@drawable/bg_warning_create_quiz"
+            android:elevation="12dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+               android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@raw/warning" />
+
+            <LinearLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo2_semibold"
+                    android:text="Vui lòng chọn câu trả lời trước khi tiếp tục nhé !"
+                    android:textColor="#000000"
+                    android:paddingLeft="15dp"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_close"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+               android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_close_create_quiz"
+                android:fontFamily="@font/baloo2_semibold"
+                android:text="Đóng"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

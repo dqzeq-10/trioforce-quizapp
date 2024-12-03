@@ -120,7 +120,7 @@ public class create_Fragment_Ques10 extends Fragment {
 
         //finish
         btnfinish.setOnClickListener(v -> {
-                Log.d("DEBUG_BTN", "Button Finish Clicked");
+            Log.d("DEBUG_BTN", "Button Finish Clicked");
 
 
             //nhắc điền câu hỏi và câu trả lời mới sang tiếp theo
@@ -166,7 +166,7 @@ public class create_Fragment_Ques10 extends Fragment {
             Log.d("DEBUG_POST", "Sending POST Request");
 
             if (set != null) {
-            //    Toast.makeText(getActivity(), "set!=null, bắt đầu gửi postSet ..", Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(getActivity(), "set!=null, bắt đầu gửi postSet ..", Toast.LENGTH_SHORT).show();
                 //gửi postSet(QuestionSet sqaSharedViewModel) tới api
                 QuestionSetsViewModel setsViewModel = new ViewModelProvider(requireActivity()).get(QuestionSetsViewModel.class);
                 setsViewModel.postSet(set).observe(getViewLifecycleOwner(), success -> {
@@ -204,21 +204,6 @@ public class create_Fragment_Ques10 extends Fragment {
         return view;
     }
 
-    private void showPopup_Warning_create() {
-        Dialog dialog = new Dialog(requireActivity(), R.style.CustomDialog);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_warning_creat_quiz);
-        Button btnClose = dialog.findViewById(R.id.btn_close);
-        btnClose.setOnClickListener(view -> dialog.dismiss());
-
-        dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        WindowManager.LayoutParams layoutParams1 = dialog.getWindow().getAttributes();
-        layoutParams1.gravity = Gravity.CENTER;
-        layoutParams1.y = 10;
-        dialog.getWindow().setAttributes(layoutParams1);
-        dialog.show();
-
-    }
     private void saveOriginalState() {
         originalQuestionText = cauhoi.getText().toString().trim();
         originalDa1 = da1.getText().toString().trim();

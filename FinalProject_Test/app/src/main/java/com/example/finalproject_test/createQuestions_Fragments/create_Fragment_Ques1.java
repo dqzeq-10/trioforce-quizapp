@@ -1,5 +1,6 @@
 package com.example.finalproject_test.createQuestions_Fragments;
 
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -13,7 +14,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,16 +23,14 @@ import com.example.finalproject_test.DATA.Models.Answer;
 import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SQASharedViewModel;
 import com.example.finalproject_test.R;
+
 import com.example.finalproject_test.main_create_quiz;
+import com.example.finalproject_test.popup_warning_create_Quiz;
+import com.example.finalproject_test.popup_warning_play_Quiz;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link create_Fragment_Ques1#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class create_Fragment_Ques1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -56,15 +54,7 @@ public class create_Fragment_Ques1 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment create_Fragment_Ques1.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static create_Fragment_Ques1 newInstance(String param1, String param2) {
         create_Fragment_Ques1 fragment = new create_Fragment_Ques1();
         Bundle args = new Bundle();
@@ -104,18 +94,13 @@ public class create_Fragment_Ques1 extends Fragment {
 
         // Xử lý sự kiện khi bấm nút "Tiếp tục"
         btnNext.setOnClickListener(v -> {
+            if (cauhoi.getText().toString().trim().isEmpty() || da1.getText().toString().trim().isEmpty() || da2.getText().toString().trim().isEmpty() || da3.getText().toString().trim().isEmpty() || da4.getText().toString().trim().isEmpty() ||
+                    (!chb1.isChecked() && !chb2.isChecked() && !chb3.isChecked() && !chb4.isChecked())) {
+                popup_warning_create_Quiz.showWarningPopup(requireContext());
+                return;
 
-            //nhắc điền câu hỏi và câu trả lời mới sang tiếp theo
-//            if (cauhoi.getText().toString().trim().isEmpty() || da1.getText().toString().trim().isEmpty() || da2.getText().toString().trim().isEmpty() || da3.getText().toString().trim().isEmpty() || da4.getText().toString().trim().isEmpty()) {
-//            Toast.makeText(getActivity(),"Điền thiếu câu hỏi hoặc câu trả lời!",Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-            //nhắc chọn ít nhất 1 đáp án đúng
-//            if (!chb1.isChecked() && !chb2.isChecked() && !chb3.isChecked() && !chb4.isChecked()) {
-//                Toast.makeText(getActivity(),"Tích chọn ít nhất một câu trả lời đúng!",Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-
+            }
+            //luu du lieu nhap tu nguoi dung
             Question question = new Question();
             question.setQuestionText(cauhoi.getText().toString().trim());
             List<Answer> answers = new ArrayList<>();
@@ -144,41 +129,25 @@ public class create_Fragment_Ques1 extends Fragment {
                 }
             }
 
-//            if (sqaSharedViewModel.getSetLiveData()!=null){
+            //  if (sqaSharedViewModel.getSetLiveData()!=null){
 //                //Toast.makeText(getContext(),"f1 da co du lieu", Toast.LENGTH_LONG).show();
 //                Log.d("postset", "f1 da co du lieu");
-//                Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getQuestionText().toString());
+            //           Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getQuestionText().toString());
 //                Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getAnswers().get(0).getAnswerText().toString());
 //                Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getAnswers().get(1).getAnswerText().toString());
 //                Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getAnswers().get(2).getAnswerText().toString());
 //                Log.d("postset", sqaSharedViewModel.getSetLiveData().getValue().getQuestions().get(0).getAnswers().get(3).getAnswerText().toString());
 //
-//            }
+            //   }
 
 
             if (getActivity() instanceof main_create_quiz) {
                 ((main_create_quiz) getActivity()).goToNextFragment();
             }
+
         });
 
         return view;
-    }
-
-    // --------------------------------------------------   WARNING CREATE QUIZ   -----------------------------------------------------------
-    private void showPopup_Warning_create() {
-        Dialog dialog = new Dialog(requireActivity(), R.style.CustomDialog);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog_warning_creat_quiz);
-        Button btnClose = dialog.findViewById(R.id.btn_close);
-        btnClose.setOnClickListener(view -> dialog.dismiss());
-
-        dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        WindowManager.LayoutParams layoutParams1 = dialog.getWindow().getAttributes();
-        layoutParams1.gravity = Gravity.CENTER;
-        layoutParams1.y = 10;
-        dialog.getWindow().setAttributes(layoutParams1);
-        dialog.show();
-
     }
 
     private void saveOriginalState() {

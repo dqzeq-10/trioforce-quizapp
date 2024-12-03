@@ -4,6 +4,8 @@ import com.example.finalproject_test.DATA.InterfaceAPI.AnswersApi.IAnswersApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.ILevelsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.IMarkedQuestionApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsAPi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
@@ -83,16 +85,32 @@ public class RetrofitService {
                 .build();
         return retrofit.create(IAnswersApi.class);
     }
-
-    public static IRankingApi createInstanceRank(){
+    public static IMarkedQuestionApi createInstanceMQ(){
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit.create(IRankingApi.class);
+        return retrofit.create(IMarkedQuestionApi.class);
+    }
+
+    public static IProgressQuestionsAPi createInstancePQ() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(IProgressQuestionsAPi.class);
     }
 
 
+    public static IRankingApi createInstanceRank(){
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(IRankingApi.class);
+    }
 
 
 

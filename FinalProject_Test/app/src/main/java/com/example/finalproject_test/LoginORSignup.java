@@ -10,10 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.finalproject_test.DATA.Models.MarkedQuestion;
+import com.example.finalproject_test.DATA.ViewModels.MarkedQuestionVM.MarkedQuestionViewModel;
 
 public class LoginORSignup extends AppCompatActivity {
     Button btnDN,btnDK;
-
+    private MarkedQuestionViewModel markedQuestionViewModel;
 
 
     @Override
@@ -42,6 +46,17 @@ public class LoginORSignup extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-
+    markedQuestionViewModel = new ViewModelProvider(this).get(MarkedQuestionViewModel.class);
+    markedQuestionViewModel.getMarkedQuestions().observe(this, markedQuestions -> {
+    if(markedQuestions!=null && !markedQuestions.isEmpty()){
+        for (MarkedQuestion mq: markedQuestions
+             ) {
+            Log.d("MQuestion", "onCreate"+ mq.getUsername());
+        }
+    }
+    else {
+        Log.d("MQuestion", "No MarkedQuestions found");
+    }
+    });
     }
 }

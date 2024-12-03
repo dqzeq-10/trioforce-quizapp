@@ -16,18 +16,20 @@ import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.Result;
 import com.example.finalproject_test.main_play_quiz;
+import com.example.finalproject_test.popup_warning_play_Quiz;
 
-/**
- * Fragment này hiển thị các chức năng trong bài quiz.
- */
+
 public class Play_quiz_fragment_10 extends Fragment {
     private Dialog dialog;
     private Button btnKetThuc, btnNext, btnLuilai;
+
     private TextView txtCauhoi;
     private AppCompatButton da1,da2,da3,da4;
 
     private Question question;
     private static final String ARG_QUESTION  = "arg_question";
+
+    private  boolean  isAnswerSelected = false;
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -94,27 +96,90 @@ public class Play_quiz_fragment_10 extends Fragment {
         btnLuilai = view.findViewById(R.id.btnLuiLai);
         btnKetThuc = view.findViewById(R.id.btnFinish);
 
-        // Xử lý sự kiện khi nhấn nút "Lui lại" (quay lại fragment trước)
+        da1 = view.findViewById(R.id.btnDapAn_10A);
+        da2 = view.findViewById(R.id.btnDapAn_10B);
+        da3 = view.findViewById(R.id.btnDapAn_10C);
+        da4 = view.findViewById(R.id.btnDapAn_10D);
+
+        View.OnClickListener answerClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isAnswerSelected) return;
+                // lay id cua dap an duoc chon
+                int selectedAnswerId = v.getId();
+                //kiem tra dap an duoc chon co dung hay sai
+                boolean isCorerct = checkAnswer(selectedAnswerId);
+
+                //thay doi mau sac cua dap an duoc chon
+                changeAnswerButtonColor(selectedAnswerId, isCorerct);
+
+                if (isCorerct){
+                    if (getActivity() instanceof main_play_quiz) {
+                        ((main_play_quiz) getActivity()).updateScore(10);  // Cộng 10 điểm
+                    }
+                }
+                //thay doi mau sac cua dap an duoc chon
+                changeAnswerButtonColor(selectedAnswerId, isCorerct);
+
+                // cap nhap mau sac cua tab trong activity
+                int tabIndex = 9;
+                if (getActivity() instanceof main_play_quiz) {
+                    ((main_play_quiz) getActivity()).setTabBackgroundColor(tabIndex, isCorerct);
+
+                }
+                isAnswerSelected = true;
+                disableOtherAnswer(selectedAnswerId);
+            }
+
+        };
+
+        da1.setOnClickListener(answerClickListener);
+        da2.setOnClickListener(answerClickListener);
+        da3.setOnClickListener(answerClickListener);
+        da4.setOnClickListener(answerClickListener);
+
+
+
+
+
         btnLuilai.setOnClickListener(v -> {
             if (getActivity() instanceof main_play_quiz) {
                 ((main_play_quiz) getActivity()).goToPreviousFragment();
             }
         });
 
+
         // Xử lý sự kiện khi nhấn nút "Kết thúc" (chuyển sang màn hình kết quả)
         btnKetThuc.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getActivity(), Result.class);
-            startActivity(intent);
+            if(!isAnswerSelected){
+                popup_warning_play_Quiz.showWarningPopup(requireContext());
+            }
+            else {
+                if (getActivity() instanceof main_play_quiz) {
+                    ((main_play_quiz) getActivity()).goToResult();  // Gọi phương thức goToResult
+                }
+            }
         });
         return view;
     }
-    public void ChonDungSai(AppCompatButton choice){
-        // Đổi màu green background appcompatbutton khi chọn đúng
-        // Đổi màu red background appcompatbutton khi chọn sai
 
-
+    private boolean checkAnswer(int selectedAnswerId) {
+        return selectedAnswerId == R.id.btnDapAn_10A;
     }
-
+    private  void changeAnswerButtonColor(int selectedAnswerId, boolean isCorrect) {
+        TextView selectedButton = getView().findViewById(selectedAnswerId);
+        if (isCorrect) {
+            selectedButton.setBackgroundResource(R.drawable.dung);
+        } else {
+            selectedButton.setBackgroundResource(R.drawable.sai);
+        }
+    }
+    private  void disableOtherAnswer(int selectedAnswerId) {
+        if (selectedAnswerId != R.id.btnDapAn_10A) da1.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10B) da2.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10C) da3.setEnabled(false);
+        if (selectedAnswerId != R.id.btnDapAn_10D) da4.setEnabled(false);
+    }
 
 
 }
