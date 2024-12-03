@@ -20,6 +20,10 @@ public class MarkedQuestion {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public Question getIdQuestionNavigation() {
         return idQuestionNavigation;
     }
@@ -36,9 +40,6 @@ public class MarkedQuestion {
         this.usernameNavigation = usernameNavigation;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public int getIdQuestion() {
         return idQuestion;

@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.finalproject_test.DATA.Models.Question;
@@ -22,6 +24,7 @@ public class Play_quiz_fragment_1 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Button btnNext, btnLuilai;
+    private ImageButton btn_save;
     private TextView txtCauhoi;
     private AppCompatButton da1, da2, da3, da4;
     private Question question;
@@ -66,6 +69,7 @@ public class Play_quiz_fragment_1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_play_quiz_1, container, false);
         Log.d("PlayQuizFragment", "Fragment Play_quiz_fragment_1 has been created!");
 
+        btn_save = view.findViewById(R.id.imageBtnSave);
         txtCauhoi = view.findViewById(R.id.txtCauhoi1);
         da1 = view.findViewById(R.id.btnDapAn_1A);
         da2 = view.findViewById(R.id.btnDapAn_1B);
@@ -93,6 +97,7 @@ public class Play_quiz_fragment_1 extends Fragment {
         da4.setText(question.getAnswers().get(3).getAnswerText().toString());
         da4.setTag(question.getAnswers().get(3).isCorrect());
         Log.d("setTag", da4.getTag().toString());
+
 
         //xu ly su kien khi chon dap an
         View.OnClickListener answerClickListener = new View.OnClickListener() {
@@ -145,8 +150,14 @@ public class Play_quiz_fragment_1 extends Fragment {
             }
         });
 
+        btn_save.setOnClickListener(v -> {
+            // Khi nhấn vào ImageButton, thay đổi màu nền để làm cho nó "bôi đen"
+            btn_save.setColorFilter(ContextCompat.getColor(getActivity(), R.color.black), android.graphics.PorterDuff.Mode.SRC_IN);
+        });
+
         return view;
     }
+
 
 
     private boolean checkAnswer(int selectedAnswerId) {

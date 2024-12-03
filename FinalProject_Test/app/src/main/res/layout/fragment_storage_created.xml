@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="700dp"
     android:layout_gravity="center_vertical"
     android:background="#00898989"
-    tools:context=".storage_createdFragment"
+    tools:context=".storage_createdFragment">
 
-    >
-
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
+        android:layout_height="660dp"
         android:background="#009B1D1D"
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Thanh tìm kiếm -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,15 +23,16 @@
                 android:id="@+id/searchEditText"
                 android:layout_width="190dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/border_search_stograge"
                 android:hint="Tìm kiếm"
+                android:drawableEnd="@raw/search"
+                android:drawablePadding="8dp"
                 android:paddingLeft="25dp"
-                android:paddingTop="10dp"
                 android:paddingRight="10dp"
-                android:paddingBottom="10dp"
                 android:textColorHint="#383838" />
+
 
             <FrameLayout
                 android:layout_width="wrap_content"
@@ -43,7 +40,7 @@
 
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_width="130dp"
+                    android:layout_width="140dp"
                     android:layout_height="40dp"
                     android:background="@drawable/spinner_selected_background"
                     android:dropDownHorizontalOffset="55dp"
@@ -56,401 +53,25 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_vertical|right"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="10dp"
                     android:scaleType="fitCenter"
                     android:src="@raw/imagedownarrow_combobox_s" />
             </FrameLayout>
-
         </LinearLayout>
 
+        <!-- Divider -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1.5dp"
             android:layout_marginTop="20dp"
-
             android:background="@color/black" />
 
-        <ScrollView
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_Created"
             android:layout_width="match_parent"
-            android:layout_height="560dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#00838383"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Tháng 9 năm 2024"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black" />
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Đố vui" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Top 10 câu đố vui về ca dao , tục ngữ"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="#D8D8D8" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Tháng 10 năm 2022"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black" />
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Bóng đá" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Top 10 đội vô địch World Cup gần nhất"
-                            android:textColor="@color/black"
-
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Khoa học" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Những phát minh vĩ đại của thế giới "
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="#D8D8D8" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Tháng 9 năm 2024"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black" />
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Văn học" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Tuyển tập các tác phẩm văn học nổi tiếng của nhà...."
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="#D8D8D8" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Tháng 9 năm 2024"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black" />
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Lịch sử" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Top 10 trận chiến gây thiệt hại nặng nề cho nền kinh tế"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="#D8D8D8" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/baloo2_bold"
-                        android:text="Tháng 9 năm 2024"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black" />
-
-                    <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="96dp"
-                        android:layout_marginTop="9.524dp"
-                        android:background="@drawable/border_tt_storage"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="3dp"
-                        android:paddingRight="20dp"
-                        android:paddingBottom="3dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:fontFamily="@font/baloo2_bold"
-                            android:text="Thể loại : Âm nhạc" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_semibold"
-                            android:text="Khám phá âm nhạc - 10 điều bạn chưa biết"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/baloo2_regular"
-                            android:text="@string/see_details"
-                            android:textColor="#416BE1"
-                            android:layout_gravity="end"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="1.5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="#D8D8D8" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
-
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#00838383" />
     </LinearLayout>
-
 </FrameLayout>
