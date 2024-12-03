@@ -121,7 +121,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
             case 9:
                 return R.raw.am_nhac;
             case 10:
-                return R.raw.phim_anh;
+                return R.raw.phim_anhh;
             case 11:
                 return R.raw.ngu_phap;
             case 12:
