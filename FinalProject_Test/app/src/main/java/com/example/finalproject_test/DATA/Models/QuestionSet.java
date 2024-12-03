@@ -16,6 +16,9 @@ public class QuestionSet {
     private List<ProgressQuestion> progressQuestions;
     private List<Question> questions;
 
+    public QuestionSet() {
+    }
+
     public QuestionSet(int idSet, String setName, String authorName, Integer idLevel, Integer idCategory, List<Question> questions) {
         this.idSet = idSet;
         this.setName = setName;

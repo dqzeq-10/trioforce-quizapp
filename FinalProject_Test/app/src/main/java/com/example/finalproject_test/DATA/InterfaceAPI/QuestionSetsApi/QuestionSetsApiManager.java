@@ -35,6 +35,11 @@ public class QuestionSetsApiManager {
         scall.enqueue(callback);
     }
 
+    public void getSetByIdLevelAndIdCate(int idLevel, int idCategory, Callback<QuestionSet> callback){
+        Call<QuestionSet> call = iQuestionSetsApi.getSetByIdLevelAndIdCate(idLevel,idCategory);
+        call.enqueue(callback);
+    }
+
     public void postSet(QuestionSet questionSet, Callback<QuestionSet> callback){
         Call<QuestionSet> call = iQuestionSetsApi.postSet(questionSet);
         call.enqueue(callback);

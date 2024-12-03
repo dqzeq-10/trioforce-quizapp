@@ -5,7 +5,7 @@
     android:layout_height="700dp"
     android:layout_gravity="center_vertical"
     android:background="#00898989"
-    tools:context=".createQuestions_Fragments.create_Fragment_Ques1">
+    tools:context=".playquizs_Fragments.Play_quiz_fragment_Default">
 
 
 
@@ -45,7 +45,7 @@
                 android:src="@raw/imageplacehold" />
 
             <TextView
-                android:id="@+id/txtCauhoi7"
+                android:id="@+id/txtCauhoidf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -64,7 +64,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDapAn_7A"
+                android:id="@+id/btnDapAn_dfA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -80,7 +80,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDapAn_7B"
+                android:id="@+id/btnDapAn_dfB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -96,7 +96,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDapAn_7C"
+                android:id="@+id/btnDapAn_dfC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -112,7 +112,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDapAn_7D"
+                android:id="@+id/btnDapAn_dfD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -137,7 +137,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLuiLai"
+                android:id="@+id/btnLuiLaidf"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="10dp"
@@ -151,7 +151,7 @@
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnTiepTuc"
+                android:id="@+id/btnTiepTucdf"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:background="@drawable/tieptuc"

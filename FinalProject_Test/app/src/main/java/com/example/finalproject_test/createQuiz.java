@@ -2,11 +2,13 @@ package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +49,9 @@ public class createQuiz extends AppCompatActivity {
                 it.putExtra("QSName",tenBoCauHoi.getText().toString().trim());
                 it.putExtra("QSLevel",lv.getSelectedItemPosition());
                 it.putExtra("QSCate",cate.getSelectedItemPosition());
+                it.putExtra("username",  getIntent().getStringExtra("username"));
+             //   Toast.makeText(createQuiz.this, tenBoCauHoi.getText().toString().trim()+lv.getSelectedItemPosition()+cate.getSelectedItemPosition(), Toast.LENGTH_LONG).show();
+                Log.d("postset", "createquiz sang main_creatquiz");
                 startActivity(it);
             }
         });

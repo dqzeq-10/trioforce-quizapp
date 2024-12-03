@@ -2,6 +2,7 @@ package com.example.finalproject_test.DATA.ViewModels.SharedVM;
 
 import android.view.View;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -12,6 +13,12 @@ import java.util.ArrayList;
 
 public class SQASharedViewModel extends ViewModel {
     private final MutableLiveData<QuestionSet> setLiveData = new MutableLiveData<>();
+
+    public SQASharedViewModel() {
+        QuestionSet questionSet = new QuestionSet();
+        questionSet.setQuestions(new ArrayList<>());
+        setLiveData.setValue(questionSet);
+    }
 
     public MutableLiveData<QuestionSet> getSetLiveData() {
         return setLiveData;
@@ -50,16 +57,17 @@ public class SQASharedViewModel extends ViewModel {
     }
 
     public void addQuestion(Question question) {
-        QuestionSet set = setLiveData.getValue();
-        if (set != null) {
-            if (set.getQuestions() == null) {
-
-                set.setQuestions(new ArrayList<>());
-            }
-            set.getQuestions().add(question);
-            setLiveData.setValue(set);
+        if (setLiveData.getValue() == null) {
+            QuestionSet questionSet = new QuestionSet();
+            questionSet.setQuestions(new ArrayList<>());
+            setLiveData.setValue(questionSet);
         }
+        QuestionSet currentSet = setLiveData.getValue();
+        currentSet.getQuestions().add(question);
+        setLiveData.setValue(currentSet);
     }
+
+
 
 
 }

@@ -2,6 +2,7 @@ package com.example.finalproject_test;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -41,16 +42,28 @@ AppCompatButton cdde,cdbthg,cdkho;
             }
         });
 
+
         cdde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Log.d("ChooseMode", "Button Easy clicked");
                 Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
+                int idCategory = getIntent().getIntExtra("idCategory",-1);
                 String category = getIntent().getStringExtra("category");
+                if (category == null || idCategory == -1) {
+                    Log.e("main_play_quiz", "Thiếu dữ liệu Intent: category hoặc idCategory");
+                    return;
+                }
+                Log.d("ChooseMode", "Category: " + category + ", idCategory: " + idCategory);
                 if (category != null) {
                     intent.putExtra("category", category);
+                    intent.putExtra("idCategory",idCategory);
+                }else
+                {
+                    Log.d("error", "onClick: cdde category bi null");
                 }
                 intent.putExtra("level","Dễ");
+                intent.putExtra("idLevel",1);
                 startActivity(intent);
             }
         });
@@ -59,10 +72,17 @@ AppCompatButton cdde,cdbthg,cdkho;
             public void onClick(View view) {
                 Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
                 String category = getIntent().getStringExtra("category");
+                int idCategory = getIntent().getIntExtra("idCategory",1);
+                if (category == null || idCategory == -1) {
+                    Log.e("main_play_quiz", "Thiếu dữ liệu Intent: category hoặc idCategory");
+                    return;
+                }
                 if (category != null) {
                     intent.putExtra("category", category);
+                    intent.putExtra("idCategory",idCategory);
                 }
                 intent.putExtra("level","Thường");
+                intent.putExtra("idLevel",2);
                 startActivity(intent);
             }
         });
@@ -71,10 +91,13 @@ AppCompatButton cdde,cdbthg,cdkho;
             public void onClick(View view) {
                 Intent intent = new Intent(activity_choose_mode.this, main_play_quiz.class );
                 String category = getIntent().getStringExtra("category");
+                int idCategory = getIntent().getIntExtra("idCategory",1);
                 if (category != null) {
                     intent.putExtra("category", category);
+                    intent.putExtra("idCategory",idCategory);
                 }
                 intent.putExtra("level","Khó");
+                intent.putExtra("idLevel",3);
                 startActivity(intent);
             }
         });

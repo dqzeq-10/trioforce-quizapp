@@ -101,6 +101,7 @@
                     android:paddingRight="15dp" />
 
                 <CheckBox
+                    android:id="@+id/check9A"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
@@ -140,6 +141,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check9B"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -179,6 +181,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check9C"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"
@@ -218,6 +221,7 @@
                 android:paddingRight="15dp"
                 android:background="@drawable/edittext"/>
             <CheckBox
+                android:id="@+id/check9D"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/bg_checkbox"

@@ -1,8 +1,9 @@
 package com.example.finalproject_test.DATA.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
-    public class Question {
+    public class Question implements Serializable {
         private int idQuestion;
         private String questionText;
         private Integer idSet;
@@ -14,7 +15,10 @@ import java.util.List;
         private List<MarkedQuestion> markedQuestions;
         private List<ProgressQuestion> progressQuestions;
 
-    public Question(int idQuestion, String questionText, int idSet) {
+        public Question() {
+        }
+
+        public Question(int idQuestion, String questionText, int idSet) {
         this.idQuestion = idQuestion;
         this.questionText = questionText;
         this.idSet = idSet;

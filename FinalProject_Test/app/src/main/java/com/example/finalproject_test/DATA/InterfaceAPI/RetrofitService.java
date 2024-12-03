@@ -8,6 +8,7 @@ import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.IMarked
 import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsAPi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,6 +43,9 @@ public class RetrofitService {
     }
 
     public static IQuestionSetsApi createInstanceSet(){
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -88,13 +92,25 @@ public class RetrofitService {
         return retrofit.create(IMarkedQuestionApi.class);
     }
 
+<<<<<<< HEAD
     public static IProgressQuestionsAPi createInstancePQ() {
+=======
+    public static IRankingApi createInstanceRank(){
+>>>>>>> 80960fb170091c18f85ad5bdc98e96f09ded370c
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+<<<<<<< HEAD
         return retrofit.create(IProgressQuestionsAPi.class);
     }
+=======
+        return retrofit.create(IRankingApi.class);
+    }
+
+
+
+>>>>>>> 80960fb170091c18f85ad5bdc98e96f09ded370c
 
 
 //   Tạo thêm method tạo instance cho mỗi entity ở đây

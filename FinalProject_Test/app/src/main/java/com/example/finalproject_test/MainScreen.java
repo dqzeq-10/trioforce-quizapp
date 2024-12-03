@@ -3,6 +3,7 @@ package com.example.finalproject_test;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 
 
@@ -16,8 +17,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.finalproject_test.DATA.Models.Answer;
+import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.DATA.Models.User;
 import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
+import com.example.finalproject_test.DATA.ViewModels.QuestionSetsVM.QuestionSetsViewModel;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.screenfragment.ViewPageAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +31,7 @@ public class MainScreen extends AppCompatActivity {
     private ViewPager2 vp;
     private BottomNavigationView bnv;
     private SharedViewModel<User> sharedViewModel;
+    private QuestionSetsViewModel setsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +116,20 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
+
+        setsViewModel = new ViewModelProvider(this).get(QuestionSetsViewModel.class);
+        setsViewModel.getSetByIdLevelAndIdCate(1,4).observe(this, data->{
+            if (data!=null){
+                for (Question qs:data.getQuestions()
+                     ) {
+                    Log.d("goisetbyidlevelcate", qs.getQuestionText());
+
+                }
+            }else {
+                Log.d("goisetbyidlevelcate", "data null");
+            }
+
+        });
 
 //        IUsersApi iUsersApi = RetrofitService.CreateInstanceU();
 //        Call<List<User>> call = iUsersApi.getUsers();

@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="categories">
-        <item>Tất cả</item>
+        <item>Chọn thể loại</item>
         <item>Thể thao</item>
         <item>Khoa học</item>
         <item>Văn học</item>
@@ -20,6 +20,7 @@
     </string-array>
 
     <string-array name="level">
+        <item>Chọn độ khó</item>
         <item>Dễ</item>
         <item>Bình thường</item>
         <item>Khó</item>

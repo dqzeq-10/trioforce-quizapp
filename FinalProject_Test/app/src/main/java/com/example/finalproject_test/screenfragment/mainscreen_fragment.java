@@ -22,14 +22,14 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.finalproject_test.DATA.Models.User;
-import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
 import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.R;
-import com.example.finalproject_test.RandomQuiz;
 
 import com.example.finalproject_test.activity_choose_mode;
 import com.example.finalproject_test.createQuiz;
 import com.example.finalproject_test.main_play_quiz;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -134,7 +134,8 @@ public class mainscreen_fragment extends Fragment {
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
             ChaoUsername.setText("Chào "+data.getName()+" !");
-        });
+
+
 
 
 
@@ -154,6 +155,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Thể thao");
+                intent.putExtra("idCategory",1);
                 startActivity(intent);
             }
         });
@@ -162,6 +164,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Khoa học");
+                intent.putExtra("idCategory",2);
                 startActivity(intent);
             }
         });
@@ -170,6 +173,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Văn học");
+                intent.putExtra("idCategory",3);
                 startActivity(intent);
             }
         });
@@ -178,6 +182,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Lịch sử");
+                intent.putExtra("idCategory",4);
                 startActivity(intent);
             }
         });
@@ -185,7 +190,8 @@ public class mainscreen_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
-                intent.putExtra("category","Tóan học");
+                intent.putExtra("category","Toán học");
+                intent.putExtra("idCategory",5);
                 startActivity(intent);
             }
         });
@@ -194,6 +200,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Ẩm thực");
+                intent.putExtra("idCategory",6);
                 startActivity(intent);
             }
         });
@@ -202,6 +209,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Công nghệ");
+                intent.putExtra("idCategory",7);
                 startActivity(intent);
             }
         });
@@ -210,6 +218,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Địa lý");
+                intent.putExtra("idCategory",8);
                 startActivity(intent);
             }
         });
@@ -218,6 +227,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Âm nhạc");
+                intent.putExtra("idCategory",9);
                 startActivity(intent);
             }
         });
@@ -226,6 +236,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Phim ảnh");
+                intent.putExtra("idCategory",10);
                 startActivity(intent);
             }
         });
@@ -234,6 +245,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Ngữ pháp");
+                intent.putExtra("idCategory",11);
                 startActivity(intent);
             }
         });
@@ -242,6 +254,7 @@ public class mainscreen_fragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), activity_choose_mode.class);
                 intent.putExtra("category","Đố vui");
+                intent.putExtra("idCategory",12);
                 startActivity(intent);
             }
         });
@@ -283,10 +296,11 @@ public class mainscreen_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(requireActivity(), createQuiz.class);
+                intent.putExtra("username",data.getUsername());
                 startActivity(intent);
             }
         });
-
+        });
         return view;
 
     }

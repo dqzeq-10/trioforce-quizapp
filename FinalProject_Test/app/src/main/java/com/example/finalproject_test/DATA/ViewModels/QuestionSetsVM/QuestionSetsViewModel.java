@@ -21,8 +21,13 @@ public class QuestionSetsViewModel extends ViewModel {
         return questionSetsRepo.getSets();
     }
 
-    public MutableLiveData<QuestionSet> getSetsById(int id) {
+
+    public MutableLiveData<QuestionSet> getSetById(int id) {
         return questionSetsRepo.getSetById(id);
+    }
+
+    public MutableLiveData<QuestionSet> getSetByIdLevelAndIdCate(int idLevel, int idCategory){
+        return questionSetsRepo.getSetByIdLevelAndIdCate(idLevel,idCategory);
     }
 
     public MutableLiveData<Boolean> postSet(QuestionSet questionSet) {
