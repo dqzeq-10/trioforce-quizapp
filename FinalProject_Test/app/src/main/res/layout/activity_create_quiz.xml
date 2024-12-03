@@ -126,7 +126,7 @@
             android:textSize="21sp" />
 
         <EditText
-            android:id="@+id/tenChuDe"
+            android:id="@+id/tenbocauhoi"
             android:layout_width="358dp"
             android:layout_height="150dp"
             android:layout_gravity="center"

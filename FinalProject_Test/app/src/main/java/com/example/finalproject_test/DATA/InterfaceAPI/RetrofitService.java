@@ -92,25 +92,25 @@ public class RetrofitService {
         return retrofit.create(IMarkedQuestionApi.class);
     }
 
-<<<<<<< HEAD
     public static IProgressQuestionsAPi createInstancePQ() {
-=======
-    public static IRankingApi createInstanceRank(){
->>>>>>> 80960fb170091c18f85ad5bdc98e96f09ded370c
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-<<<<<<< HEAD
         return retrofit.create(IProgressQuestionsAPi.class);
     }
-=======
+
+
+    public static IRankingApi createInstanceRank(){
+
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         return retrofit.create(IRankingApi.class);
     }
 
-
-
->>>>>>> 80960fb170091c18f85ad5bdc98e96f09ded370c
 
 
 //   Tạo thêm method tạo instance cho mỗi entity ở đây
