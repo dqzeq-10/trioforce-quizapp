@@ -40,15 +40,45 @@ namespace API_QuizAppDB.Controllers
           {
               return NotFound();
           }
-            var progressQuestion = await _context.ProgressQuestions.Where(pq => pq.Username == username)
+            var progressQuestions = await _context.ProgressQuestions
+                .Where(pq => pq.Username == username)
+                .Include(pq =>pq.IdSetNavigation)
+                    .ThenInclude(qs=>qs.Questions)
+                .Include(pq=>pq.IdSetNavigation)
+                    .ThenInclude(qs=>qs.AnsweredQuestitons)
                 .ToListAsync();
 
-            if (progressQuestion == null)
+            if (progressQuestions == null || !progressQuestions.Any())
             {
                 return NotFound();
             }
 
-            return progressQuestion;
+            var result = progressQuestions.Select(pq => new
+            {
+                savedTime = pq.SaveTime,
+                idSet = pq.IdSet,
+                questionCount = pq.QuestionCount,
+                questionLastId = pq.QuestionLastId,
+                setName = pq.IdSetNavigation?.SetName,
+                questions = pq.IdSetNavigation?.Questions.Select(q => new
+                {
+                    idQuestion = q.IdQuestion,
+                    questionText = q.QuestionText,
+                    answers = q.Answers.Select(a => new
+                    {
+                        answerText = a.AnswerText,
+                        isCorrect = a.IsCorrect
+                    }),
+                    isAnswered = pq.IdSetNavigation?.AnsweredQuestitons
+                        .Any(aq => aq.IdQuestion == q.IdQuestion && aq.Username == username),
+                    isCorrect = pq.IdSetNavigation?.AnsweredQuestitons
+                        .Where(aq => aq.IdQuestion == q.IdQuestion && aq.Username == username)
+                        .Select(aq => aq.IsCorrect)
+                        .FirstOrDefault()
+                }).ToList()
+            }).ToList();
+
+            return Ok(result);
         }
 
 

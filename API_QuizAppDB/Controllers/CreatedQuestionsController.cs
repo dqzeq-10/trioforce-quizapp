@@ -40,15 +40,41 @@ namespace API_QuizAppDB.Controllers
               return NotFound();
           }
             var createdQuestion = await _context.CreatedQuestions
-                .Where(cq => cq.Username == username)
-                .ToListAsync();
+                 .Where(cq => cq.Username == username)
+                 .Include(cq => cq.IdQuestionNavigation)
+                    .ThenInclude(q=> q.Answers)
+                 .Include(cq=> cq.IdQuestionNavigation)
+                    .ThenInclude(q=>q.IdSetNavigation)
+                        .ThenInclude(qs=>qs.IdCategoryNavigation)
+                 .ToListAsync();
+
 
             if (!createdQuestion.Any())
             {
                 return NotFound();
             }
 
-            return createdQuestion;
+
+
+            var result = createdQuestion.Select(cq => new
+            {
+                createdTime = cq.CreatedTime,
+                categoryName = cq.IdQuestionNavigation?.IdSetNavigation?.IdCategoryNavigation?.CategoryName,
+                questionText = cq.IdQuestionNavigation?.QuestionText,
+                answers = cq.IdQuestionNavigation?.Answers.Select(a => new
+                {
+                    answerText = a.AnswerText,
+                    isCorrect = a.IsCorrect
+                }).ToList()
+            });
+                                        
+
+            if (!result.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
         }
 
         [HttpGet("{username}/{idQuestion}")]

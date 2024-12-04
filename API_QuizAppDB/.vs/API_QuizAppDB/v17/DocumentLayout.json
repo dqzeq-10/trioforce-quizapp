@@ -3,40 +3,76 @@
   "WorkspaceRootPath": "E:\\Source Visual Studio\\API_QuizAppDB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\markedquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\markedquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\answeredquestiton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\answeredquestiton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\createdquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\createdquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\questionsetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questionsetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\createdquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\createdquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\markedquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\markedquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\progressquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\progressquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\createdquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\createdquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\levelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,56 +91,16 @@
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\rankingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\ranking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\ranking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\questioncategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questioncategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\controllers\\questionsetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questionsetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|e:\\source visual studio\\api_quizappdb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -156,196 +152,142 @@
               "RelativeDocumentMoniker": "Models\\AnsweredQuestiton.cs",
               "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\AnsweredQuestiton.cs",
               "RelativeToolTip": "Models\\AnsweredQuestiton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T13:03:41.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CreatedQuestion.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
-              "RelativeDocumentMoniker": "Models\\CreatedQuestion.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
-              "RelativeToolTip": "Models\\CreatedQuestion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABDAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ProgressQuestion.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\ProgressQuestion.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
+              "RelativeToolTip": "Models\\ProgressQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:42.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AnsweredQuestitonsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AnsweredQuestitonsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
-              "RelativeToolTip": "Controllers\\AnsweredQuestitonsController.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAiwJ4AAACNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:41:25.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AnswersController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnswersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AnswersController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnswersController.cs",
-              "RelativeToolTip": "Controllers\\AnswersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:32:54.214Z",
+              "WhenOpened": "2024-11-23T13:03:44.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Answer.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Answer.cs",
-              "RelativeDocumentMoniker": "Models\\Answer.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Answer.cs",
-              "RelativeToolTip": "Models\\Answer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABDAAAAAAAAAA==",
+              "Title": "Question.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "Models\\Question.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Question.cs",
+              "RelativeToolTip": "Models\\Question.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:39.503Z",
+              "WhenOpened": "2024-11-23T13:03:44.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProgressQuestionsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\ProgressQuestionsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProgressQuestionsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\ProgressQuestionsController.cs",
-              "RelativeToolTip": "Controllers\\ProgressQuestionsController.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIUAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:43:42.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LevelsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\LevelsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LevelsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\LevelsController.cs",
-              "RelativeToolTip": "Controllers\\LevelsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:33:57.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T13:41:26.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CreatedQuestionsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\CreatedQuestionsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CreatedQuestionsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\CreatedQuestionsController.cs",
-              "RelativeToolTip": "Controllers\\CreatedQuestionsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:42:12.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T09:46:51.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T08:48:46.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "RankingsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\RankingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RankingsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\RankingsController.cs",
-              "RelativeToolTip": "Controllers\\RankingsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:36:28.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 0,
               "Title": "QuestionsController.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuestionsController.cs",
               "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionsController.cs",
               "RelativeToolTip": "Controllers\\QuestionsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-27T10:34:33.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
+              "Title": "QuestionSet.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionSet.cs",
+              "RelativeDocumentMoniker": "Models\\QuestionSet.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionSet.cs",
+              "RelativeToolTip": "Models\\QuestionSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:58.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreatedQuestionsController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\CreatedQuestionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CreatedQuestionsController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\CreatedQuestionsController.cs",
+              "RelativeToolTip": "Controllers\\CreatedQuestionsController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAB0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:42:12.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuestionSetsController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionSetsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuestionSetsController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionSetsController.cs",
+              "RelativeToolTip": "Controllers\\QuestionSetsController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T15:02:47.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CreatedQuestion.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\CreatedQuestion.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
+              "RelativeToolTip": "Models\\CreatedQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:42.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "User.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T08:26:13.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Ranking.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Ranking.cs",
-              "RelativeDocumentMoniker": "Models\\Ranking.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Ranking.cs",
-              "RelativeToolTip": "Models\\Ranking.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Answer.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Answer.cs",
+              "RelativeDocumentMoniker": "Models\\Answer.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Answer.cs",
+              "RelativeToolTip": "Models\\Answer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:59.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T13:03:39.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 12,
+              "Title": "QuestionCategory.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionCategory.cs",
+              "RelativeDocumentMoniker": "Models\\QuestionCategory.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionCategory.cs",
+              "RelativeToolTip": "Models\\QuestionCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:45.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "QuizAppDbContext.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuizAppDbContext.cs",
               "RelativeDocumentMoniker": "Models\\QuizAppDbContext.cs",
@@ -353,90 +295,11 @@
               "RelativeToolTip": "Models\\QuizAppDbContext.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAcwDkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T09:38:21.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T09:38:21.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "QuestionSet.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionSet.cs",
-              "RelativeDocumentMoniker": "Models\\QuestionSet.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionSet.cs",
-              "RelativeToolTip": "Models\\QuestionSet.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAtwBkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:58.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "QuestionCategory.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionCategory.cs",
-              "RelativeDocumentMoniker": "Models\\QuestionCategory.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\QuestionCategory.cs",
-              "RelativeToolTip": "Models\\QuestionCategory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:45.515Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Question.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Question.cs",
-              "RelativeDocumentMoniker": "Models\\Question.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Question.cs",
-              "RelativeToolTip": "Models\\Question.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:44.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProgressQuestion.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
-              "RelativeDocumentMoniker": "Models\\ProgressQuestion.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
-              "RelativeToolTip": "Models\\ProgressQuestion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:44.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "MarkedQuestion.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
-              "RelativeDocumentMoniker": "Models\\MarkedQuestion.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
-              "RelativeToolTip": "Models\\MarkedQuestion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T14:50:55.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "Models\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T13:52:50.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 13,
               "Title": "Level.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Level.cs",
               "RelativeDocumentMoniker": "Models\\Level.cs",
@@ -444,8 +307,115 @@
               "RelativeToolTip": "Models\\Level.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T13:03:43.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T13:03:43.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AnswersController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnswersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnswersController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnswersController.cs",
+              "RelativeToolTip": "Controllers\\AnswersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:32:54.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AnsweredQuestitonsController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnsweredQuestitonsController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
+              "RelativeToolTip": "Controllers\\AnsweredQuestitonsController.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAiwJ4AAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:41:25.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LevelsController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\LevelsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LevelsController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\LevelsController.cs",
+              "RelativeToolTip": "Controllers\\LevelsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:33:57.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T13:41:26.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T09:46:51.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T08:48:46.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RankingsController.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\RankingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RankingsController.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\RankingsController.cs",
+              "RelativeToolTip": "Controllers\\RankingsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:36:28.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Ranking.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Ranking.cs",
+              "RelativeDocumentMoniker": "Models\\Ranking.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\Ranking.cs",
+              "RelativeToolTip": "Models\\Ranking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:59.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T13:52:50.521Z"
             },
             {
               "$type": "Document",
@@ -457,25 +427,11 @@
               "RelativeToolTip": "Controllers\\QuestionCategoriesController.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:35:13.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T10:35:13.089Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "QuestionSetsController.cs",
-              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionSetsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\QuestionSetsController.cs",
-              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\QuestionSetsController.cs",
-              "RelativeToolTip": "Controllers\\QuestionSetsController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAYwHMAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:37:59.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -487,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "API_QuizAppDB.csproj",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\API_QuizAppDB.csproj",
               "RelativeDocumentMoniker": "API_QuizAppDB.csproj",
@@ -499,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "20241127103025_FirstMigration.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Migrations\\20241127103025_FirstMigration.cs",
               "RelativeDocumentMoniker": "Migrations\\20241127103025_FirstMigration.cs",
@@ -511,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "launchSettings.json",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -523,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "20241127102846_FirstMigration.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Migrations\\20241127102846_FirstMigration.cs",
               "RelativeDocumentMoniker": "Migrations\\20241127102846_FirstMigration.cs",
@@ -535,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -547,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -559,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "JsonDateTimeConverter.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
               "RelativeDocumentMoniker": "System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
@@ -572,20 +528,33 @@
           ]
         },
         {
-          "DockedWidth": 191,
+          "DockedWidth": 209,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "MarkedQuestion.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\MarkedQuestion.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
+              "RelativeToolTip": "Models\\MarkedQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T14:50:55.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MarkedQuestionsController.cs",
               "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\MarkedQuestionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\MarkedQuestionsController.cs",
               "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Controllers\\MarkedQuestionsController.cs",
               "RelativeToolTip": "Controllers\\MarkedQuestionsController.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAAwJYAAACUAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAADwvzIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T10:42:58.627Z",
+              "WhenOpened": "2024-12-03T07:15:54.88Z",
               "EditorCaption": ""
             }
           ]

@@ -41,6 +41,11 @@ namespace API_QuizAppDB.Controllers
           }
             var markedQuestions = await _context.MarkedQuestions
                 .Where(mq => mq.Username == username)
+                .Include(cq=>cq.IdQuestionNavigation)
+                    .ThenInclude(q=>q.Answers)
+                .Include(cq=>cq.IdQuestionNavigation)
+                    .ThenInclude(q=>q.IdSetNavigation)
+                        .ThenInclude(qs=>qs.IdCategoryNavigation)
                 .ToListAsync();
         
 
@@ -49,7 +54,28 @@ namespace API_QuizAppDB.Controllers
                 return NotFound();
             }
 
-            return markedQuestions;
+
+            var result = markedQuestions.Select(cq => new
+            {
+                markedTime = cq.MarkedTime,
+                categoryName = cq.IdQuestionNavigation?.IdSetNavigation?.IdCategoryNavigation?.CategoryName,
+                questionText = cq.IdQuestionNavigation?.QuestionText,
+                answers = cq.IdQuestionNavigation?.Answers.Select(a => new
+                {
+                    answerText = a.AnswerText,
+                    isCorrect = a.IsCorrect
+                }).ToList()
+            });
+
+
+            if (!result.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+
+      
         }
 
         // GET: api/MarkedQuestions/user1/1
