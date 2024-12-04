@@ -15,15 +15,18 @@ public interface IMarkedQuestionApi {
     @GET("MarkedQuestions")
     Call<List<MarkedQuestion>> getMarkedQuestions();
 
-    @GET("MarkedQuestions/{id}")
-    Call<MarkedQuestion> getMarkedQuestionById(@Path("id") int id);
+    @GET("MarkedQuestions/{username}")
+    Call<List<MarkedQuestion>> getMarkedQuestionByUsername(@Path("username") String username);
+
+    @GET("MarkedQuestions/{username}/{idQuestion}")
+    Call<MarkedQuestion> getMarkedQuestionByUsernameAndIdQuestion(@Path("username") String username, @Path("idQuestion") int idQuestion);
 
     @POST("MarkedQuestions")
     Call<MarkedQuestion> postMarkedQuestion(@Body MarkedQuestion markedQuestion);
 
-    @PUT("MarkedQuestions/{id}")
-    Call<MarkedQuestion> putMarkedQuestion(@Path("id") int id, @Body MarkedQuestion markedQuestion);
+    @PUT("MarkedQuestions/{username}/{idQuestion}")
+    Call<MarkedQuestion> putMarkedQuestion(@Path("username") String username, @Path("idQuestion") int idQuestion, @Body MarkedQuestion markedQuestion);
 
-    @DELETE("MarkedQuestions/{id}")
-    Call<Void> deleteMarkedQuestion(@Path("id") int id);
+    @DELETE("MarkedQuestions/{username}/{idQuestion}")
+    Call<Void> deleteMarkedQuestion(@Path("username") String username, @Path("idQuestion") int idQuestion);
 }

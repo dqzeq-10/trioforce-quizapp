@@ -1,51 +1,23 @@
 package com.example.finalproject_test.DATA.Models;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 public class CreatedQuestion {
-    private String username;
-    private int idQuestion;
     private Date createdTime;
+    private String categoryName;
+    private String questionText;
+    private List<Answer> answers;
 
-    private Question idQuestionNavigation;
-    private User usernameNavigation;
 
-    public Question getIdQuestionNavigation() {
-        return idQuestionNavigation;
+    public CreatedQuestion() {
     }
 
-    public void setIdQuestionNavigation(Question idQuestionNavigation) {
-        this.idQuestionNavigation = idQuestionNavigation;
-    }
-
-    public User getUsernameNavigation() {
-        return usernameNavigation;
-    }
-
-    public void setUsernameNavigation(User usernameNavigation) {
-        this.usernameNavigation = usernameNavigation;
-    }
-
-    public CreatedQuestion(String username, int idQuestion, Date createdTime) {
-        this.username = username;
-        this.idQuestion = idQuestion;
+    public CreatedQuestion(Date createdTime, String categoryName, String questionText, List<Answer> answers) {
         this.createdTime = createdTime;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public int getIdQuestion() {
-        return idQuestion;
-    }
-
-    public void setIdQuestion(int idQuestion) {
-        this.idQuestion = idQuestion;
+        this.categoryName = categoryName;
+        this.questionText = questionText;
+        this.answers = answers;
     }
 
     public Date getCreatedTime() {
@@ -54,5 +26,29 @@ public class CreatedQuestion {
 
     public void setCreatedTime(Date createdTime) {
         this.createdTime = createdTime;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 }

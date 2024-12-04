@@ -6,7 +6,7 @@
 
     <!-- Tháng và năm -->
     <TextView
-        android:id="@+id/tvMonthYear"
+        android:id="@+id/tvMonthYearP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo2_bold"
@@ -25,7 +25,7 @@
 
         <!-- Tiêu đề -->
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvTitleP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_bold"
@@ -58,7 +58,7 @@
                 android:scaleType="fitCenter" />
 
             <TextView
-                android:id="@+id/tvAuthor"
+                android:id="@+id/tvAuthorP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

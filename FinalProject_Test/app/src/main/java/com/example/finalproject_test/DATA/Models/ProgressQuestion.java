@@ -1,13 +1,13 @@
 package com.example.finalproject_test.DATA.Models;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ProgressQuestion {
+    private Date saveTime;
     private String username;
     private int idSet;
     private int questionCount;
     private int questionLastId;
-    private Date saveTime;
 
     private QuestionSet idSetNavigation;
     private Question questionLast;

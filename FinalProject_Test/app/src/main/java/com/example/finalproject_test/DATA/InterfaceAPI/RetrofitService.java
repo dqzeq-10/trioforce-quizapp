@@ -2,10 +2,11 @@ package com.example.finalproject_test.DATA.InterfaceAPI;
 
 import com.example.finalproject_test.DATA.InterfaceAPI.AnswersApi.IAnswersApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.CreatedQuestionApi.ICreatedQuestionApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.ILevelsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.IMarkedQuestionApi;
-import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsAPi;
+import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
@@ -34,7 +35,7 @@ public class RetrofitService {
     }
 
 
-    public static ILoginRequestApi createInstanceLogin(){
+    public static ILoginRequestApi createInstanceLogin() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -42,7 +43,7 @@ public class RetrofitService {
         return retrofit.create(ILoginRequestApi.class);
     }
 
-    public static IQuestionSetsApi createInstanceSet(){
+    public static IQuestionSetsApi createInstanceSet() {
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(Date.class, new DateTimeConverter())
                 .create();
@@ -53,7 +54,7 @@ public class RetrofitService {
         return retrofit.create(IQuestionSetsApi.class);
     }
 
-    public static ILevelsApi createInstanceLevel(){
+    public static ILevelsApi createInstanceLevel() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -61,7 +62,7 @@ public class RetrofitService {
         return retrofit.create(ILevelsApi.class);
     }
 
-    public static IQuestionCategoriesApi createInstanceCate(){
+    public static IQuestionCategoriesApi createInstanceCate() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -69,7 +70,7 @@ public class RetrofitService {
         return retrofit.create(IQuestionCategoriesApi.class);
     }
 
-    public static IQuestionsApi createInstanceQ(){
+    public static IQuestionsApi createInstanceQ() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -77,14 +78,29 @@ public class RetrofitService {
         return retrofit.create(IQuestionsApi.class);
     }
 
-    public static IAnswersApi createInstanceAns(){
+    public static IAnswersApi createInstanceAns() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit.create(IAnswersApi.class);
     }
-    public static IMarkedQuestionApi createInstanceMQ(){
+
+    public static ICreatedQuestionApi createInstanceCQ() {
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(ICreatedQuestionApi.class);
+    }
+
+    public static IMarkedQuestionApi createInstanceMQ() {
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -92,16 +108,19 @@ public class RetrofitService {
         return retrofit.create(IMarkedQuestionApi.class);
     }
 
-    public static IProgressQuestionsAPi createInstancePQ() {
+    public static IProgressQuestionsApi createInstancePQ() {
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit.create(IProgressQuestionsAPi.class);
+        return retrofit.create(IProgressQuestionsApi.class);
     }
 
 
-    public static IRankingApi createInstanceRank(){
+    public static IRankingApi createInstanceRank() {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -110,7 +129,6 @@ public class RetrofitService {
 
         return retrofit.create(IRankingApi.class);
     }
-
 
 
 //   Tạo thêm method tạo instance cho mỗi entity ở đây

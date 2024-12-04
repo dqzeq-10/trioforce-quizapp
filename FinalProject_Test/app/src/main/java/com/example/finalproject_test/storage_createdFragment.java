@@ -19,14 +19,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.finalproject_test.DATA.Models.CreatedQuestion;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.CreatedQuestionsVM.CreatedQuestionsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
+
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
 public class storage_createdFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private RecyclerView recyclerView;
+    private List<CreatedQuestion> createdQuestionList;
+    private CreatedAdapter createdAdapter;
+    private CreatedQuestionsViewModel createdQuestionsViewModel;
+    private SharedViewModel<User> sharedViewModel;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -69,13 +82,36 @@ public class storage_createdFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_storage_created, container, false);
 
+        recyclerView = view.findViewById(R.id.recyclerView_Created);
+
+        //lấy user đã share chung khi đăng nhập vào
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data -> {
 
 
 
+            //goi api lay createdquesiton ve
+            createdQuestionsViewModel = new ViewModelProvider(this).get(CreatedQuestionsViewModel.class);
+            createdQuestionsViewModel.getCreatedQuestionByUsername(data.getUsername()).observe(getViewLifecycleOwner(), createdList -> {
+                if (createdList!=null && !createdList.isEmpty()){
+                    //sap xep theo createdtime
+                    Collections.sort(createdList, new Comparator<CreatedQuestion>() {
+                        @Override
+                        public int compare(CreatedQuestion t0, CreatedQuestion t1) {
+                            return t0.getCreatedTime().compareTo(t1.getCreatedTime());
+                        }
+                    });
+
+                    createdAdapter = new CreatedAdapter(createdList);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView.setAdapter(createdAdapter);
+                }else {
+                    Log.d("createdQuestion", "createdlist null ");
+                }
+            });
 
 
-
-
+        });
         // -----------------XOA CAC ITEM KHI VUOT ,SUA LAI CHO HOP EM NHÉ , CHƯA KHỚP -------------------------------------------------
         /*
         // Thêm ItemTouchHelper để xử lý vuốt xóa

@@ -12,9 +12,10 @@ public class MarkedQuestionApiManager {
     private static IMarkedQuestionApi iMarkedQuestionApi;
     private static MarkedQuestionApiManager markedQuestionApiManager;
 
-    private MarkedQuestionApiManager(){
+    private MarkedQuestionApiManager() {
         iMarkedQuestionApi = RetrofitService.createInstanceMQ();
     }
+
     public static MarkedQuestionApiManager getInstance() {
         if (markedQuestionApiManager == null) {
             markedQuestionApiManager = new MarkedQuestionApiManager();
@@ -26,21 +27,32 @@ public class MarkedQuestionApiManager {
         Call<List<MarkedQuestion>> call = iMarkedQuestionApi.getMarkedQuestions();
         call.enqueue(callback);
     }
-  public void getMarkedQuestionById(int id, Callback<MarkedQuestion> callback) {
-        Call<MarkedQuestion> call = iMarkedQuestionApi.getMarkedQuestionById(id);
+
+    public void getMarkedQuestionByUsername(String username, Callback<List<MarkedQuestion>> callback) {
+        Call<List<MarkedQuestion>> call = iMarkedQuestionApi.getMarkedQuestionByUsername(username);
         call.enqueue(callback);
-  }
-    public  void postMarkedQuestion(MarkedQuestion markedQuestion, Callback<MarkedQuestion> callback) {
+    }
+
+    public void getMarkedQuestionByUsernameAndIdQuestion(String username, int idQuestion, Callback<MarkedQuestion> callback) {
+        Call<MarkedQuestion> call = iMarkedQuestionApi.getMarkedQuestionByUsernameAndIdQuestion(username, idQuestion);
+        call.enqueue(callback);
+    }
+
+
+
+    public void postMarkedQuestion(MarkedQuestion markedQuestion, Callback<MarkedQuestion> callback) {
         Call<MarkedQuestion> call = iMarkedQuestionApi.postMarkedQuestion(markedQuestion);
         call.enqueue(callback);
 
     }
-    public void putMarkedQuestion(int id, MarkedQuestion markedQuestion, Callback<MarkedQuestion> callback) {
-        Call<MarkedQuestion> call = iMarkedQuestionApi.putMarkedQuestion(id, markedQuestion);
+
+    public void putMarkedQuestion(String username, int idQuestion, MarkedQuestion markedQuestion, Callback<MarkedQuestion> callback) {
+        Call<MarkedQuestion> call = iMarkedQuestionApi.putMarkedQuestion(username,idQuestion, markedQuestion);
         call.enqueue(callback);
     }
-public void deleteMarkedQuestion(int id, Callback<Void> callback) {
-        Call<Void> call = iMarkedQuestionApi.deleteMarkedQuestion(id);
+
+    public void deleteMarkedQuestion(String username,int idQuestion, Callback<Void> callback) {
+        Call<Void> call = iMarkedQuestionApi.deleteMarkedQuestion(username, idQuestion);
         call.enqueue(callback);
-}
+    }
 }
