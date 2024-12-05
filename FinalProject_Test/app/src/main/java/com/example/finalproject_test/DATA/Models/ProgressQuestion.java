@@ -1,8 +1,9 @@
 package com.example.finalproject_test.DATA.Models;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class ProgressQuestion {
+public class ProgressQuestion implements Serializable {
     private String username;
     private int idSet;
     private int questionCount;

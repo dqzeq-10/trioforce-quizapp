@@ -102,6 +102,7 @@ AppCompatButton cdde,cdbthg,cdkho;
                 }
                 intent.putExtra("level","Dễ");
                 intent.putExtra("idLevel",1);
+                intent.putExtra("username", "khanh");
                 startActivity(intent);
             }
         });

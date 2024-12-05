@@ -28,6 +28,11 @@ public class UsersApiManager {
         usersCall.enqueue(callback);
     }
 
+    public void putUsers(String id, User user, Callback<Void> callback) {
+        // Gọi API updateUser với id và user
+        Call<Void> usersCall = iUsersApi.updateUser(id, user);
+        usersCall.enqueue(callback); // Thực hiện API call với callback
+    }
 // Tạo thêm method lấy gì đó, câu hỏi, thể loại,... nhưng mà ở class khác chứ user này còn gì đâu mà lấy nữa
 //    public void getSomethings (Callback<List<'entityName'>> callback){
 //        Call<List<'entityName'>> 'entityName'Call = i'entityName'Api.get'entityName'();

@@ -18,7 +18,8 @@ import java.util.Date;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 //http://10.0.2.2:5019/api/
-//http://192.168.1.129:5019/api/
+//http://192.168.1.129:5019/api/ //wifi nhà
+//http://192.168.32.155:5019/api/ //4g
 public class RetrofitService {
     private static final String BASE_URL = "http://192.168.1.129:5019/api/";
     private static Retrofit retrofit;

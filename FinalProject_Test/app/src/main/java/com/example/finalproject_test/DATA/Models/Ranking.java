@@ -11,6 +11,14 @@ public class Ranking {
         this.point = point;
     }
 
+    public Ranking() {
+
+    }
+
+    public Ranking(String username) {
+        this.username = username;
+    }
+
     public String getUsername() {
         return username;
     }

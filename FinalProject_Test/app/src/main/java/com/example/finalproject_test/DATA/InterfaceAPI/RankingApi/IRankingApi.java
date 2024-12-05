@@ -4,6 +4,7 @@ import com.example.finalproject_test.DATA.Models.Ranking;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -27,4 +28,8 @@ public interface IRankingApi {
 
     @DELETE("Rankings/{id}")
     Call<Void> deleteRank(@Path("id") String id);
+
+    @PUT("Rankings/{id}/updateScore")
+    Call<Ranking> updateScore(@Path("id") String id, @Body Ranking request);
 }
+

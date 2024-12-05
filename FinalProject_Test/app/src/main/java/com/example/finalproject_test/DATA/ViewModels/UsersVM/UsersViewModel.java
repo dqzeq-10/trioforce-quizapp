@@ -11,13 +11,19 @@ import java.util.List;
 public class UsersViewModel extends ViewModel {
     private final UsersRepo usersRepo;
     private  MutableLiveData<List<User>> usersLiveData;
+    private MutableLiveData<Void> usersUpdate;
 
     public UsersViewModel(){
         usersRepo = new UsersRepo();
         usersLiveData = usersRepo.getUsers();
+//        usersUpdate = usersRepo.updateUser();
     }
 
     public MutableLiveData<List<User>> getUsers(){
         return usersLiveData;
+    }
+    public MutableLiveData<Void> getUsersUpdate(String id, User user){
+        usersUpdate = usersRepo.updateUser(id,user);
+        return usersUpdate;
     }
 }

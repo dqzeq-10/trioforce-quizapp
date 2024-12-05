@@ -15,10 +15,13 @@
     import android.view.ViewGroup;
     import android.view.WindowManager;
     import android.widget.Button;
+    import android.widget.EditText;
     import android.widget.RadioGroup;
     import android.widget.TextView;
     import android.widget.Toast;
 
+    import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
+    import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
     import com.example.finalproject_test.DATA.Models.User;
     import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
     import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
@@ -28,6 +31,10 @@
     import java.text.ParseException;
     import java.text.SimpleDateFormat;
     import java.util.Date;
+
+    import retrofit2.Call;
+    import retrofit2.Callback;
+    import retrofit2.Response;
 
     /**
      * A simple {@link Fragment} subclass.
@@ -153,25 +160,118 @@
         }
 
         //==========================================show popup======================================================//
+//        private void showPopup() {
+//
+//            dialog_email = new Dialog(requireActivity(), R.style.CustomDialog);
+//
+//            dialog_email.setCancelable(false);
+//            dialog_email.setContentView(R.layout.dialog_change_email);
+//
+//
+//            EditText editnewEmail = dialog_email.findViewById(R.id.emailEditText);
+//            btn_Huy_email = dialog_email.findViewById(R.id.btn_H);
+//            btn_XN_email = dialog_email.findViewById(R.id.btn_XN);
+//
+//            btn_Huy_email.setOnClickListener(view -> dialog_email.dismiss());
+//
+//            btn_XN_email.setOnClickListener(new View.OnClickListener() {
+////                String newEmail = editnewEmail.getText().toString().trim();
+//
+//                @Override
+//                public void onClick(View view) {
+//                    sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data -> {
+//                        if (data != null) {
+//                            String newEmail = editnewEmail.getText().toString().trim();
+//                            if (!newEmail.isEmpty()) {
+//                                // Cập nhật email trong SharedViewModel
+//                                User updatedUser = new User(
+//                                                                        data.getUsername(),
+//                                                                        data.getPassword(),
+//                                                                        data.getName(),
+//                                                                        newEmail,            // Thay đổi email
+//                                                                        data.getPhoneNumber(),
+//                                        data.isSex(),
+//                                        data.getBirthday()
+//                                                                );
+//
+//                                sharedViewModel.setObjectMLD(updatedUser);
+//                                dialog_email.dismiss();
+//                                showPopup2();
+//                            } else {
+//                                Toast.makeText(requireActivity(), "Vui lòng nhập email mới.", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        }
+//                    });
+//                    dialog_email.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+//                    WindowManager.LayoutParams layoutParams = dialog_email.getWindow().getAttributes();
+//                    layoutParams.gravity = Gravity.CENTER;
+//                    layoutParams.y = 10;
+//                    dialog_email.getWindow().setAttributes(layoutParams);
+//                    dialog_email.show();
+//                }
+//            });
+//        }
+
         private void showPopup() {
-
             dialog_email = new Dialog(requireActivity(), R.style.CustomDialog);
-
             dialog_email.setCancelable(false);
             dialog_email.setContentView(R.layout.dialog_change_email);
 
+            EditText editnewEmail = dialog_email.findViewById(R.id.emailEditText);
             btn_Huy_email = dialog_email.findViewById(R.id.btn_H);
             btn_XN_email = dialog_email.findViewById(R.id.btn_XN);
-
             btn_Huy_email.setOnClickListener(view -> dialog_email.dismiss());
+
+            // Lấy dữ liệu user từ ViewModel
+            User currentUser = sharedViewModel.getObjectMLD().getValue();
 
             btn_XN_email.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    dialog_email.dismiss();
-                    showPopup2();
+                    if (currentUser != null) {
+                        String newEmail = editnewEmail.getText().toString().trim();
+                        if (!newEmail.isEmpty()) {
+                            // Cập nhật email trong SharedViewModel
+                            User updatedUser = new User(
+                                    currentUser.getUsername(),
+                                    currentUser.getPassword(),
+                                    currentUser.getName(),
+                                    newEmail,  // Thay đổi email
+                                    currentUser.getPhoneNumber(),
+                                    currentUser.isSex(),
+                                    currentUser.getBirthday()
+                            );
+                            IUsersApi api = RetrofitService.CreateInstanceU();
+                            Call<Void> call = api.updateUser(currentUser.getUsername(), updatedUser);
+                            call.enqueue(new Callback<Void>() {
+
+                                             @Override
+                                             public void onResponse(Call<Void> call, Response<Void> response) {
+                                                if(response.isSuccessful()){
+                                                    //Toast.makeText(requireActivity(), "Cập nhật email thành công", Toast.LENGTH_SHORT).show();
+                                                }
+                                             }
+
+                                             @Override
+                                             public void onFailure(Call<Void> call, Throwable throwable) {
+                                                 Toast.makeText(requireActivity(), "Cập nhật email thất bại.", Toast.LENGTH_SHORT).show();
+                                             }
+                                         });
+                            sharedViewModel.setObjectMLD(updatedUser);
+
+                            // Đóng popup và hiển thị thành công
+                            dialog_email.dismiss();
+                            showPopup2();
+                        } else {
+                            Toast.makeText(requireActivity(), "Vui lòng nhập email mới.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(requireActivity(), "Không thể tải thông tin người dùng.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
+
             dialog_email.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
             WindowManager.LayoutParams layoutParams = dialog_email.getWindow().getAttributes();
             layoutParams.gravity = Gravity.CENTER;
@@ -179,6 +279,21 @@
             dialog_email.getWindow().setAttributes(layoutParams);
             dialog_email.show();
         }
+
+//        private void updateEmail(String newEmail) {
+//            // Giả sử bạn có phương thức API để cập nhật email, ví dụ:
+//             sharedViewModel.updateEmail(newEmail).observe(getViewLifecycleOwner(), response -> {
+//                if (response != null && response.isSuccessful()) {
+//                    // Cập nhật thành công, thay đổi UI
+//                    tvEmail.setText(newEmail);
+//                    Toast.makeText(requireActivity(), "Email đã được cập nhật.", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(requireActivity(), "Cập nhật email thất bại.", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        }
+
+
 
         //==============================show popup2 =======================================//
         private void showPopup2() {
@@ -198,20 +313,60 @@
         private void showPopup3() {
 
             dialog_phone = new Dialog(requireActivity(), R.style.CustomDialog);
-
             dialog_phone.setCancelable(false);
             dialog_phone.setContentView(R.layout.dialog_change_phonenumber);
 
-            btn_Huy_phone = dialog_phone.findViewById(R.id.btn_H);
-            btn_XN_phone = dialog_phone.findViewById(R.id.btn_XN);
-
+            EditText editnewPhone = dialog_phone.findViewById(R.id.phoneEditText);
+            btn_Huy_phone = dialog_phone.findViewById(R.id.btn_H2);
+            btn_XN_phone = dialog_phone.findViewById(R.id.btn_XN2);
             btn_Huy_phone.setOnClickListener(view -> dialog_phone.dismiss());
+
+            // Lấy dữ liệu user từ ViewModel
+            User currentUser = sharedViewModel.getObjectMLD().getValue();
 
             btn_XN_phone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    dialog_phone.dismiss();
-                    showPopup2();
+                    if (currentUser != null) {
+                        String newPhone = editnewPhone.getText().toString().trim();
+                        if (!newPhone.isEmpty()) {
+                            // Cập nhật sdt trong SharedViewModel
+                            User updatedUser = new User(
+                                    currentUser.getUsername(),
+                                    currentUser.getPassword(),
+                                    currentUser.getName(),
+                                    currentUser.getEmail(),
+                                    newPhone, // Thay đổi email
+                                    currentUser.isSex(),
+                                    currentUser.getBirthday()
+                            );
+                            IUsersApi api = RetrofitService.CreateInstanceU();
+                            Call<Void> call = api.updateUser(currentUser.getUsername(), updatedUser);
+                            call.enqueue(new Callback<Void>() {
+
+                                @Override
+                                public void onResponse(Call<Void> call, Response<Void> response) {
+                                    if(response.isSuccessful()){
+                                        //Toast.makeText(requireActivity(), "Cập nhật email thành công", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<Void> call, Throwable throwable) {
+                                    Toast.makeText(requireActivity(), "Cập nhật số điện thoại thất bại.", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                            sharedViewModel.setObjectMLD(updatedUser);
+
+                            // Đóng popup và hiển thị thành công
+                            dialog_phone.dismiss();
+                            showPopup2();
+                        } else {
+                            Toast.makeText(requireActivity(), "Vui lòng nhập sdt mới.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(requireActivity(), "Không thể tải thông tin người dùng.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
             dialog_phone.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);

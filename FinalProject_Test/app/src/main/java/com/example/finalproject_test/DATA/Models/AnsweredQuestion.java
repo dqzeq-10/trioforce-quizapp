@@ -1,6 +1,8 @@
 package com.example.finalproject_test.DATA.Models;
 
-public class AnsweredQuestion {
+import java.io.Serializable;
+
+public class AnsweredQuestion implements Serializable {
     private String username;
     private int idSet;
     private int idQuestion;

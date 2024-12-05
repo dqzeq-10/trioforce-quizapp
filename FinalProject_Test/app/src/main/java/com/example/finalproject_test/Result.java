@@ -12,10 +12,15 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.finalproject_test.DATA.Models.Ranking;
+import com.example.finalproject_test.DATA.ViewModels.RanksVM.RanksViewModel;
 
 public class Result extends AppCompatActivity {
 AppCompatButton btnrshome, btnrsreplay, btnrsnext;
 private TextView resultPoint;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +40,7 @@ private TextView resultPoint;
         resultPoint = findViewById(R.id.result_point);
 // /nhan diem tu intent
 
-        int totalScore = getIntent().getIntExtra("totalScore", 0);
+        int totalScore = getIntent().getIntExtra("addscore", 0);
         Log.d("TotalScore", "Total Score from Intent: " + totalScore); // In ra log để kiểm tra điểm
 
         resultPoint.setText(String.valueOf(totalScore+".00"));

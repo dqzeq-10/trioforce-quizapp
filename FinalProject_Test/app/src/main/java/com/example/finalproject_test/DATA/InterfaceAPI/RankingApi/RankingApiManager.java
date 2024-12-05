@@ -48,4 +48,9 @@ public class RankingApiManager {
         Call<Void> call = iRankingApi.deleteRank(id);
         call.enqueue(callback);
     }
+
+    public void updateScore(String id, Ranking point, Callback<Ranking> callback){
+        Call<Ranking> call = iRankingApi.updateScore(id, point);
+        call.enqueue(callback);
+    }
 }

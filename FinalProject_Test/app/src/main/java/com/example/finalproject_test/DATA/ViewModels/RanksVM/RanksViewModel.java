@@ -35,4 +35,23 @@ public class RanksViewModel extends ViewModel {
     public MutableLiveData<Boolean> deleteRank(String id){
         return ranksRepo.deleteRank(id);
     }
+//    public MutableLiveData<Boolean> updateScore(String id, Ranking point){
+//        return ranksRepo.updateScore(id, point);
+//    }
+//public MutableLiveData<Ranking> updateScore(String id, int addedPoints) {
+//    MutableLiveData<Ranking> currentRank = ranksRepo.getRankById(id);  // Lấy thông tin ranking hiện tại
+//
+//    currentRank.observeForever(ranking -> {
+//        if (ranking != null) {
+//            // Cộng điểm mới vào điểm hiện tại
+//            int newScore = ranking.getPoint() + addedPoints;
+//            ranking.setPoint(newScore);  // Cập nhật điểm trong đối tượng Ranking
+//
+//            // Cập nhật lại điểm cho người dùng
+//            ranksRepo.putRank(id, ranking);  // Gửi yêu cầu cập nhật điểm lên Repository
+//        }
+//    });
+//
+//    return currentRank;
+//}
 }

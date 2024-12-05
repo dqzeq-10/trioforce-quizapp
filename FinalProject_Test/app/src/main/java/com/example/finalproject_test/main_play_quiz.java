@@ -17,9 +17,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.CategoriesAdapter;
+import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
+import com.example.finalproject_test.DATA.Models.QuestionCategory;
+import com.example.finalproject_test.DATA.Models.Ranking;
 import com.example.finalproject_test.DATA.ViewModels.QuestionSetsVM.QuestionSetsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.RanksVM.RanksViewModel;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class main_play_quiz extends AppCompatActivity {
 
@@ -30,15 +44,39 @@ public class main_play_quiz extends AppCompatActivity {
     TextView btn_dialogLuuThoat, btn_dialogHuy, txtLevel, txtcategory;
     QuestionSetsViewModel setsViewModel;
     private int totalScore = 0;
+    RanksViewModel ranksViewModel;
+    String user;
+    Ranking ranking;
+    int point=0;
 
+
+    public void startNewGame() {
+        point = 0; // Reset điểm phiên chơi
+        Log.d("GameStart", "Game started, point reset to 0.");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_play_quiz);
 
+
+
+        // Kiểm tra xem user có giá trị hợp lệ không
+        if (user == null) {
+            Log.e("main_play_quiz", "User ID is null");
+        }
+        ranksViewModel = new ViewModelProvider(this).get(RanksViewModel.class);
+
+        startNewGame();
+
         viewPager_play_quiz = findViewById(R.id.viewPager_Play_Quiz);
         tabLayout = findViewById(R.id.tabLayout_Play_Quiz);
+
+
+
+
+        user = getIntent().getStringExtra("username");
 
         // Nhận idCategory, idLevel từ Intent
         int idCate = getIntent().getIntExtra("idCategory", 1);
@@ -158,16 +196,78 @@ public class main_play_quiz extends AppCompatActivity {
     }
 
     // Cập nhật điểm từ các fragment
+//    public void updateScore(int score) {
+//        Log.d("ScoreUpdate", "Current Score: " + totalScore + ", Adding Points: " + score);
+//        totalScore += score;
+//        Ranking ranking = new Ranking(user,totalScore);
+//        ranking.setPoint(totalScore); // Assuming 'setScore' method exists in Ranking class to set the score
+//        ranksViewModel.updateScore(user, ranking);
+//    }
+//    public void updateScore(int score) {
+//        Log.d("ScoreUpdate", "Current Score: " + totalScore + ", Adding Points: " + score);
+//
+//        // Cộng thêm điểm vào tổng điểm
+//        totalScore += score;
+//
+//        // Cập nhật điểm vào ViewModel
+//        ranksViewModel.updateScore(user, score).observe(this, ranking -> {
+//            if (ranking != null) {
+//                // Khi điểm đã được cập nhật thành công, bạn có thể làm gì đó với đối tượng ranking, ví dụ:
+//                totalScore = ranking.getPoint();  // Cập nhật lại điểm hiện tại
+//                Log.d("UpdatedScore", "Updated Total Score: " + totalScore);
+//            }
+//        });
+//    }
+
     public void updateScore(int score) {
+//        Log.d("ScoreUpdate", "Current Score: " + totalScore + ", Adding Points: " + score);
+//        totalScore += score;
+//        Ranking ranking = new Ranking(user, totalScore);
+//        Log.d("UserCheck", "Username: " + ranking.getUsername());
+//        ranksViewModel.putRank(user, ranking).observe(this, success -> {
+//            if (success != null && success) {
+//
+//                Log.d("UpdatedScore", "Updated Total Score: " + totalScore);
+//            } else {
+//                Log.e("UpdateScore", "Failed to update score.");
+//            }
+//        });
+        // Lấy điểm hiện tại từ hệ thống (Ví dụ từ ViewModel hoặc dữ liệu đã lưu trữ)
         Log.d("ScoreUpdate", "Current Score: " + totalScore + ", Adding Points: " + score);
-        totalScore += score;
+        point+=score;
+        ranksViewModel.getRankById(user).observe(this, ranking -> {
+            if (ranking != null) {
+                // Lấy điểm hiện tại của người dùng và cộng thêm điểm mới
+                int currentScore = ranking.getPoint();  // Giả sử 'getPoint()' là phương thức lấy điểm
+
+                totalScore = currentScore + score;
+
+
+                // Tạo đối tượng Ranking với điểm mới
+                Ranking updatedRanking = new Ranking(user, totalScore);
+                Log.d("UserCheck", "Username: " + updatedRanking.getUsername());
+
+                // Cập nhật điểm vào ViewModel
+                ranksViewModel.putRank(user, updatedRanking).observe(this, success -> {
+                    if (success != null && success) {
+                        Log.d("UpdatedScore", "Updated Total Score: " + totalScore);
+                    } else {
+                        Log.e("UpdateScore", "Failed to update score.");
+                    }
+                });
+            } else {
+                Log.e("UpdateScore", "Ranking not found for user.");
+            }
+        });// Lấy điểm hiện tại từ hệ thống (Ví dụ từ ViewModel hoặc dữ liệu đã lưu trữ)
 
     }
 
     // Chuyển đến màn hình kết quả
     public void goToResult() {
         Intent intent = new Intent(main_play_quiz.this, Result.class);
-        intent.putExtra("totalScore", totalScore);  // Truyền điểm vào Intent
+        intent.putExtra("addscore", point);  // Truyền điểm vào Intent
+
         startActivity(intent);
     }
+
 }

@@ -118,6 +118,20 @@ public class RanksRepo {
         });
         return  operationSuccess;
     }
-
+//    public MutableLiveData<Boolean> updateScore(String id, Ranking point){
+//        rankingApiManager.updateScore(id, point, new Callback<Ranking>() {
+//            @Override
+//            public void onResponse(Call<Ranking> call, Response<Ranking> response) {
+//                operationSuccess.setValue(response.isSuccessful());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Ranking> call, Throwable throwable) {
+//                operationSuccess.setValue(false);
+//                Log.e("RankRepo", "failed to updateScore: " + throwable.getMessage());
+//            }
+//        });
+//        return  operationSuccess;
+//    }
 }
 

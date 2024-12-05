@@ -50,7 +50,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/emailEditText"
+                    android:id="@+id/phoneEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -72,7 +72,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_H"
+                    android:id="@+id/btn_H2"
                     android:layout_width="80dp"
                     android:layout_height="35dp"
                     android:background="@drawable/bg_huy"
@@ -89,7 +89,7 @@
                     android:layout_height="match_parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_XN"
+                    android:id="@+id/btn_XN2"
                     android:layout_width="80dp"
                     android:layout_height="35dp"
                     android:layout_gravity="end"
