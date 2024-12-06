@@ -28,6 +28,17 @@ public class UsersApiManager {
         usersCall.enqueue(callback);
     }
 
+    public void postUser(User user, Callback<User> callback){
+        Call<User> call = iUsersApi.postUser(user);
+        call.enqueue(callback);
+    }
+
+    public void putUser(String id, User user, Callback<User> callback){
+        Call<User> call = iUsersApi.putUser(id, user);
+        call.enqueue(callback);
+    }
+
+
 // Tạo thêm method lấy gì đó, câu hỏi, thể loại,... nhưng mà ở class khác chứ user này còn gì đâu mà lấy nữa
 //    public void getSomethings (Callback<List<'entityName'>> callback){
 //        Call<List<'entityName'>> 'entityName'Call = i'entityName'Api.get'entityName'();

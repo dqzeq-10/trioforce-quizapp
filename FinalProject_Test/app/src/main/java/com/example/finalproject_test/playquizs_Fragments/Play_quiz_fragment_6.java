@@ -51,7 +51,13 @@ public class Play_quiz_fragment_6 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+    public static Play_quiz_fragment_6 receiveQuestion1 (Question question) {
+        Play_quiz_fragment_6 playQuizFragment6 = new Play_quiz_fragment_6();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_QUESTION, question);
+        playQuizFragment6.setArguments(args);
+        return playQuizFragment6;
+    }
     public static Play_quiz_fragment_6 receiveQuestion(Question question, @Nullable Boolean isCorrectChoice) {
         Play_quiz_fragment_6 playQuizFragment6 = new Play_quiz_fragment_6();
         Bundle args = new Bundle();

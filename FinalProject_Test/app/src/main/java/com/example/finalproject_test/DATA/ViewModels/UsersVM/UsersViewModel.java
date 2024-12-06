@@ -10,14 +10,22 @@ import java.util.List;
 
 public class UsersViewModel extends ViewModel {
     private final UsersRepo usersRepo;
-    private  MutableLiveData<List<User>> usersLiveData;
+    //  private  MutableLiveData<List<User>> usersLiveData;
 
     public UsersViewModel(){
         usersRepo = new UsersRepo();
-        usersLiveData = usersRepo.getUsers();
+        //   usersLiveData = usersRepo.getUsers();
     }
 
     public MutableLiveData<List<User>> getUsers(){
-        return usersLiveData;
+        return usersRepo.getUsers();
+    }
+
+    public MutableLiveData<Boolean> postUser (User user){
+        return usersRepo.postUser(user);
+    }
+
+    public MutableLiveData<Boolean> putUser (String id, User user){
+        return usersRepo.putUser(id, user);
     }
 }

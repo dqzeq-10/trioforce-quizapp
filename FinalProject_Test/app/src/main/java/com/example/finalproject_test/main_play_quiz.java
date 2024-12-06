@@ -57,7 +57,7 @@ public class main_play_quiz extends AppCompatActivity {
             setsViewModel.getSetByIdLevelAndIdCate(idLevel, idCate).observe(this, set -> {
                 if (set != null && set.getQuestions() != null) {
                     // Set adapter chỉ khi có dữ liệu
-                    adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions(), null);
+                    adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions()); //bỏ null answered ra
                     viewPager_play_quiz.setAdapter(adapter);
 
                     new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {

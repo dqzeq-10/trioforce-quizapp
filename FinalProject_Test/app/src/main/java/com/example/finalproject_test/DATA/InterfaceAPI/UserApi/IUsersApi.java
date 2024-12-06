@@ -5,7 +5,10 @@ import com.example.finalproject_test.DATA.Models.User;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface IUsersApi {
@@ -15,6 +18,12 @@ public interface IUsersApi {
 
     @GET("Users/{id}")
     Call<List<User>> getUserById(@Path("id") String id);
+
+    @POST("Users")
+    Call<User> postUser(@Body User user);
+
+    @PUT("Users/{id}")
+    Call<User> putUser (@Path("id") String id, @Body User user);
 
 
 }
