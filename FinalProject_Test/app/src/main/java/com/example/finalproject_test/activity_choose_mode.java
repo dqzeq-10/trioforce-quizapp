@@ -1,3 +1,4 @@
+
 package com.example.finalproject_test;
 
 import android.content.Intent;
@@ -17,11 +18,17 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.finalproject_test.DATA.Models.Level;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.Repository.CurrentUserSesssion;
 import com.example.finalproject_test.DATA.ViewModels.LevelsVM.LevelsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.LoginVM.LoginViewModel;
+import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModel;
 
 public class activity_choose_mode extends AppCompatActivity {
-ImageButton btnVeManHinhChinh;
-AppCompatButton cdde,cdbthg,cdkho;
+    ImageButton btnVeManHinhChinh;
+    AppCompatButton cdde,cdbthg,cdkho;
+    UsersViewModel usersViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,8 @@ AppCompatButton cdde,cdbthg,cdkho;
         cdbthg =findViewById(R.id.CheDoBinhThuong);
         cdkho =findViewById(R.id.CheDoKho);
         btnVeManHinhChinh=(ImageButton) findViewById(R.id.TroVeManHinhChinh);
+        User currentUser =  CurrentUserSesssion.getInstance().getUserCurrent();
+
 
         //(mới thêm nè...
         int idTheLoai = getIntent().getIntExtra("ID_THE_LOAI", -1); // -1 nếu không có dữ liệu
@@ -102,7 +111,7 @@ AppCompatButton cdde,cdbthg,cdkho;
                 }
                 intent.putExtra("level","Dễ");
                 intent.putExtra("idLevel",1);
-                intent.putExtra("username", "khanh");
+                intent.putExtra("username", currentUser.getUsername());
                 startActivity(intent);
             }
         });
@@ -122,6 +131,7 @@ AppCompatButton cdde,cdbthg,cdkho;
                 }
                 intent.putExtra("level","Thường");
                 intent.putExtra("idLevel",2);
+                intent.putExtra("username", currentUser.getUsername());
                 startActivity(intent);
             }
         });
@@ -137,6 +147,7 @@ AppCompatButton cdde,cdbthg,cdkho;
                 }
                 intent.putExtra("level","Khó");
                 intent.putExtra("idLevel",3);
+                intent.putExtra("username", currentUser.getUsername());
                 startActivity(intent);
             }
         });
