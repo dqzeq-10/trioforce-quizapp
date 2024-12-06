@@ -1,0 +1,514 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Dowloads\\asp\\API_QuizAppDB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\pages\\adminmanagement.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:pages\\adminmanagement.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\pages\\adminmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:pages\\adminmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\rankingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\rankingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\ranking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\ranking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\info.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\info.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\createdquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\createdquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\levelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\levelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answeredquestitonscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\answeredquestiton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\answeredquestiton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\progressquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\markedquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\progressquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\progressquestionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\questioncategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:models\\quizappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\answerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\controllers\\questioncategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:controllers\\questioncategoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Source Visual Studio\\API_QuizAppDB\\Migrations\\20241127102846_FirstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\system\\text\\json\\serialization\\jsondatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:system\\text\\json\\serialization\\jsondatetimeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|d:\\dowloads\\asp\\api_quizappdb\\migrations\\20241127103025_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D4E8C4A-EB4E-461C-9AA0-B12E1A29DE70}|API_QuizAppDB.csproj|solutionrelative:migrations\\20241127103025_firstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 218,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminManagement.cshtml.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Pages\\AdminManagement.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\AdminManagement.cshtml.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Pages\\AdminManagement.cshtml.cs*",
+              "RelativeToolTip": "Pages\\AdminManagement.cshtml.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:23:30.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminManagement.cshtml",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Pages\\AdminManagement.cshtml",
+              "RelativeDocumentMoniker": "Pages\\AdminManagement.cshtml",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Pages\\AdminManagement.cshtml*",
+              "RelativeToolTip": "Pages\\AdminManagement.cshtml*",
+              "ViewState": "AgIAAFIBAAAAAAAAAAAAAFcBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T15:22:03.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Question.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "Models\\Question.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Question.cs",
+              "RelativeToolTip": "Models\\Question.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:44.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T08:38:26.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LevelsController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\LevelsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LevelsController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\LevelsController.cs",
+              "RelativeToolTip": "Controllers\\LevelsController.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAADwv3MAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:33:57.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T08:26:13.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RankingsController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\RankingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RankingsController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\RankingsController.cs",
+              "RelativeToolTip": "Controllers\\RankingsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:36:28.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ranking.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Ranking.cs",
+              "RelativeDocumentMoniker": "Models\\Ranking.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Ranking.cs",
+              "RelativeToolTip": "Models\\Ranking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:59.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Level.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Level.cs",
+              "RelativeDocumentMoniker": "Models\\Level.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Level.cs",
+              "RelativeToolTip": "Models\\Level.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:43.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProgressQuestion.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\ProgressQuestion.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\ProgressQuestion.cs",
+              "RelativeToolTip": "Models\\ProgressQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:44.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreatedQuestion.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\CreatedQuestion.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\CreatedQuestion.cs",
+              "RelativeToolTip": "Models\\CreatedQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:42.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Info.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Info.cs",
+              "RelativeDocumentMoniker": "Models\\Info.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Info.cs",
+              "RelativeToolTip": "Models\\Info.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T11:49:28.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T13:52:50.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Answer.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Answer.cs",
+              "RelativeDocumentMoniker": "Models\\Answer.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\Answer.cs",
+              "RelativeToolTip": "Models\\Answer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:39.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AnsweredQuestiton.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\AnsweredQuestiton.cs",
+              "RelativeDocumentMoniker": "Models\\AnsweredQuestiton.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\AnsweredQuestiton.cs",
+              "RelativeToolTip": "Models\\AnsweredQuestiton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:41.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AnsweredQuestitonsController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnsweredQuestitonsController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AnsweredQuestitonsController.cs",
+              "RelativeToolTip": "Controllers\\AnsweredQuestitonsController.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAwwKAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:41:25.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MarkedQuestion.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
+              "RelativeDocumentMoniker": "Models\\MarkedQuestion.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\MarkedQuestion.cs",
+              "RelativeToolTip": "Models\\MarkedQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:02:53.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "QuestionSet.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuestionSet.cs",
+              "RelativeDocumentMoniker": "Models\\QuestionSet.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuestionSet.cs",
+              "RelativeToolTip": "Models\\QuestionSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:58.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProgressQuestionsController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\ProgressQuestionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProgressQuestionsController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\ProgressQuestionsController.cs",
+              "RelativeToolTip": "Controllers\\ProgressQuestionsController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwDQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T02:36:28.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "QuestionsController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\QuestionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuestionsController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\QuestionsController.cs",
+              "RelativeToolTip": "Controllers\\QuestionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:34:33.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "QuestionCategory.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuestionCategory.cs",
+              "RelativeDocumentMoniker": "Models\\QuestionCategory.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuestionCategory.cs",
+              "RelativeToolTip": "Models\\QuestionCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:03:45.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "QuizAppDbContext.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuizAppDbContext.cs",
+              "RelativeDocumentMoniker": "Models\\QuizAppDbContext.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Models\\QuizAppDbContext.cs",
+              "RelativeToolTip": "Models\\QuizAppDbContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwDkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T09:38:21.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AnswersController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AnswersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnswersController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AnswersController.cs",
+              "RelativeToolTip": "Controllers\\AnswersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:32:54.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T13:41:26.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T09:46:51.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "QuestionCategoriesController.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\QuestionCategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuestionCategoriesController.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Controllers\\QuestionCategoriesController.cs",
+              "RelativeToolTip": "Controllers\\QuestionCategoriesController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:35:13.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20241127103025_FirstMigration.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Migrations\\20241127103025_FirstMigration.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241127103025_FirstMigration.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Migrations\\20241127103025_FirstMigration.cs",
+              "RelativeToolTip": "Migrations\\20241127103025_FirstMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:30:25.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-16T14:43:23.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20241127102846_FirstMigration.cs",
+              "DocumentMoniker": "E:\\Source Visual Studio\\API_QuizAppDB\\Migrations\\20241127102846_FirstMigration.cs",
+              "ToolTip": "E:\\Source Visual Studio\\API_QuizAppDB\\Migrations\\20241127102846_FirstMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T10:28:46.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "JsonDateTimeConverter.cs",
+              "DocumentMoniker": "D:\\Dowloads\\asp\\API_QuizAppDB\\System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
+              "RelativeDocumentMoniker": "System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
+              "ToolTip": "D:\\Dowloads\\asp\\API_QuizAppDB\\System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
+              "RelativeToolTip": "System\\Text\\Json\\Serialization\\JsonDateTimeConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T06:31:56.548Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+﻿@page
+@model API_QuizAppDB.Pages.AdminManagementModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>API Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .tabs {
+            width: 250px;
+            background-color: #D5EEF4;
+            padding-top: 20px;
+            border-right: 1px solid #ddd;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .card {
+            margin-top: 30px;
+        }
+
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Admin Panel - Tabs navigation on the left -->
+        <div class="tabs">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2>13.TrioForce
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <h3>Quản lý</h3>
+
+                    <!-- Tab navigation for each controller -->
+                    <ul class="nav flex-column nav-pills" id="apiTabs" role="tablist">
+                        @foreach (var api in Model.ApiList)
+                        {
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="api-tab-@api.Id" data-bs-toggle="pill" href="#api-@api.Id" role="tab" aria-controls="api-@api.Id" aria-selected="false">@api.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Panel - Content area to manage each controller -->
+        <div class="tab-content">
+            @foreach (var api in Model.ApiList)
+            {
+                <div class="tab-pane fade" id="api-@api.Id" role="tabpanel" aria-labelledby="api-tab-@api.Id">
+                    <div class="mt-3">
+                        <h4>Thông tin API: @api.Name</h4>
+
+                        @if (api.Name == "User")
+                        {
+                            <!-- Hiển thị bảng danh sách người dùng -->
+                            <h5>Danh sách User</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Email</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Giới tính</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTableBody">
+                                    <!-- Dữ liệu User sẽ được nạp qua JavaScript -->
+                                </tbody>
+                            </table>
+                            <script>
+                                // Gọi API để lấy danh sách User khi tab "User" được mở
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    const userTab = document.getElementById('api-tab-@api.Id');
+                                    const userTableBody = document.getElementById('userTableBody');
+
+                                    userTab.addEventListener('click', async function () {
+                                        const response = await fetch('/api/Users');
+                                        if (response.ok) {
+                                            const users = await response.json();
+                                            userTableBody.innerHTML = users.map(user => `
+                                                <tr>
+                                                    <td>${user.username}</td>
+                                                    <td>${user.email}</td>
+                                                     <td>${user.phoneNumber}</td>
+                                                    <td>${user.sex ? 'Nam' : 'Nữ'}</td> <!-- Chuyển đổi sex từ true/false sang Nam/Nữ -->
+
+                                                    <td>
+                                                        <button class="btn btn-warning btn-sm" onclick="editUser(${user.username})">Sửa</button>
+                                                        <button class="btn btn-danger btn-sm" onclick="deleteUser(${user.username})">Xóa</button>
+                                                    </td>
+                                                </tr>
+                                            `).join('');
+                                        } else {
+                                            userTableBody.innerHTML = '<tr><td colspan="4">Không thể tải danh sách người dùng!</td></tr>';
+                                        }
+                                    });
+                                });
+                            </script>
+                        }
+                        else if (api.Name == "Question")
+                    {
+                            <!-- Hiển thị bảng danh sách người dùng -->
+                            <h5>Danh sách Question</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>IDQuestion</th>
+
+                                        <th>QuestionText</th>
+                                        <th>ID set</th>
+                                  
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="questionTableBody">
+                                    <!-- Dữ liệu User sẽ được nạp qua JavaScript -->
+                                </tbody>
+                            </table>
+                            <script>
+                                // Gọi API để lấy danh sách User khi tab "User" được mở
+                                document.addEventListener('DOMContentLoaded', function () {
+                                                                 const questionTab = document.getElementById('api-tab-@api.Id');
+                                const questionTableBody = document.getElementById('questionTableBody');
+
+                                questionTab.addEventListener('click', async function () {
+                                    const response = await fetch('/api/Questions');
+                                    if (response.ok) {
+                                        const questions = await response.json();
+                                        questionTableBody.innerHTML = questions.map(question => `
+                                            <tr>
+                                                 <td>${question.idQuestion}</td> <!-- Đổi tên thành idQuestion -->
+                                                 <td>${question.questionText}</td> <!-- Đổi tên thành questionText -->
+                                                     <td>${question.idSet}</td> <!-- Đổi tên thành idSet -->
+                                                <td>
+                                                    <button class="btn btn-warning btn-sm" onclick="editQuestion(${question.IDQuestion})">Sửa</button>
+                                                    <button class="btn btn-danger btn-sm" onclick="deleteQuestion(${question.IDQuestion})">Xóa</button>
+                                                </td>
+                                            </tr>
+                                        `).join('');
+                                    } else {
+                                        questionTableBody.innerHTML = '<tr><td colspan="4">Không thể tải danh sách câu hỏi!</td></tr>';
+                                    }
+                                     });
+                                });
+                            </script>
+                            }
+                        else if (api.Name == "Ranking")
+                        {
+                            <h5>Danh sách Ranking</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>UserName</th>
+                                        <th>Point</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userTableBody">
+                                    <!-- Dữ liệu Ranking sẽ được nạp qua JavaScript -->
+                                </tbody>
+                            </table>
+                            <script>
+                              
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                    // Lấy tab của Ranking và body của bảng Ranking
+                                    const rankingTab = document.getElementById('api-tab-@api.Id');
+                                    const rankingTableBody = document.getElementById('rankingTableBody'); // Đảm bảo ID chính xác
+
+                                    rankingTab.addEventListener('click', async function () {
+                                        try {
+                                            // Gọi API Rankings
+                                            const response = await fetch('/api/Rankings');
+                                            if (response.ok) {
+                                                const rankings = await response.json(); // Chuyển đổi JSON
+                                                rankingTableBody.innerHTML = rankings.map(ranking => `
+                                                    <tr>
+                                                        <td>${ranking.username}</td> <!-- Tên trường chính xác từ JSON -->
+                                                        <td>${ranking.point}</td>   <!-- Tên trường chính xác từ JSON -->
+                                                        <td>
+                                                            <button class="btn btn-warning btn-sm" onclick="editRanking('${ranking.username}')">Sửa</button>
+                                                            <button class="btn btn-danger btn-sm" onclick="deleteRanking('${ranking.username}')">Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                `).join(''); // Tạo hàng mới từ danh sách rankings
+                                            } else {
+                                                rankingTableBody.innerHTML = '<tr><td colspan="3">Không thể tải danh sách xếp hạng!</td></tr>';
+                                            }
+                                        } catch (error) {
+                                            console.error('Lỗi khi gọi API Rankings:', error);
+                                            rankingTableBody.innerHTML = '<tr><td colspan="3">Có lỗi xảy ra khi tải dữ liệu!</td></tr>';
+                                        }
+                                    });
+                                });
+                            </script>
+
+                        }
+                        else if (api.Name == "MarkedQuestion")
+                        {
+                        <!-- Hiển thị bảng danh sách người dùng -->
+                        <h5>Danh sách Marked</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>UserName</th>
+                                    <th>ID Question</th>
+                                    <th>Marked Time</th>
+                                    <th>Hành động</th>
+                                 
+                                </tr>
+                            </thead>
+                            <tbody id="markedQuestionTableBody">
+                                <!-- Dữ liệu User sẽ được nạp qua JavaScript -->
+                            </tbody>
+                        </table>
+                        <script>
+                            // Gọi API để lấy danh sách User khi tab "User" được mở
+                                                          document.addEventListener('DOMContentLoaded', function () {
+                                    // Lấy tab của MarkedQuestion và body của bảng
+                                    const markedQuestionTab = document.getElementById('api-tab-@api.Id');
+                                    const markedQuestionTableBody = document.getElementById('markedQuestionTableBody'); // Đảm bảo ID chính xác
+
+                                    markedQuestionTab.addEventListener('click', async function () {
+                                        try {
+                                            // Gọi API MarkedQuestions
+                                            const response = await fetch('/api/MarkedQuestions');
+                                            if (response.ok) {
+                                                const markedQuestions = await response.json(); // Chuyển đổi JSON
+                                                markedQuestionTableBody.innerHTML = markedQuestions.map(question => `
+                                                    <tr>
+                                                        <td>${question.username}</td> <!-- Tên trường chính xác từ JSON -->
+                                                        <td>${question.idQuestion}</td> <!-- Tên trường chính xác từ JSON -->
+                                                        <td>${question.markedTime}</td> <!-- Hiển thị thời gian đánh dấu -->
+                                                        <td>
+                                                            <button class="btn btn-warning btn-sm" onclick="editMarkedQuestion('${question.username}', ${question.idQuestion})">Sửa</button>
+                                                            <button class="btn btn-danger btn-sm" onclick="deleteMarkedQuestion('${question.username}', ${question.idQuestion})">Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                `).join(''); // Tạo hàng mới từ danh sách câu hỏi đã đánh dấu
+                                            } else {
+                                                markedQuestionTableBody.innerHTML = '<tr><td colspan="4">Không thể tải danh sách câu hỏi đã đánh dấu!</td></tr>';
+                                            }
+                                        } catch (error) {
+                                            console.error('Lỗi khi gọi API MarkedQuestions:', error);
+                                            markedQuestionTableBody.innerHTML = '<tr><td colspan="4">Có lỗi xảy ra khi tải dữ liệu!</td></tr>';
+                                        }
+                                    });
+                                });
+                        </script>
+                        }
+                        else if (api.Name == "ProgressQuestions")
+                        {
+                            <!-- Hiển thị bảng danh sách người dùng -->
+                            <h5>Danh sách Progress</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>UserName</th>
+                                        <th>ID Set</th>
+                                        <th>Question Account</th>
+                                        <th>Question LastId</th>
+                                        <th>Save Time</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="progressQuestionTableBody">
+                                    <!-- Dữ liệu User sẽ được nạp qua JavaScript -->
+                                </tbody>
+                            </table>
+                            <script>
+
+                                                        document.addEventListener('DOMContentLoaded', function () {
+                                    // Lấy tab của MarkedQuestion và body của bảng
+                                    const progressQuestionTab = document.getElementById('api-tab-@api.Id');
+                                    const progressQuestionTableBody = document.getElementById('progressQuestionTableBody'); // Đảm bảo ID chính xác
+
+                                    progressQuestionTab.addEventListener('click', async function () {
+                                        try {
+                                            // Gọi API MarkedQuestions
+                                            const response = await fetch('/api/progressquestions');
+                                            if (response.ok) {
+                                                const progressQuestions = await response.json(); // Chuyển đổi JSON
+                                                progressQuestionTableBody.innerHTML = progressQuestions.map(set => `
+                                                    <tr>
+                                                        <td>${set.username}</td> <!-- Username -->
+                                                        <td>${set.idSet}</td> <!-- ID Set -->
+                                                        <td>${set.questionCount}</td> <!-- Số lượng câu hỏi -->
+                                                        <td>${set.questionLastId}</td> <!-- ID câu hỏi cuối cùng -->
+                                                        <td>${set.saveTime}</td> <!-- Thời gian lưu -->
+                                                        <td>
+                                                            <button class="btn btn-warning btn-sm" onclick="editSaveQuestionSet('${set.username}', ${set.idSet})">Sửa</button>
+                                                            <button class="btn btn-danger btn-sm" onclick="deleteSaveQuestionSet('${set.username}', ${set.idSet})">Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                `).join(''); // Tạo hàng mới từ danh sách SaveQuestionSets
+                                            } else {
+                                                progressQuestionSetTableBody.innerHTML = '<tr><td colspan="6">Không thể tải danh sách bộ câu hỏi đã lưu!</td></tr>';
+                                            }
+                                        } catch (error) {
+                                            console.error('Lỗi khi gọi API SaveQuestionSets:', error);
+                                            progressQuestionSetTableBody.innerHTML = '<tr><td colspan="6">Có lỗi xảy ra khi tải dữ liệu!</td></tr>';
+                                        }
+                                    });
+                                });
+                            </script>
+                        }
+                        else if (api.Name == "Questions")
+                        {
+                            <!-- Hiển thị bảng danh sách người dùng -->
+                            <h5>Danh sách Progress</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>UserName</th>
+                                        <th>ID Set</th>
+                                        <th>Question Account</th>
+                                        <th>Question LastId</th>
+                                        <th>Save Time</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="progressQuestionTableBody">
+                                    <!-- Dữ liệu User sẽ được nạp qua JavaScript -->
+                                </tbody>
+                            </table>
+                            <script>
+
+                                                        document.addEventListener('DOMContentLoaded', function () {
+                                    // Lấy tab của MarkedQuestion và body của bảng
+                                    const progressQuestionTab = document.getElementById('api-tab-@api.Id');
+                                    const progressQuestionTableBody = document.getElementById('progressQuestionTableBody'); // Đảm bảo ID chính xác
+
+                                    progressQuestionTab.addEventListener('click', async function () {
+                                        try {
+                                            // Gọi API MarkedQuestions
+                                            const response = await fetch('/api/progressquestions');
+                                            if (response.ok) {
+                                                const progressQuestions = await response.json(); // Chuyển đổi JSON
+                                                progressQuestionTableBody.innerHTML = progressQuestions.map(set => `
+                                                    <tr>
+                                                        <td>${set.username}</td> <!-- Username -->
+                                                        <td>${set.idSet}</td> <!-- ID Set -->
+                                                        <td>${set.questionCount}</td> <!-- Số lượng câu hỏi -->
+                                                        <td>${set.questionLastId}</td> <!-- ID câu hỏi cuối cùng -->
+                                                        <td>${set.saveTime}</td> <!-- Thời gian lưu -->
+                                                        <td>
+                                                            <button class="btn btn-warning btn-sm" onclick="editSaveQuestionSet('${set.username}', ${set.idSet})">Sửa</button>
+                                                            <button class="btn btn-danger btn-sm" onclick="deleteSaveQuestionSet('${set.username}', ${set.idSet})">Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                `).join(''); // Tạo hàng mới từ danh sách SaveQuestionSets
+                                            } else {
+                                                progressQuestionSetTableBody.innerHTML = '<tr><td colspan="6">Không thể tải danh sách bộ câu hỏi đã lưu!</td></tr>';
+                                            }
+                                        } catch (error) {
+                                            console.error('Lỗi khi gọi API SaveQuestionSets:', error);
+                                            progressQuestionSetTableBody.innerHTML = '<tr><td colspan="6">Có lỗi xảy ra khi tải dữ liệu!</td></tr>';
+                                        }
+                                    });
+                                });
+                            </script>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS (for modal, collapse, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
