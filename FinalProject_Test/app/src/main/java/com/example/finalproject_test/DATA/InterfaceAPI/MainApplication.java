@@ -3,6 +3,7 @@ package com.example.finalproject_test.DATA.InterfaceAPI;
 import android.app.Application;
 
 
+import com.example.finalproject_test.DATA.InterfaceAPI.CreatedQuestionApi.CreatedQuestionApiManager;
 import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.LevelsApiManager;
 
 import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.MarkedQuestionApiManager;
@@ -21,7 +22,7 @@ public class MainApplication extends Application {
 
     public static RankingApiManager rankingApiManager;
     public static LevelsApiManager levelsApiManager;
-
+    public static CreatedQuestionApiManager createdQuestionApiManager;
     public static MarkedQuestionApiManager markedQuestionApiManager;
 
 
@@ -37,7 +38,7 @@ public class MainApplication extends Application {
 
 
         questionSetsApiManager = QuestionSetsApiManager.getInstance();
-
+        createdQuestionApiManager = CreatedQuestionApiManager.getInstance();
         markedQuestionApiManager = MarkedQuestionApiManager.getInstance();
 
         //'entityName'ApiManager = new 'EntityName'ApiManager.getInstance();

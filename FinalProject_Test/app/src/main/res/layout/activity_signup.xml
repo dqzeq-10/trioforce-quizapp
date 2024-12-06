@@ -137,6 +137,7 @@
             app:boxStrokeColor="#C71515">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -169,6 +170,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/etEmail"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@null"
@@ -198,6 +200,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/etSDT"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@null"
@@ -227,6 +230,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/etNgaysinh"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@null"
@@ -327,6 +331,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/etMK"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@null"
@@ -356,6 +361,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/etXNMK"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:background="@null"
@@ -390,7 +396,7 @@
             android:textSize="12sp" />
 
         <RadioGroup
-            android:id="@+id/ChonGioiTinh"
+            android:id="@+id/rgChonGioiTinhDK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -410,14 +416,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo2_regular"
                 android:text="Nữ"
-                android:textSize="12sp" />
-
-            <RadioButton
-                android:id="@+id/radioButtonOther"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/baloo2_regular"
-                android:text="Khác"
                 android:textSize="12sp" />
 
         </RadioGroup>

@@ -8,37 +8,51 @@ import retrofit2.Call;
 import retrofit2.Callback;
 
 public class ProgressQuestionsApiManager {
-    private static IProgressQuestionsAPi iProgressQuestionsAPi;
+    private static IProgressQuestionsApi iProgressQuestionsApi;
     private static ProgressQuestionsApiManager progressQuestionsApiManager;
-    private ProgressQuestionsApiManager (){
-        iProgressQuestionsAPi = RetrofitService.createInstancePQ();
+
+    private ProgressQuestionsApiManager(){
+        iProgressQuestionsApi = RetrofitService.createInstancePQ();
     }
+
+
     public static ProgressQuestionsApiManager getInstance() {
         if (progressQuestionsApiManager == null) {
             progressQuestionsApiManager = new ProgressQuestionsApiManager();
         }
         return progressQuestionsApiManager;
     }
+
     public void getProgress(Callback<List<ProgressQuestion>> callback) {
-        Call<List<ProgressQuestion>> progressCall = iProgressQuestionsAPi.getProgress();
+        Call<List<ProgressQuestion>> progressCall = iProgressQuestionsApi.getProgress();
         progressCall.enqueue(callback);
     }
-    public void getProgressById(int id, Callback<ProgressQuestion> callback) {
-        Call<ProgressQuestion> progressCall = iProgressQuestionsAPi.getProgressById(id);
-        progressCall.enqueue(callback);
 
+    public void getProgressByUsername(String username, Callback<List<ProgressQuestion>> callback) {
+        Call<List<ProgressQuestion>> progressCall = iProgressQuestionsApi.getProgressByUsername(username);
+        progressCall.enqueue(callback);
     }
+
+    public void getProgressByUsernameAndIdSet(String username, int idSet, Callback<ProgressQuestion> callback) {
+        Call<ProgressQuestion> progressCall = iProgressQuestionsApi.getProgressByUsernameAndIdSet(username, idSet);
+        progressCall.enqueue(callback);
+    }
+
+
+
     public void postProgress(ProgressQuestion progressQuestion, Callback<ProgressQuestion> callback) {
-        Call<ProgressQuestion> progressCall = iProgressQuestionsAPi.postProgress(progressQuestion);
+        Call<ProgressQuestion> progressCall = iProgressQuestionsApi.postProgress(progressQuestion);
         progressCall.enqueue(callback);
     }
-    public void putProgress(int id, ProgressQuestion progressQuestion, Callback<ProgressQuestion> callback) {
-        Call<ProgressQuestion> progressCall = iProgressQuestionsAPi.putProgress(id, progressQuestion);
+
+    public void putProgress(String username, int idSet, ProgressQuestion progressQuestion, Callback<ProgressQuestion> callback) {
+        Call<ProgressQuestion> progressCall = iProgressQuestionsApi.putProgress(username, idSet , progressQuestion);
         progressCall.enqueue(callback);
 
     }
-    public void deleteProgress(int id, Callback<Void> callback) {
-        Call<Void> progressCall = iProgressQuestionsAPi.deleteProgress(id);
+
+    public void deleteProgress(String username, int idSet, Callback<Void> callback) {
+        Call<Void> progressCall = iProgressQuestionsApi.deleteProgress(username, idSet);
         progressCall.enqueue(callback);
     }
 }

@@ -28,6 +28,16 @@ public class User {
         this.sex = sex;
         this.birthday = birthday;
     }
+
+    public User(String username, String password, String email, String phoneNumber, boolean sex, Date birthday) {
+        this.username = username;
+        this.password = password;
+        this.name = "Chưa đặt tên";
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.sex = sex;
+        this.birthday = birthday;
+    }
     public User(String username, List<QuestionSet> questionSets) {
         this.username = username;
         this.questionSets = questionSets;

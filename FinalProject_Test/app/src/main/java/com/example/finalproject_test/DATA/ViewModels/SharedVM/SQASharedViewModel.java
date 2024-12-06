@@ -67,7 +67,16 @@ public class SQASharedViewModel extends ViewModel {
         setLiveData.setValue(currentSet);
     }
 
-
-
+    public void resetData() {
+        if (setLiveData.getValue() != null) {
+            QuestionSet currentSet = setLiveData.getValue();
+            currentSet.setSetName(null); // Đặt lại tên bộ câu hỏi
+            currentSet.setAuthorName(null); // Đặt lại tên tác giả
+            currentSet.setIdLevel(0); // Đặt lại ID cấp độ
+            currentSet.setIdCategory(0); // Đặt lại ID thể loại
+            currentSet.setQuestions(new ArrayList<>()); // Xóa danh sách câu hỏi
+            setLiveData.setValue(currentSet); // Cập nhật lại LiveData
+        }
+    }
 
 }

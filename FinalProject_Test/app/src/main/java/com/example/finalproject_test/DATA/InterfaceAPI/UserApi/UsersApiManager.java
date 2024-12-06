@@ -28,6 +28,12 @@ public class UsersApiManager {
         usersCall.enqueue(callback);
     }
 
+
+    public void postUser(User user, Callback<User> callback){
+        Call<User> call = iUsersApi.postUser(user);
+        call.enqueue(callback);
+    }
+
     public void putUsers(String id, User user, Callback<Void> callback) {
         // Gọi API updateUser với id và user
         Call<Void> usersCall = iUsersApi.updateUser(id, user);

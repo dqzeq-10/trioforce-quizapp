@@ -7,7 +7,7 @@
 
     <!-- Tiêu đề Tháng -->
     <TextView
-        android:id="@+id/tvMonth"
+        android:id="@+id/tvMonthC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo2_bold"
@@ -25,25 +25,50 @@
         android:padding="12dp">
 
         <TextView
-            android:id="@+id/tvCategory"
+            android:id="@+id/tvCategoryC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_bold"
-            android:text="Thể loại"
+            android:text="Tên Thể loại"
             android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvTitleC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_semibold"
-            android:text="Top 10 câu đố vui về ca dao, tục ngữ"
+            android:text="câuu hỏi dàiiiiiiiiiiiiiiiiiiiiiiiiiii"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_marginBottom="4dp" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTenDapandung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo2_medium"
+                android:text="Đáp án đúng:"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:paddingLeft="10dp"
+                android:id="@+id/tvDapandungC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo2_regular"
+                android:text="đáp án cùng hàfgdfgsdgsdgdfới Đáp án đúng"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+
         <TextView
-            android:id="@+id/tvDetails"
+            android:id="@+id/tvDetailsC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo2_regular"

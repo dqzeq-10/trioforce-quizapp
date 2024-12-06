@@ -21,6 +21,8 @@ import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.CategoriesA
 import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
+import com.example.finalproject_test.DATA.Models.AnsweredQuestion;
+import com.example.finalproject_test.DATA.Models.Question;
 import com.example.finalproject_test.DATA.Models.QuestionCategory;
 import com.example.finalproject_test.DATA.Models.Ranking;
 import com.example.finalproject_test.DATA.ViewModels.QuestionSetsVM.QuestionSetsViewModel;
@@ -48,6 +50,8 @@ public class main_play_quiz extends AppCompatActivity {
     String user;
     Ranking ranking;
     int point=0;
+    private Boolean isNewPlay;
+
 
 
     public void startNewGame() {
@@ -72,12 +76,10 @@ public class main_play_quiz extends AppCompatActivity {
 
         viewPager_play_quiz = findViewById(R.id.viewPager_Play_Quiz);
         tabLayout = findViewById(R.id.tabLayout_Play_Quiz);
-
-
-
+        isNewPlay = getIntent().getBooleanExtra("isNewPlay", false);
 
         user = getIntent().getStringExtra("username");
-
+        if (isNewPlay) {
         // Nhận idCategory, idLevel từ Intent
         int idCate = getIntent().getIntExtra("idCategory", 1);
         int idLevel = getIntent().getIntExtra("idLevel", 1);
@@ -99,17 +101,30 @@ public class main_play_quiz extends AppCompatActivity {
             }
         });
 
-        // Truyền dữ liệu cấp độ và thể loại
-        txtLevel = findViewById(R.id.txtlevel);
-        String level = getIntent().getStringExtra("level");
-        if (level != null) {
-            txtLevel.setText(level);
-        }
+            // Truyền dữ liệu cấp độ và thể loại
+            txtLevel = findViewById(R.id.txtlevel);
+            String level = getIntent().getStringExtra("level");
+            if (level != null) {
+                txtLevel.setText(level);
+            }
 
-        txtcategory = findViewById(R.id.txtTheLoai);
-        String category = getIntent().getStringExtra("category");
-        if (category != null) {
-            txtcategory.setText(category);
+            txtcategory = findViewById(R.id.txtTheLoai);
+            String category = getIntent().getStringExtra("category");
+            if (category != null) {
+                txtcategory.setText(category);
+            }
+            //end if(isNewPlay)
+        } else { //nhận chơi tiếp tục
+            ArrayList<Question> questionsP = (ArrayList<Question>) getIntent().getSerializableExtra("setquestionP");
+            ArrayList<AnsweredQuestion> answeredP = (ArrayList<AnsweredQuestion>) getIntent().getSerializableExtra("answeredsP");
+
+            adapter = new ViewpagerAdapter_Play_Quiz(this, questionsP, answeredP);
+            viewPager_play_quiz.setAdapter(adapter);
+
+            new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {
+                tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
+            }).attach();
+            disableTabs();
         }
 
         // Dialog khi thoát quiz

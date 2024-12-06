@@ -6,7 +6,7 @@ public class AnsweredQuestion implements Serializable {
     private String username;
     private int idSet;
     private int idQuestion;
-    private boolean isCorrect;
+    private boolean isCorrectChoice;
 
     private Question idQuestionNavigation;
     private QuestionSet idSetNavigation;
@@ -18,7 +18,7 @@ public class AnsweredQuestion implements Serializable {
         this.username = username;
         this.idSet = idSet;
         this.idQuestion = idQuestion;
-        this.isCorrect = isCorrect;
+        this.isCorrectChoice = isCorrect;
     }
 
     public String getUsername() {
@@ -45,12 +45,12 @@ public class AnsweredQuestion implements Serializable {
         this.idQuestion = idQuestion;
     }
 
-    public boolean isCorrect() {
-        return isCorrect;
+    public boolean isCorrectChoice() {
+        return isCorrectChoice;
     }
 
-    public void setCorrect(boolean correct) {
-        isCorrect = correct;
+    public void setCorrectChoice(boolean correctChoice) {
+        isCorrectChoice = correctChoice;
     }
 
     public Question getIdQuestionNavigation() {

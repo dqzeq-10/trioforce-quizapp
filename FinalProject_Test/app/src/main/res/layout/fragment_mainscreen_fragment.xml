@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/baloo2_bold"
-                    android:text="99999999"
+                    android:text="0"
                     android:textSize="15sp" />
 
             </LinearLayout>

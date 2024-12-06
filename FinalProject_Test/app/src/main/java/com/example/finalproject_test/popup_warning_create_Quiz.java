@@ -2,11 +2,17 @@ package com.example.finalproject_test;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SQASharedViewModel;
+
 public class popup_warning_create_Quiz {
+    private SQASharedViewModel sqaSharedViewModel;
+    private Context context;
+
     public static void showWarningPopup(Context context) {
         // Tạo một đối tượng Dialog
         Dialog dialog = new Dialog(context, R.style.CustomDialog);
@@ -18,7 +24,10 @@ public class popup_warning_create_Quiz {
         // Lấy nút "Close" từ layout
         Button btnClose = dialog.findViewById(R.id.btn_close);
         btnClose.setOnClickListener(view -> dialog.dismiss());  // Đóng popup khi bấm nút Close
-
+        // Lấy nút "Vẫn thoát" từ layout
+//        Button btnOut = dialog.findViewById(R.id.btn_out);
+//        btnOut.setOnClickListener(view -> {
+//            Intent it = new Intent(this, MainScreen.class);});
         // Cấu hình kích thước của dialog
         dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
         WindowManager.LayoutParams layoutParams1 = dialog.getWindow().getAttributes();

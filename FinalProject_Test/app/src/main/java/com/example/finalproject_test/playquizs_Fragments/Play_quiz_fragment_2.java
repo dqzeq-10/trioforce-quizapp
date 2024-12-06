@@ -1,12 +1,15 @@
 package com.example.finalproject_test.playquizs_Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
@@ -25,6 +28,11 @@ public class Play_quiz_fragment_2 extends Fragment {
     private Button btnNext, btnLuilai;
     private TextView txtCauhoi;
     private AppCompatButton da1,da2,da3,da4;
+    private CheckBox btn_save;
+    private Boolean isCorrectChoice;
+
+    private View view;
+
 
     private Question question;
     private static final String ARG_QUESTION  = "arg_question";
@@ -45,12 +53,21 @@ public class Play_quiz_fragment_2 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    public static Play_quiz_fragment_2 receiveQuestion(Question question){
+    public static Play_quiz_fragment_2 receiveQuestion1 (Question question) {
+        Play_quiz_fragment_2 playQuizFragment2 = new Play_quiz_fragment_2();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_QUESTION, question);
+        playQuizFragment2.setArguments(args);
+        return playQuizFragment2;
+    }
+    public static Play_quiz_fragment_2 receiveQuestion(Question question, @Nullable Boolean isCorrectChoice) {
         Play_quiz_fragment_2 playQuizFragment2 = new Play_quiz_fragment_2();
         Bundle args = new Bundle();
         if (question!=null){
             args.putSerializable(ARG_QUESTION, question);
+        }
+        if (isCorrectChoice != null) {
+            args.putBoolean("isCorrectChoice", isCorrectChoice);
         }
         playQuizFragment2.setArguments(args);
         return playQuizFragment2;
@@ -60,20 +77,24 @@ public class Play_quiz_fragment_2 extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null){
             question = (Question) getArguments().getSerializable(ARG_QUESTION);
+            if (getArguments().containsKey("isCorrectChoice")) {
+                isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
+            }
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_play_quiz_2, container, false);
+        view = inflater.inflate(R.layout.fragment_play_quiz_2, container, false);
+
+        btn_save = view.findViewById(R.id.cbbookmark2);
 
         txtCauhoi = view.findViewById(R.id.txtCauhoi2);
         da1 = view.findViewById(R.id.btnDapAn_2A);
         da2 = view.findViewById(R.id.btnDapAn_2B);
         da3 = view.findViewById(R.id.btnDapAn_2C);
         da4 = view.findViewById(R.id.btnDapAn_2D);
-
 
         btnLuilai = view.findViewById(R.id.btnLuiLai);
         btnNext = view.findViewById(R.id.btnTiepTuc);
@@ -93,6 +114,25 @@ public class Play_quiz_fragment_2 extends Fragment {
         da4.setTag(question.getAnswers().get(3).isCorrect());
 
 
+        if (getArguments() != null && getArguments().containsKey("isCorrectChoice")) {
+            boolean isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
+            int selectedAnswerId = -1; // Khởi tạo biến selectedAnswerId
+            // Xác định ID của đáp án đã chọn
+            if (da1.getTag().equals(isCorrectChoice)) {
+                selectedAnswerId = da1.getId();
+            } else if (da2.getTag().equals(isCorrectChoice)) {
+                selectedAnswerId = da2.getId();
+            } else if (da3.getTag().equals(isCorrectChoice)) {
+                selectedAnswerId = da3.getId();
+            } else if (da4.getTag().equals(isCorrectChoice)) {
+                selectedAnswerId = da4.getId();
+            }
+            if (selectedAnswerId != -1) {
+                changeAnswerButtonColor(selectedAnswerId, isCorrectChoice);
+                disableOtherAnswer(selectedAnswerId);
+                isAnswerSelected = true;
+            }
+        }
         //xu ly su kien khi chon dap an
         View.OnClickListener answerClickListener = new View.OnClickListener() {
             @Override
@@ -103,7 +143,6 @@ public class Play_quiz_fragment_2 extends Fragment {
 
                 boolean isCorerct = checkAnswer(selectedAnswerId);
 
-                changeAnswerButtonColor(selectedAnswerId, isCorerct);
 
                 if (isCorerct){
                     if (getActivity() instanceof main_play_quiz) {
@@ -155,16 +194,34 @@ public class Play_quiz_fragment_2 extends Fragment {
     }
 
     private boolean checkAnswer(int selectedAnswerId) {
-        Button selectedButton = getView().findViewById(selectedAnswerId); // lay button duoc chon
+        if (view==null){
+            Log.e("PlayQuizFragment", "Root view is null in checkAnswer");
+            return false;
+        }
+        Button selectedButton = view.findViewById(selectedAnswerId); // lay button duoc chon
+        if (selectedButton == null) {
+            Log.e("PlayQuizFragment", "Selected button is null with ID: " + selectedAnswerId);
+            return false;
+        }
         boolean isCorrect = (boolean) selectedButton.getTag();  // lay tag cua button va ep kieu thanh boolean
         return isCorrect;
     }
-    private  void changeAnswerButtonColor(int selectedAnswerId, boolean isCorrect) {
-        TextView selectedButton = getView().findViewById(selectedAnswerId);
+
+    private void changeAnswerButtonColor(int selectedAnswerId, boolean isCorrect) {
+
+        if (view == null){
+            Log.e("PlayQuizFragment", "Root view is null in changeAnswerButtonColor");
+            return;
+        }
+        Button selectedButton = view.findViewById(selectedAnswerId);
+        if (selectedButton == null) {
+            Log.e("PlayQuizFragment", "Selected button is null with ID: " + selectedAnswerId);
+            return;
+        }
         if (isCorrect) {
-            selectedButton.setBackgroundResource(R.drawable.dung);
+            selectedButton.setBackgroundResource(R.drawable.dung); // Đáp án đúng
         } else {
-            selectedButton.setBackgroundResource(R.drawable.sai);
+            selectedButton.setBackgroundResource(R.drawable.sai); // Đáp án sai
         }
     }
     private  void disableOtherAnswer(int selectedAnswerId) {

@@ -22,6 +22,11 @@ public class UsersViewModel extends ViewModel {
     public MutableLiveData<List<User>> getUsers(){
         return usersLiveData;
     }
+
+    public MutableLiveData<Boolean> postUser (User user){
+        return usersRepo.postUser(user);
+    }
+
     public MutableLiveData<Void> getUsersUpdate(String id, User user){
         usersUpdate = usersRepo.updateUser(id,user);
         return usersUpdate;

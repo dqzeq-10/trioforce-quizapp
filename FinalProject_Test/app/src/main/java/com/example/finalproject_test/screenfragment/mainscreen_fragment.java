@@ -237,14 +237,14 @@ CategoriesAdapter menuAdapter;
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
-            ChaoUsername.setText("Chào "+data.getName()+" !");
+            ChaoUsername.setText("Chào \n"+data.getName()+" !");
 
 
 
 
 
 
-        //==========================================các sự kiện======================================================//
+            //==========================================các sự kiện======================================================//
 
         itoProfile.setOnClickListener(new View.OnClickListener() {
             @Override

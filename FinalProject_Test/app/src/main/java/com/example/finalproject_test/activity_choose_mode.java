@@ -112,6 +112,7 @@ public class activity_choose_mode extends AppCompatActivity {
                 intent.putExtra("level","Dễ");
                 intent.putExtra("idLevel",1);
                 intent.putExtra("username", currentUser.getUsername());
+                intent.putExtra("isNewPlay",true);
                 startActivity(intent);
             }
         });
@@ -132,6 +133,7 @@ public class activity_choose_mode extends AppCompatActivity {
                 intent.putExtra("level","Thường");
                 intent.putExtra("idLevel",2);
                 intent.putExtra("username", currentUser.getUsername());
+                intent.putExtra("isNewPlay",true);
                 startActivity(intent);
             }
         });
@@ -148,6 +150,7 @@ public class activity_choose_mode extends AppCompatActivity {
                 intent.putExtra("level","Khó");
                 intent.putExtra("idLevel",3);
                 intent.putExtra("username", currentUser.getUsername());
+                intent.putExtra("isNewPlay",true);
                 startActivity(intent);
             }
         });

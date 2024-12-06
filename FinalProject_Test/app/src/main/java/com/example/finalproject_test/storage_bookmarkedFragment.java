@@ -3,9 +3,23 @@ package com.example.finalproject_test;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.finalproject_test.DATA.Models.MarkedQuestion;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.MarkedQuestionsVM.MarkedQuestionsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class storage_bookmarkedFragment extends Fragment {
 
@@ -13,6 +27,12 @@ public class storage_bookmarkedFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private RecyclerView recyclerView;
+    private List<MarkedQuestion> markedQuestions;
+    private BookmarkedAdapter bookmarkedAdapter;
+    private MarkedQuestionsViewModel markedQuestionsViewModel;
+    private SharedViewModel<User> sharedViewModel;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,10 +75,34 @@ public class storage_bookmarkedFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_storage_bookmarked, container, false);
 
+        recyclerView = view.findViewById(R.id.recyclerViewBookmarked);
+
+        //lấy user đã share chung khi đăng nhập vào
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data -> {
+
+            //goi api lay markquesion ve
+            markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+            markedQuestionsViewModel.getMarkedQuestionsByUsername(data.getUsername()).observe(getViewLifecycleOwner(), markedList ->{
+                if (markedList !=null && !markedList.isEmpty()){
+
+                    Collections.sort(markedList, new Comparator<MarkedQuestion>() {
+                        @Override
+                        public int compare(MarkedQuestion t0, MarkedQuestion t1) {
+                            return t0.getMarkedTime().compareTo(t1.getMarkedTime());
+                        }
+                    });
+
+                    bookmarkedAdapter = new BookmarkedAdapter(markedList);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView.setAdapter(bookmarkedAdapter);
+                }else {
+                    Log.d("markedQuestion", "markedQuestion null ");
+                }
+            });
 
 
-
-
+        });
 
 
         // -----------------XOA CAC ITEM KHI VUOT ,SUA LAI CHO HOP EM NHÉ , CHƯA KHỚP -------------------------------------------------

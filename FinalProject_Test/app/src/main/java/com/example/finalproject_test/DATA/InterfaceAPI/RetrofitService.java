@@ -2,10 +2,12 @@ package com.example.finalproject_test.DATA.InterfaceAPI;
 
 import com.example.finalproject_test.DATA.InterfaceAPI.AnswersApi.IAnswersApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.CategoriesApi.IQuestionCategoriesApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.CreatedQuestionApi.ICreatedQuestionApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LevelApi.ILevelsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.LoginApi.ILoginRequestApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.MarkedQuestionApi.IMarkedQuestionApi;
-import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsAPi;
+//import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.ProgressQuestionApi.IProgressQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionApi.IQuestionsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.QuestionSetsApi.IQuestionSetsApi;
 import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
@@ -86,6 +88,18 @@ public class RetrofitService {
                 .build();
         return retrofit.create(IAnswersApi.class);
     }
+
+    public static ICreatedQuestionApi createInstanceCQ() {
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Date.class, new DateTimeConverter())
+                .create();
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(ICreatedQuestionApi.class);
+    }
+
     public static IMarkedQuestionApi createInstanceMQ(){
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -94,12 +108,12 @@ public class RetrofitService {
         return retrofit.create(IMarkedQuestionApi.class);
     }
 
-    public static IProgressQuestionsAPi createInstancePQ() {
+    public static IProgressQuestionsApi createInstancePQ() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit.create(IProgressQuestionsAPi.class);
+        return retrofit.create(IProgressQuestionsApi.class);
     }
 
 

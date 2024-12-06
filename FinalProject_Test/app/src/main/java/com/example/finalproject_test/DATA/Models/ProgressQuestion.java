@@ -1,57 +1,47 @@
 package com.example.finalproject_test.DATA.Models;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 public class ProgressQuestion implements Serializable {
-    private String username;
+    private Date savedTime;
+    private String authorName;
     private int idSet;
+    private String setName;
     private int questionCount;
     private int questionLastId;
-    private Date saveTime;
+    private List<Question> questions;
+    private List<AnsweredQuestion> answered;
 
-    private QuestionSet idSetNavigation;
-    private Question questionLast;
-    private User usernameNavigation;
 
-    public ProgressQuestion(String username, int idSet, int questionCount, int questionLastId, Date saveTime) {
-        this.username = username;
+    public ProgressQuestion() {
+    }
+
+    public ProgressQuestion(int idSet, String authorName, Date savedTime, int questionCount, int questionLastId, List<Question> questions, List<AnsweredQuestion> answered) {
         this.idSet = idSet;
+        this.authorName = authorName;
+        this.savedTime = savedTime;
         this.questionCount = questionCount;
         this.questionLastId = questionLastId;
-        this.saveTime = saveTime;
+        this.questions = questions;
+        this.answered = answered;
     }
 
-    public QuestionSet getIdSetNavigation() {
-        return idSetNavigation;
+    public Date getSavedTime() {
+        return savedTime;
     }
 
-    public void setIdSetNavigation(QuestionSet idSetNavigation) {
-        this.idSetNavigation = idSetNavigation;
+    public void setSavedTime(Date savedTime) {
+        this.savedTime = savedTime;
     }
 
-    public Question getQuestionLast() {
-        return questionLast;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setQuestionLast(Question questionLast) {
-        this.questionLast = questionLast;
-    }
-
-    public User getUsernameNavigation() {
-        return usernameNavigation;
-    }
-
-    public void setUsernameNavigation(User usernameNavigation) {
-        this.usernameNavigation = usernameNavigation;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public int getIdSet() {
@@ -60,6 +50,14 @@ public class ProgressQuestion implements Serializable {
 
     public void setIdSet(int idSet) {
         this.idSet = idSet;
+    }
+
+    public String getSetName() {
+        return setName;
+    }
+
+    public void setSetName(String setName) {
+        this.setName = setName;
     }
 
     public int getQuestionCount() {
@@ -78,11 +76,19 @@ public class ProgressQuestion implements Serializable {
         this.questionLastId = questionLastId;
     }
 
-    public Date getSaveTime() {
-        return saveTime;
+    public List<Question> getQuestions() {
+        return questions;
     }
 
-    public void setSaveTime(Date saveTime) {
-        this.saveTime = saveTime;
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public List<AnsweredQuestion> getAnswered() {
+        return answered;
+    }
+
+    public void setAnswered(List<AnsweredQuestion> answered) {
+        this.answered = answered;
     }
 }
