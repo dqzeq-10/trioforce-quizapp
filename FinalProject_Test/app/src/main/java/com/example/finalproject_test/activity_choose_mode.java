@@ -43,6 +43,7 @@ AppCompatButton cdde,cdbthg,cdkho;
         });
 
 
+
         cdde.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +65,9 @@ AppCompatButton cdde,cdbthg,cdkho;
                 }
                 intent.putExtra("level","Dễ");
                 intent.putExtra("idLevel",1);
+
+                intent.putExtra("username", getIntent().getStringExtra("username"));
+
                 intent.putExtra("isNewPlay",true);
                 startActivity(intent);
             }
@@ -82,8 +86,12 @@ AppCompatButton cdde,cdbthg,cdkho;
                     intent.putExtra("category", category);
                     intent.putExtra("idCategory",idCategory);
                 }
+                intent.putExtra("username", getIntent().getStringExtra("username"));
+
                 intent.putExtra("level","Thường");
                 intent.putExtra("idLevel",2);
+                intent.putExtra("isNewPlay",true);
+
                 startActivity(intent);
             }
         });
@@ -97,8 +105,11 @@ AppCompatButton cdde,cdbthg,cdkho;
                     intent.putExtra("category", category);
                     intent.putExtra("idCategory",idCategory);
                 }
+                intent.putExtra("username", getIntent().getStringExtra("username"));
                 intent.putExtra("level","Khó");
                 intent.putExtra("idLevel",3);
+                intent.putExtra("isNewPlay",true);
+
                 startActivity(intent);
             }
         });

@@ -1,7 +1,6 @@
 package com.example.finalproject_test.playquizs_Fragments;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,15 +9,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finalproject_test.DATA.Models.MarkedQuestion;
 import com.example.finalproject_test.DATA.Models.Question;
+import com.example.finalproject_test.DATA.ViewModels.MarkedQuestionsVM.MarkedQuestionsViewModel;
 import com.example.finalproject_test.R;
-import com.example.finalproject_test.Result;
 import com.example.finalproject_test.main_play_quiz;
 import com.example.finalproject_test.popup_warning_play_Quiz;
 
@@ -30,7 +32,9 @@ public class Play_quiz_fragment_10 extends Fragment {
     private TextView txtCauhoi;
     private AppCompatButton da1,da2,da3,da4;
     private CheckBox btn_save;
-    private Boolean isCorrectChoice;
+    private Boolean isCorrectChoice, isNewPl;
+    private String cate, leve, username;
+    private int idCate, idLeve;
 
     private Question question;
     private static final String ARG_QUESTION  = "arg_question";
@@ -57,10 +61,29 @@ public class Play_quiz_fragment_10 extends Fragment {
         return fragment;
     }
 
-    public static Play_quiz_fragment_10 receiveQuestion1 (Question question) {
+    public static Play_quiz_fragment_10 receiveQuestion10 (Question question, int idCategory,int idLevel,String category,String level, Boolean isNewPlay, String username) {
         Play_quiz_fragment_10 playQuizFragment10 = new Play_quiz_fragment_10();
         Bundle args = new Bundle();
         args.putSerializable(ARG_QUESTION, question);
+        if (idCategory != -1) {
+            args.putInt("idCategory",idCategory);
+        }
+        if (idLevel != -1) {
+            args.putInt("idLevel",idLevel);
+        }
+        if (category != null) {
+            args.putString("category",category);
+        }
+        if (level != null) {
+            args.putString("level",level);
+        }
+
+        if (isNewPlay != null) {
+            args.putBoolean("isNewPlay",isNewPlay);
+        }
+        if (username != null) {
+            args.putString("username",username);
+        }
         playQuizFragment10.setArguments(args);
         return playQuizFragment10;
     }
@@ -83,6 +106,25 @@ public class Play_quiz_fragment_10 extends Fragment {
             if (getArguments().containsKey("isCorrectChoice")) {
                 isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
             }
+            if (getArguments().containsKey("idCategory")) {
+                idCate = getArguments().getInt("idCategory");
+            }
+            if (getArguments().containsKey("idLevel")) {
+                idLeve = getArguments().getInt("idLevel");
+            }
+            if (getArguments().containsKey("category")) {
+                cate = getArguments().getString("category");
+            }
+            if (getArguments().containsKey("level")) {
+                leve = getArguments().getString("level");
+            }
+            if (getArguments().containsKey("isNewPlay")) {
+                isNewPl = getArguments().getBoolean("isNewPlay");
+            }
+            if (getArguments().containsKey("username")) {
+                username = getArguments().getString("username");
+            }
+
         }
     }
     @Override
@@ -116,7 +158,39 @@ public class Play_quiz_fragment_10 extends Fragment {
         da4.setText(question.getAnswers().get(3).getAnswerText().toString());
         da4.setTag(question.getAnswers().get(3).isCorrect());
 
+        btn_save.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Log.d("CheckBox", "Clicked!");
 
+            if (isChecked) {
+                Log.d("CheckBox", "Click true!");
+
+                //khởi tạo và gọi post để lưu vào MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.postMarkedQuestion(new MarkedQuestion(username, question.getIdQuestion())).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+
+            } else {
+                Log.d("CheckBox", "Click false!");
+                //khởi tạo và gọi delete để xoa khoi MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.deleteMarkedQuestion(username, question.getIdQuestion()).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã xóa câu hỏi khỏi Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể xóa câu hỏi khởi Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+                ;
+
+            }
+        });
         return view;
     }
 
@@ -203,7 +277,7 @@ public class Play_quiz_fragment_10 extends Fragment {
             }
             else {
                 if (getActivity() instanceof main_play_quiz) {
-                    ((main_play_quiz) getActivity()).goToResult();  // Gọi phương thức goToResult
+                    ((main_play_quiz) getActivity()).goToResult(idCate, idLeve,cate,leve,isNewPl);  // Gọi phương thức goToResult
                 }
             }
         });

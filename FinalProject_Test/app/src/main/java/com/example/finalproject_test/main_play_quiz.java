@@ -35,6 +35,7 @@ public class main_play_quiz extends AppCompatActivity {
     QuestionSetsViewModel setsViewModel;
     private int totalScore = 0;
     private Boolean isNewPlay;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,28 +48,8 @@ public class main_play_quiz extends AppCompatActivity {
 
         // Nhận idCategory, idLevel, isNewPlay(xac dinh choi new hay choi tiep) từ Intent
         isNewPlay = getIntent().getBooleanExtra("isNewPlay", false);
-
+        username = getIntent().getStringExtra("username");
         if (isNewPlay) {
-
-            int idCate = getIntent().getIntExtra("idCategory", 1);
-            int idLevel = getIntent().getIntExtra("idLevel", 1);
-            // Khởi tạo ViewModel
-            setsViewModel = new ViewModelProvider(this).get(QuestionSetsViewModel.class);
-            setsViewModel.getSetByIdLevelAndIdCate(idLevel, idCate).observe(this, set -> {
-                if (set != null && set.getQuestions() != null) {
-                    // Set adapter chỉ khi có dữ liệu
-                    adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions()); //bỏ null answered ra
-                    viewPager_play_quiz.setAdapter(adapter);
-
-                    new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {
-                        tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
-                    }).attach();
-                    disableTabs();
-                } else {
-                    Log.e("main_play_quiz", "Dữ liệu câu hỏi rỗng hoặc không hợp lệ");
-                }
-            });
-
             // Truyền dữ liệu cấp độ và thể loại
             txtLevel = findViewById(R.id.txtlevel);
             String level = getIntent().getStringExtra("level");
@@ -81,6 +62,26 @@ public class main_play_quiz extends AppCompatActivity {
             if (category != null) {
                 txtcategory.setText(category);
             }
+            int idCate = getIntent().getIntExtra("idCategory", 1);
+            int idLevel = getIntent().getIntExtra("idLevel", 1);
+            // Khởi tạo ViewModel
+            setsViewModel = new ViewModelProvider(this).get(QuestionSetsViewModel.class);
+            setsViewModel.getSetByIdLevelAndIdCate(idLevel, idCate).observe(this, set -> {
+                if (set != null && set.getQuestions() != null) {
+                    // Set adapter chỉ khi có dữ liệu
+                    adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions(),idCate, idLevel, category, level, isNewPlay,username); //bỏ null answered ra
+                    viewPager_play_quiz.setAdapter(adapter);
+
+                    new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {
+                        tab.setText(String.valueOf(position + 1)); // Đặt số tab từ 1 đến 10
+                    }).attach();
+                    disableTabs();
+                } else {
+                    Log.e("main_play_quiz", "Dữ liệu câu hỏi rỗng hoặc không hợp lệ");
+                }
+            });
+
+
                     //end if(isNewPlay)
         } else { //nhận chơi tiếp tục
             ArrayList<Question> questionsP = (ArrayList<Question>) getIntent().getSerializableExtra("setquestionP");
@@ -186,9 +187,14 @@ public class main_play_quiz extends AppCompatActivity {
     }
 
     // Chuyển đến màn hình kết quả
-    public void goToResult() {
+    public void goToResult(int idCategory,int idLevel,String category,String level,Boolean isNewPlay) {
         Intent intent = new Intent(main_play_quiz.this, Result.class);
         intent.putExtra("totalScore", totalScore);  // Truyền điểm vào Intent
+        intent.putExtra("idCategoryR", idCategory);
+        intent.putExtra("idLevelR", idLevel);
+        intent.putExtra("categoryR", category);
+        intent.putExtra("levelR", level);
+        intent.putExtra("isNewPlayR", isNewPlay);
         startActivity(intent);
     }
 }
