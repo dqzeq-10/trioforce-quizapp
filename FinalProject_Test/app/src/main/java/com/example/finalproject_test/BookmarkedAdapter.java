@@ -43,7 +43,7 @@ public class BookmarkedAdapter extends RecyclerView.Adapter<BookmarkedAdapter.Bo
 
         }
         //Date sang String
-        SimpleDateFormat formatter = new SimpleDateFormat("Ngày dd, tháng MM, năm yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("'Ngày' dd, 'tháng' MM, 'năm' yyyy");
         String dateString = formatter.format(markedQuestion.getMarkedTime());
 
         holder.tvNgay.setText(dateString);

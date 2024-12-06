@@ -42,7 +42,7 @@ public class CreatedAdapter extends RecyclerView.Adapter<CreatedAdapter.Createdm
             }
         }
         //Date sang String
-        SimpleDateFormat formatter = new SimpleDateFormat("Ngày dd, tháng MM, năm yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("'Ngày' dd, 'tháng' MM, 'năm' yyyy");
         String dateString = formatter.format(createdQuestion.getCreatedTime());
 
         holder.tvNgay.setText(dateString);

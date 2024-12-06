@@ -3,10 +3,23 @@ package com.example.finalproject_test;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.finalproject_test.DATA.Models.ProgressQuestion;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.ProgressQuestionsVM.ProgressQuestionsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +32,12 @@ public class storage_progressFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private RecyclerView recyclerView;
+    private List<ProgressQuestion> progressQuestions;
+    private ProgressAdapter progressAdapter;
+    private ProgressQuestionsViewModel progressQuestionsViewModel;
+    private SharedViewModel<User> sharedViewModel;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,6 +79,37 @@ public class storage_progressFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_storage_progress, container, false);
+
+        recyclerView = view.findViewById(R.id.recyclerView_Progress);
+
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getObjectMLD().observe(getViewLifecycleOwner(), data ->{
+
+            // goi api lay progressquestion
+            progressQuestionsViewModel = new ViewModelProvider(this).get(ProgressQuestionsViewModel.class);
+            progressQuestionsViewModel.getProgressQuestionsByUsername(data.getUsername()).observe(getViewLifecycleOwner(), progressList ->{
+                if (progressList != null && !progressList.isEmpty()){
+
+                    Collections.sort(progressList, new Comparator<ProgressQuestion>() {
+                        @Override
+                        public int compare(ProgressQuestion t0, ProgressQuestion t1) {
+                            return t0.getSavedTime().compareTo(t1.getSavedTime());
+                        }
+                    });
+
+                    progressAdapter = new ProgressAdapter(progressList,getContext() );
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView.setAdapter(progressAdapter);
+                }else {
+                    Log.d("progressQuestion", "progressQuestion null ");
+                }
+            });
+        });
+
+
+
+
+
         // -----------------XOA CAC ITEM KHI VUOT ,SUA LAI CHO HOP EM NHÉ , CHƯA KHỚP -------------------------------------------------
         /*
         // Thêm ItemTouchHelper để xử lý vuốt xóa

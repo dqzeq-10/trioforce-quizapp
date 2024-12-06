@@ -8,10 +8,10 @@ import com.example.finalproject_test.DATA.Repository.ProgressQuestionsRepo;
 
 import java.util.List;
 
-public class ProgressQuestonsViewModel extends ViewModel {
+public class ProgressQuestionsViewModel extends ViewModel {
     private final ProgressQuestionsRepo progressQuestionsRepo;
 
-    public ProgressQuestonsViewModel() {
+    public ProgressQuestionsViewModel() {
         progressQuestionsRepo = new ProgressQuestionsRepo();
     }
 
