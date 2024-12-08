@@ -18,13 +18,22 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finalproject_test.DATA.InterfaceAPI.RankingApi.IRankingApi;
+import com.example.finalproject_test.DATA.InterfaceAPI.RetrofitService;
+import com.example.finalproject_test.DATA.InterfaceAPI.UserApi.IUsersApi;
+import com.example.finalproject_test.DATA.Models.Ranking;
 import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.RanksVM.RanksViewModel;
 import com.example.finalproject_test.DATA.ViewModels.UsersVM.UsersViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class activity_signup extends AppCompatActivity {
     Button btnDK;
@@ -33,6 +42,7 @@ public class activity_signup extends AppCompatActivity {
     TextView tvDN;
 
     private UsersViewModel usersViewModel;
+    private RanksViewModel ranksViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +75,8 @@ public class activity_signup extends AppCompatActivity {
 
         RadioButton rgNam = findViewById(R.id.radioButtonMale), rgNu = findViewById(R.id.radioButtonFemale);
         usersViewModel = new ViewModelProvider(this).get(UsersViewModel.class);
+        ranksViewModel = new ViewModelProvider(this).get(RanksViewModel.class);
+
         btnDK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +108,7 @@ public class activity_signup extends AppCompatActivity {
                 usersViewModel.postUser(userDk).observe(activity_signup.this, thongbao -> {
                     if (thongbao != null && thongbao) {
                         Toast.makeText(activity_signup.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                        addUserToRanking(username, 0);
                     } else {
                         Toast.makeText(activity_signup.this, "Đăng ký thất bạn", Toast.LENGTH_SHORT).show();
                         Log.d("SIGNUP", "thongbao tra ve null ");
@@ -107,6 +120,17 @@ public class activity_signup extends AppCompatActivity {
                 Intent chuyensangDN = new Intent(activity_signup.this, login_activity.class);
                 startActivity(chuyensangDN);
                 //      Toast.makeText(activity_signup.this, "Đăng nhập thành công!!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void addUserToRanking(String username, int points) {
+        Ranking newRanking = new Ranking(username, points);
+
+        ranksViewModel.postRank(newRanking).observe(this, success -> {
+            if (success != null && success) {
+                Toast.makeText(getApplicationContext(), "Cập nhật bảng xếp hạng thành công!", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Lỗi cập nhật bảng xếp hạng!", Toast.LENGTH_SHORT).show();
             }
         });
     }

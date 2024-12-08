@@ -80,7 +80,18 @@ public class main_play_quiz extends AppCompatActivity {
 
         user = getIntent().getStringExtra("username");
         if (isNewPlay) {
-        // Nhận idCategory, idLevel từ Intent
+            // Nhận idCategory, idLevel, isNewPlay(xac dinh choi new hay choi tiep) từ Intent
+            txtLevel = findViewById(R.id.txtlevel);
+            String level = getIntent().getStringExtra("level");
+            if (level != null) {
+                txtLevel.setText(level);
+            }
+
+            txtcategory = findViewById(R.id.txtTheLoai);
+            String category = getIntent().getStringExtra("category");
+            if (category != null) {
+                txtcategory.setText(category);
+            }
         int idCate = getIntent().getIntExtra("idCategory", 1);
         int idLevel = getIntent().getIntExtra("idLevel", 1);
 
@@ -89,7 +100,7 @@ public class main_play_quiz extends AppCompatActivity {
         setsViewModel.getSetByIdLevelAndIdCate(idLevel, idCate).observe(this, set -> {
             if (set != null && set.getQuestions() != null) {
                 // Set adapter chỉ khi có dữ liệu
-                adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions());
+                adapter = new ViewpagerAdapter_Play_Quiz(this, set.getQuestions(),idCate, idLevel, category, level, isNewPlay,user); //bỏ null answered ra
                 viewPager_play_quiz.setAdapter(adapter);
 
                 new TabLayoutMediator(tabLayout, viewPager_play_quiz, (tab, position) -> {
@@ -102,17 +113,20 @@ public class main_play_quiz extends AppCompatActivity {
         });
 
             // Truyền dữ liệu cấp độ và thể loại
-            txtLevel = findViewById(R.id.txtlevel);
-            String level = getIntent().getStringExtra("level");
-            if (level != null) {
-                txtLevel.setText(level);
-            }
+//            txtLevel = findViewById(R.id.txtlevel);
+//            String level = getIntent().getStringExtra("level");
+//            if (level != null) {
+//                txtLevel.setText(level);
+//            }
+//
+//            txtcategory = findViewById(R.id.txtTheLoai);
+//            String category = getIntent().getStringExtra("category");
+//            if (category != null) {
+//                txtcategory.setText(category);
+//            }
 
-            txtcategory = findViewById(R.id.txtTheLoai);
-            String category = getIntent().getStringExtra("category");
-            if (category != null) {
-                txtcategory.setText(category);
-            }
+
+
             //end if(isNewPlay)
         } else { //nhận chơi tiếp tục
             ArrayList<Question> questionsP = (ArrayList<Question>) getIntent().getSerializableExtra("setquestionP");
@@ -278,10 +292,14 @@ public class main_play_quiz extends AppCompatActivity {
     }
 
     // Chuyển đến màn hình kết quả
-    public void goToResult() {
+    public void goToResult(int idCategory,int idLevel,String category,String level,Boolean isNewPlay) {
         Intent intent = new Intent(main_play_quiz.this, Result.class);
         intent.putExtra("addscore", point);  // Truyền điểm vào Intent
-
+        intent.putExtra("idCategoryR", idCategory);
+        intent.putExtra("idLevelR", idLevel);
+        intent.putExtra("categoryR", category);
+        intent.putExtra("levelR", level);
+        intent.putExtra("isNewPlayR", isNewPlay);
         startActivity(intent);
     }
 

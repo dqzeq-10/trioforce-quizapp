@@ -9,16 +9,28 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finalproject_test.DATA.Models.MarkedQuestion;
 import com.example.finalproject_test.DATA.Models.Question;
+import com.example.finalproject_test.DATA.Models.User;
+import com.example.finalproject_test.DATA.ViewModels.MarkedQuestionsVM.MarkedQuestionsViewModel;
+import com.example.finalproject_test.DATA.ViewModels.SharedVM.SharedViewModel;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.main_play_quiz;
 import com.example.finalproject_test.popup_warning_play_Quiz;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 
 public class Play_quiz_fragment_1 extends Fragment {
@@ -26,13 +38,16 @@ public class Play_quiz_fragment_1 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private Button btnNext, btnLuilai;
-    private CheckBox btn_save;
     private TextView txtCauhoi;
     private AppCompatButton da1, da2, da3, da4;
-    private Question question;
+    private CheckBox btn_save;
     private Boolean isCorrectChoice;
-    private static final String ARG_QUESTION = "arg_question";
+    private String username;
     private View view;
+
+
+    private Question question;
+    private static final String ARG_QUESTION = "arg_question";
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -51,14 +66,18 @@ public class Play_quiz_fragment_1 extends Fragment {
         return fragment;
     }
 
-    public static Play_quiz_fragment_1 receiveQuestion1 (Question question) {
+    public static Play_quiz_fragment_1 receiveQuestion1(Question question, String username) {
         Play_quiz_fragment_1 playQuizFragment1 = new Play_quiz_fragment_1();
         Bundle args = new Bundle();
         args.putSerializable(ARG_QUESTION, question);
+        if (username != null) {
+            args.putString("username",username);
+        }
         playQuizFragment1.setArguments(args);
         return playQuizFragment1;
     }
-    public static Play_quiz_fragment_1 receiveQuestion(Question question ,@Nullable Boolean isCorrectChoice) {
+
+    public static Play_quiz_fragment_1 receiveQuestion(Question question, @Nullable Boolean isCorrectChoice) {
         Play_quiz_fragment_1 playQuizFragment1 = new Play_quiz_fragment_1();
         Bundle args = new Bundle();
         args.putSerializable(ARG_QUESTION, question);
@@ -76,6 +95,9 @@ public class Play_quiz_fragment_1 extends Fragment {
             question = (Question) getArguments().getSerializable(ARG_QUESTION);
             if (getArguments().containsKey("isCorrectChoice")) {
                 isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
+            }
+            if (getArguments().containsKey("username")) {
+                username = getArguments().getString("username");
             }
         }
     }
@@ -115,6 +137,10 @@ public class Play_quiz_fragment_1 extends Fragment {
         da4.setText(question.getAnswers().get(3).getAnswerText().toString());
         da4.setTag(question.getAnswers().get(3).isCorrect());
         Log.d("setTag", da4.getTag().toString());
+
+        if (getArguments().containsKey("username")) {
+            username = getArguments().getString("username");
+        }
 
         if (getArguments() != null && getArguments().containsKey("isCorrectChoice")) {
             boolean isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
@@ -186,10 +212,43 @@ public class Play_quiz_fragment_1 extends Fragment {
             }
         });
 
-        btn_save.setOnClickListener(v -> {
-            // Khi nhấn vào ImageButton, thay đổi màu nền để làm cho nó "bôi đen"
-//            btn_save.setColorFilter(ContextCompat.getColor(getActivity(), R.color.black), android.graphics.PorterDuff.Mode.SRC_IN);
+
+        Log.d("CheckBox", "username: "+username);
+        btn_save.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Log.d("CheckBox", "Clicked!");
+
+            if (isChecked) {
+                Log.d("CheckBox", "Click true!");
+
+                //khởi tạo và gọi post để lưu vào MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.postMarkedQuestion(new MarkedQuestion(username, question.getIdQuestion())).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+
+            } else {
+                Log.d("CheckBox", "Click false!");
+                //khởi tạo và gọi delete để xoa khoi MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.deleteMarkedQuestion(username, question.getIdQuestion()).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã xóa câu hỏi khỏi Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể xóa câu hỏi khởi Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+                ;
+
+            }
         });
+
+
 
         return view;
     }

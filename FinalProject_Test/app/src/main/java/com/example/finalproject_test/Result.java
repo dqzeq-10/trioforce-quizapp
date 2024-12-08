@@ -56,7 +56,17 @@ private TextView resultPoint;
         btnrsreplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int idCate =  getIntent().getIntExtra("idCategoryR",1);
+                int idLeve = getIntent().getIntExtra("idLevelR",1);
+                String cate = getIntent().getStringExtra("categoryR");
+                String level = getIntent().getStringExtra("levelR");
+                Boolean isNew = getIntent().getBooleanExtra("isNewPlayR", true);
                 Intent intent = new Intent(Result.this, main_play_quiz.class);
+                intent.putExtra("isNewPlay", isNew);
+                intent.putExtra("category", cate);
+                intent.putExtra("level", level);
+                intent.putExtra("idCategory", idCate);
+                intent.putExtra("idLevel", idLeve);
                 startActivity(intent);
                 finish();
             }

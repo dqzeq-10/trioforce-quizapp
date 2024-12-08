@@ -1,3 +1,4 @@
+
 package com.example.finalproject_test;
 
 import android.os.Bundle;
@@ -29,11 +30,23 @@ public class ViewpagerAdapter_Play_Quiz extends FragmentStateAdapter {
 
     private final List<Question> questions;
     private List<AnsweredQuestion> answeredQuestions;
+    private int idCategory;
+    private int idLevel;
+    private String level;
+    private String category;
+    private Boolean isNewPlay;
+    private String username;
 
 
-    public ViewpagerAdapter_Play_Quiz(@NonNull FragmentActivity fragmentActivity, List<Question> questions) {
+    public ViewpagerAdapter_Play_Quiz(@NonNull FragmentActivity fragmentActivity, List<Question> questions, int idCategory,int idLevel,String category,String level, Boolean isNewPlay,String username ) {
         super(fragmentActivity);
         this.questions = questions;
+        this.idCategory = idCategory;
+        this.idLevel = idLevel;
+        this.category = category;
+        this.level = level;
+        this.isNewPlay = isNewPlay;
+        this.username = username;
     }
 
     public ViewpagerAdapter_Play_Quiz(@NonNull FragmentActivity fragmentActivity, List<Question> questions, List<AnsweredQuestion> answeredQuestions) {
@@ -51,27 +64,27 @@ public class ViewpagerAdapter_Play_Quiz extends FragmentStateAdapter {
             switch (position) {
                 case 0:
                     // Log.d("playadapter0",String.valueOf( answeredQuestions.get(position).isCorrectChoice()));
-                    return Play_quiz_fragment_1.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_1.receiveQuestion1(questions.get(position), username);
                 case 1:
-                    return Play_quiz_fragment_2.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_2.receiveQuestion1(questions.get(position), username);
                 case 2:
-                    return Play_quiz_fragment_3.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_3.receiveQuestion1(questions.get(position), username);
                 case 3:
-                    return Play_quiz_fragment_4.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_4.receiveQuestion1(questions.get(position), username);
                 case 4:
-                    return Play_quiz_fragment_5.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_5.receiveQuestion1(questions.get(position), username);
                 case 5:
-                    return Play_quiz_fragment_6.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_6.receiveQuestion1(questions.get(position), username);
                 case 6:
-                    return Play_quiz_fragment_7.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_7.receiveQuestion1(questions.get(position), username);
                 case 7:
-                    return Play_quiz_fragment_8.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_8.receiveQuestion1(questions.get(position), username);
                 case 8:
-                    return Play_quiz_fragment_9.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_9.receiveQuestion1(questions.get(position), username);
                 case 9:
-                    return Play_quiz_fragment_10.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_10.receiveQuestion10(questions.get(position),idCategory, idLevel, category, level, isNewPlay, username);
                 default:
-                    return Play_quiz_fragment_1.receiveQuestion1(questions.get(position));
+                    return Play_quiz_fragment_1.receiveQuestion1(questions.get(position), username);
             }
         } else {
 

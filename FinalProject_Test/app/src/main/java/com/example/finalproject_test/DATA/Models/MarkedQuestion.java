@@ -4,12 +4,35 @@ import java.util.Date;
 import java.util.List;
 
 public class MarkedQuestion {
+    private String username;
+    private int idQuestion;
     private Date markedTime;
     private String categoryName;
     private String questionText;
     private List<Answer> answers;
 
     public MarkedQuestion() {
+    }
+
+    public MarkedQuestion(String username, int idQuestion) {
+        this.username = username;
+        this.idQuestion = idQuestion;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public int getIdQuestion() {
+        return idQuestion;
+    }
+
+    public void setIdQuestion(int idQuestion) {
+        this.idQuestion = idQuestion;
     }
 
     public MarkedQuestion(Date markedTime, String categoryName, String questionText, List<Answer> answers) {

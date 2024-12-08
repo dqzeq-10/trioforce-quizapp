@@ -8,12 +8,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.finalproject_test.DATA.Models.MarkedQuestion;
 import com.example.finalproject_test.DATA.Models.Question;
+import com.example.finalproject_test.DATA.ViewModels.MarkedQuestionsVM.MarkedQuestionsViewModel;
 import com.example.finalproject_test.R;
 import com.example.finalproject_test.main_play_quiz;
 import com.example.finalproject_test.popup_warning_play_Quiz;
@@ -30,6 +34,7 @@ public class Play_quiz_fragment_5 extends Fragment {
     private AppCompatButton da1,da2,da3,da4;
     private CheckBox btn_save;
     private Boolean isCorrectChoice;
+    private String username;
     private View view;
 
     private Question question;
@@ -51,11 +56,14 @@ public class Play_quiz_fragment_5 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    public static Play_quiz_fragment_5 receiveQuestion1 (Question question) {
+    public static Play_quiz_fragment_5 receiveQuestion1 (Question question, String username) {
         Play_quiz_fragment_5 playQuizFragment5 = new Play_quiz_fragment_5();
         Bundle args = new Bundle();
         args.putSerializable(ARG_QUESTION, question);
         playQuizFragment5.setArguments(args);
+        if (username != null) {
+            args.putString("username",username);
+        }
         return playQuizFragment5;
     }
     public static Play_quiz_fragment_5 receiveQuestion(Question question, @Nullable Boolean isCorrectChoice) {
@@ -77,6 +85,9 @@ public class Play_quiz_fragment_5 extends Fragment {
             question = (Question) getArguments().getSerializable(ARG_QUESTION);
             if (getArguments().containsKey("isCorrectChoice")) {
                 isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
+            }
+            if (getArguments().containsKey("username")) {
+                username = getArguments().getString("username");
             }
         }
     }
@@ -110,7 +121,9 @@ public class Play_quiz_fragment_5 extends Fragment {
 
         da4.setText(question.getAnswers().get(3).getAnswerText().toString());
         da4.setTag(question.getAnswers().get(3).isCorrect());
-
+        if (getArguments().containsKey("username")) {
+            username = getArguments().getString("username");
+        }
         if (getArguments() != null && getArguments().containsKey("isCorrectChoice")) {
             boolean isCorrectChoice = getArguments().getBoolean("isCorrectChoice");
             int selectedAnswerId = -1; // Khởi tạo biến selectedAnswerId
@@ -187,7 +200,39 @@ public class Play_quiz_fragment_5 extends Fragment {
                 }
             }
         });
+        btn_save.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Log.d("CheckBox", "Clicked!");
 
+            if (isChecked) {
+                Log.d("CheckBox", "Click true!");
+
+                //khởi tạo và gọi post để lưu vào MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.postMarkedQuestion(new MarkedQuestion(username, question.getIdQuestion())).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể thêm câu hỏi vào Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+
+            } else {
+                Log.d("CheckBox", "Click false!");
+                //khởi tạo và gọi delete để xoa khoi MarkedQuestion
+                MarkedQuestionsViewModel markedQuestionsViewModel = new ViewModelProvider(this).get(MarkedQuestionsViewModel.class);
+                markedQuestionsViewModel.deleteMarkedQuestion(username, question.getIdQuestion()).observe(getViewLifecycleOwner(), thongbao -> {
+                    if (thongbao != null && thongbao) {
+                        Toast.makeText(getContext(), "Đã xóa câu hỏi khỏi Đã lưu!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "Không thể xóa câu hỏi khởi Đã lưu!", Toast.LENGTH_SHORT).show();
+                        Log.d("checkboxBookmark", "Thông báo false or null: ");
+                    }
+                });
+                ;
+
+            }
+        });
         return view;
     }
 
